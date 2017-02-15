@@ -1,12 +1,11 @@
-using System.Collections.Generic;
 using Orchard.Recipes.Models;
 using Orchard.Setup.Annotations;
-using Orchard.Setup.Controllers;
+using System.Collections.Generic;
 
-namespace Orchard.Setup.ViewModels {
+namespace Orchard.Setup.ViewModels
+{
     public class SetupViewModel  {
-        public SetupViewModel() {
-        }
+        public SetupViewModel() {}
 
         [SiteNameValid(maximumLength: 70)]
         public string SiteName { get; set; }

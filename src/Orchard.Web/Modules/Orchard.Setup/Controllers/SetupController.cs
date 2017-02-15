@@ -1,17 +1,18 @@
-﻿using System;
-using System.Linq;
-using System.Web.Mvc;
-using Orchard.Environment;
+﻿using Orchard.Environment;
 using Orchard.Environment.Configuration;
+using Orchard.Localization;
 using Orchard.Logging;
+using Orchard.Recipes.Services;
 using Orchard.Setup.Services;
 using Orchard.Setup.ViewModels;
-using Orchard.Localization;
-using Orchard.Recipes.Services;
 using Orchard.Themes;
 using Orchard.UI.Notify;
+using System;
+using System.Linq;
+using System.Web.Mvc;
 
-namespace Orchard.Setup.Controllers {
+namespace Orchard.Setup.Controllers
+{
     [ValidateInput(false), Themed]
     public class SetupController : Controller {
         private readonly IViewsBackgroundCompilation _viewsBackgroundCompilation;
@@ -64,7 +65,7 @@ namespace Orchard.Setup.Controllers {
 
             return IndexViewResult(new SetupViewModel {
                 AdminUsername = "admin",
-                DatabaseIsPreconfigured = !String.IsNullOrEmpty(initialSettings.DataProvider),
+                DatabaseIsPreconfigured = !string.IsNullOrEmpty(initialSettings.DataProvider),
                 Recipes = recipes,
                 RecipeDescription = recipeDescription
             });
@@ -81,17 +82,17 @@ namespace Orchard.Setup.Controllers {
             if (model.DatabaseProvider != SetupDatabaseType.Builtin && string.IsNullOrEmpty(model.DatabaseConnectionString))
                 ModelState.AddModelError("DatabaseConnectionString", T("A connection string is required.").Text);
 
-            if (!String.IsNullOrWhiteSpace(model.ConfirmPassword) && model.AdminPassword != model.ConfirmPassword) {
+            if (!string.IsNullOrWhiteSpace(model.ConfirmPassword) && model.AdminPassword != model.ConfirmPassword) {
                 ModelState.AddModelError("ConfirmPassword", T("Password confirmation must match.").Text);
             }
 
             if (model.DatabaseProvider != SetupDatabaseType.Builtin && !string.IsNullOrWhiteSpace(model.DatabaseTablePrefix)) {
                 model.DatabaseTablePrefix = model.DatabaseTablePrefix.Trim();
-                if (!Char.IsLetter(model.DatabaseTablePrefix[0])) {
+                if (!char.IsLetter(model.DatabaseTablePrefix[0])) {
                     ModelState.AddModelError("DatabaseTablePrefix", T("The table prefix must begin with a letter.").Text);
                 }
 
-                if (model.DatabaseTablePrefix.Any(x => !Char.IsLetterOrDigit(x))) {
+                if (model.DatabaseTablePrefix.Any(x => !char.IsLetterOrDigit(x))) {
                     ModelState.AddModelError("DatabaseTablePrefix", T("The table prefix must contain letters or digits.").Text);
                 }
             }
@@ -108,7 +109,7 @@ namespace Orchard.Setup.Controllers {
                 foreach (var recipe in recipes.Where(recipe => recipe.Name == model.Recipe)) {
                     model.RecipeDescription = recipe.Description;
                 }
-                model.DatabaseIsPreconfigured = !String.IsNullOrEmpty(_setupService.Prime().DataProvider);
+                model.DatabaseIsPreconfigured = !string.IsNullOrEmpty(_setupService.Prime().DataProvider);
 
                 return IndexViewResult(model);
             }
@@ -167,7 +168,7 @@ namespace Orchard.Setup.Controllers {
                 foreach (var recipe in recipes.Where(recipe => recipe.Name == model.Recipe)) {
                     model.RecipeDescription = recipe.Description;
                 }
-                model.DatabaseIsPreconfigured = !String.IsNullOrEmpty(_setupService.Prime().DataProvider);
+                model.DatabaseIsPreconfigured = !string.IsNullOrEmpty(_setupService.Prime().DataProvider);
 
                 return IndexViewResult(model);
             }

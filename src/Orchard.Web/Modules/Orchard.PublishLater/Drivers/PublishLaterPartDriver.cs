@@ -1,6 +1,4 @@
-﻿using System;
-using System.Xml;
-using Orchard.ContentManagement;
+﻿using Orchard.ContentManagement;
 using Orchard.ContentManagement.Drivers;
 using Orchard.ContentManagement.Handlers;
 using Orchard.Core.Common.ViewModels;
@@ -11,6 +9,8 @@ using Orchard.PublishLater.Models;
 using Orchard.PublishLater.Services;
 using Orchard.PublishLater.ViewModels;
 using Orchard.Services;
+using System;
+using System.Xml;
 
 namespace Orchard.PublishLater.Drivers {
     public class PublishLaterPartDriver : ContentPartDriver<PublishLaterPart> {
@@ -84,7 +84,7 @@ namespace Orchard.PublishLater.Drivers {
             updater.TryUpdateModel(model, Prefix, null, null);
             var httpContext = _httpContextAccessor.Current();
             if (httpContext.Request.Form["submit.Save"] == "submit.PublishLater") {
-                if (!String.IsNullOrWhiteSpace(model.Editor.Date) && !String.IsNullOrWhiteSpace(model.Editor.Time)) {
+                if (!string.IsNullOrWhiteSpace(model.Editor.Date) && !string.IsNullOrWhiteSpace(model.Editor.Time)) {
                     try {
                         var utcDateTime = _dateLocalizationServices.ConvertFromLocalizedString(model.Editor.Date, model.Editor.Time);
                         if (utcDateTime.HasValue) {

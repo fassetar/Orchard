@@ -76,9 +76,9 @@
             <h3>@sectionHeaderMarkup</h3>
             if (secondLevelMenuItems.Count(menuItem => !menuItem.LocalNav) > 1 || !firstLevelMenuItem.LinkToFirstChild) {
                 <ul class="menuItems">
-                @{ var first = true;}    
+                @{ var first = true;}
                 @foreach (var secondLevelMenuItem in secondLevelMenuItems.Where(menuItem => !menuItem.LocalNav)) {
-                    if (first && firstLevelMenuItem.LinkToFirstChild && String.Equals(firstLevelMenuItemUrl, secondLevelMenuItem.Href)) {
+                    if (first && firstLevelMenuItem.LinkToFirstChild && string.Equals(firstLevelMenuItemUrl, secondLevelMenuItem.Href)) {
                         first = false;
                         continue;
                     }
@@ -101,7 +101,7 @@
                     var secondLevelUrl = secondLevelMenuItem.Href;
                     if (firstOfTheThird != null && secondLevelMenuItem.LinkToFirstChild && (firstOfTheThird.RouteValues != null || HasText(firstOfTheThird.Url))) {
                         secondLevelUrl = firstOfTheThird.Href;
-                    }                    
+                    }
                     @secondLevelTag.StartElement
                         if (HasText(secondLevelItemId)) {
                             <a href="@secondLevelUrl" class="@secondLevelItemClassName" id="@secondLevelItemId">@secondLevelMenuItem.Text</a>

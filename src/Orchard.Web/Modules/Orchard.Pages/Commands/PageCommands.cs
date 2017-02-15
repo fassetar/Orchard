@@ -1,6 +1,4 @@
-﻿using System;
-using System.Web;
-using Orchard.Autoroute.Services;
+﻿using Orchard.Autoroute.Services;
 using Orchard.Commands;
 using Orchard.ContentManagement;
 using Orchard.ContentManagement.Aspects;
@@ -8,11 +6,13 @@ using Orchard.ContentPicker.Models;
 using Orchard.Core.Common.Models;
 using Orchard.Core.Navigation.Models;
 using Orchard.Core.Navigation.Services;
+using Orchard.Core.Title.Models;
 using Orchard.Security;
 using Orchard.Settings;
-using Orchard.Core.Title.Models;
 using Orchard.UI.Navigation;
 using Orchard.Utility;
+using System;
+using System.Web;
 
 namespace Orchard.Pages.Commands {
     public class PageCommands : DefaultOrchardCommandHandler {
@@ -87,7 +87,7 @@ namespace Orchard.Pages.Commands {
             page.As<TitlePart>().Title = Title;
             page.As<ICommonPart>().Owner = owner;
 
-            if (!String.IsNullOrWhiteSpace(MenuText)) {
+            if (!string.IsNullOrWhiteSpace(MenuText)) {
                 var menu = _menuService.GetMenu(MenuName);
 
                 if (menu != null) {

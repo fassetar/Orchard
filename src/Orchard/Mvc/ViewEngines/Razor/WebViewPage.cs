@@ -1,9 +1,4 @@
-﻿using System;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using System.Web.WebPages;
-using Orchard.ContentManagement;
+﻿using Orchard.ContentManagement;
 using Orchard.DisplayManagement;
 using Orchard.DisplayManagement.Shapes;
 using Orchard.Environment.Configuration;
@@ -13,9 +8,13 @@ using Orchard.Mvc.Spooling;
 using Orchard.Security;
 using Orchard.Security.Permissions;
 using Orchard.UI.Resources;
+using System;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using System.Web.WebPages;
 
 namespace Orchard.Mvc.ViewEngines.Razor {
-
     public abstract class WebViewPage<TModel> : System.Web.Mvc.WebViewPage<TModel>, IOrchardViewPage {
         private ScriptRegister _scriptRegister;
         private ResourceRegister _stylesheetRegister;
@@ -190,7 +189,7 @@ namespace Orchard.Mvc.ViewEngines.Razor {
                 _tenantPrefix = WorkContext.Resolve<ShellSettings>().RequestUrlPrefix ?? "";
             }
 
-            if (!String.IsNullOrEmpty(_tenantPrefix)
+            if (!string.IsNullOrEmpty(_tenantPrefix)
                 && path.StartsWith("~/")  
                 && !CommonLocations.Any(gpp=>path.StartsWith(gpp, StringComparison.OrdinalIgnoreCase))
             ) { 

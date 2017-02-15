@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Orchard.Commands;
+﻿using Orchard.Commands;
 using Orchard.Recipes.Services;
 using Orchard.Setup.Services;
+using System.Collections.Generic;
+using System.Linq;
 
-namespace Orchard.Setup.Commands {
+namespace Orchard.Setup.Commands
+{
     public class SetupCommand : DefaultOrchardCommandHandler {
         private readonly ISetupService _setupService;
         private readonly IRecipeHarvester _recipeHarvester;
@@ -47,13 +47,13 @@ namespace Orchard.Setup.Commands {
         [OrchardSwitches("SiteName,AdminUsername,AdminPassword,DatabaseProvider,DatabaseConnectionString,DatabaseTablePrefix,EnabledFeatures,Recipe")]
         public void Setup() {
             IEnumerable<string> enabledFeatures = null;
-            if (!String.IsNullOrEmpty(EnabledFeatures)) {
+            if (!string.IsNullOrEmpty(EnabledFeatures)) {
                 enabledFeatures = EnabledFeatures
                     .Split(',')
                     .Select(s => s.Trim())
-                    .Where(s => !String.IsNullOrEmpty(s));
+                    .Where(s => !string.IsNullOrEmpty(s));
             }
-            Recipe = String.IsNullOrEmpty(Recipe) ? "Default" : Recipe;
+            Recipe = string.IsNullOrEmpty(Recipe) ? "Default" : Recipe;
             var recipe = _setupService.Recipes().GetRecipeByName(Recipe);
 
             var setupContext = new SetupContext {

@@ -1,7 +1,7 @@
-﻿using System;
-using Orchard.ContentManagement;
+﻿using Orchard.ContentManagement;
 using Orchard.ContentManagement.Aspects;
 using Orchard.ContentManagement.Utilities;
+using System;
 
 namespace Orchard.PublishLater.Models {
     public class PublishLaterPart : ContentPart<PublishLaterPart>, IPublishingControlAspect {

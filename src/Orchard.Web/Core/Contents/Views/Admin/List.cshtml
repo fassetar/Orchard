@@ -27,7 +27,7 @@
             @Html.SelectOption((ContentsBulkAction)Model.Options.BulkAction, ContentsBulkAction.Unpublish, T("Unpublish").ToString())
             @Html.SelectOption((ContentsBulkAction)Model.Options.BulkAction, ContentsBulkAction.Remove, T("Delete").ToString())
         </select>
-        <button type="submit" name="submit.BulkEdit" value="yes">@T("Apply")</button>
+        <button type="submit" class="btn btn-success" name="submit.BulkEdit" value="yes">@T("Apply")</button>
     </fieldset>
     <fieldset class="bulk-actions">
         <label for="filterResults" class="bulk-filter">@T("Show")</label>

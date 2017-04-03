@@ -6,7 +6,7 @@
             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fa fa-user" aria-hidden="true"></i> @Html.ItemDisplayText((Orchard.ContentManagement.IContent)Model.CurrentUser)@T(" | ")<span class="caret"></span>
             </button>
-            <ul class="dropdown-menu dropdown-menu-left">
+            <ul class="dropdown-menu dropdown-menu-right">
                 <li>@Html.ActionLink(T("Change password").ToString(), "ChangePassword", new { area = "Orchard.Users", Controller = "Account" })</li>
                 <li>@Html.ActionLink(T("Logout").ToString(), "LogOff", new { Area = "Orchard.Users", Controller = "Account", ReturnUrl = Href("~/") })</li>
             </ul>

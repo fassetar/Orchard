@@ -18,7 +18,7 @@
             @Html.SelectOption(Model.BulkAction, TagAdminIndexBulkAction.None, T("Choose action...").ToString())
             @Html.SelectOption(Model.BulkAction, TagAdminIndexBulkAction.Delete, T("Delete").ToString())
         </select>
-        <button type="submit"name="submit.BulkEdit" value="@T("Apply")">@T("Apply")</button>
+        <button class="btn btn-primary" type="submit"name="submit.BulkEdit" value="@T("Apply")">@T("Apply")</button>
     </fieldset>
     <fieldset>
         <table class="items" summary="@T("This is a table of the tags in your application")" >

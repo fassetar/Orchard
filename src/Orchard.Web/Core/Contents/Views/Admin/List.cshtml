@@ -14,7 +14,7 @@
 }
 
 <div class="manage">
-    @Html.ActionLink(createLinkText.Text, "Create", new { Area = "Contents", Id = (string)Model.Options.SelectedFilter }, new { @class = "button primaryAction" })
+    @Html.ActionLink(createLinkText.Text, "Create", new { Area = "Contents", Id = (string)Model.Options.SelectedFilter }, new { @class = "btn btn-primary" })
 </div>
 
 @using (Html.BeginFormAntiForgeryPost()) {

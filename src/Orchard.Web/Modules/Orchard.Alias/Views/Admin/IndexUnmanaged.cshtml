@@ -30,7 +30,7 @@
             @Html.SelectOption(options.BulkAction, AliasBulkAction.None, T("Choose action...").ToString())
             @Html.SelectOption(options.BulkAction, AliasBulkAction.Delete, T("Delete").ToString())
         </select>
-        <button type="submit" name="submit.BulkEdit" value="@T("Apply")">@T("Apply")</button>
+        <button class="btn btn-primary" type="submit" name="submit.BulkEdit" value="@T("Apply")">@T("Apply")</button>
     </fieldset>
     <fieldset class="bulk-actions">
         <label for="filterResults">@T("Sort by:")</label>

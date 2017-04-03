@@ -1,9 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using Orchard.ContentManagement;
+﻿using Orchard.ContentManagement;
 using Orchard.Core.Navigation.Services;
+using System.Collections.Generic;
+using System.Linq;
 
-namespace Orchard.Core.Navigation.ViewModels {
+namespace Orchard.Core.Navigation.ViewModels
+{
     public class NavigationManagementViewModel  {
         public NavigationManagementViewModel() {
             MenuItemEntries = Enumerable.Empty<MenuItemEntry>().ToList();

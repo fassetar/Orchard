@@ -242,7 +242,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\twitter-admin.js" />
-    <Content Include="Styles\twitter-admin.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -292,9 +291,6 @@
     <Content Include="Views\EditorTemplates\Parts.FacebookSettings.cshtml" />
     <Content Include="Views\EditorTemplates\Parts.GoogleSettings.cshtml" />
     <Content Include="Views\EditorTemplates\Parts.TwitterSettings.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Styles\Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\Web.config" />

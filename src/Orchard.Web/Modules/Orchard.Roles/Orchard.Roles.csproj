@@ -137,11 +137,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Module.txt" />
-    <Content Include="Styles\admin-usertask.css" />
-    <Content Include="Styles\workflows-activity-unassign-role.css" />
-    <Content Include="Styles\workflows-activity-assign-role.css" />
-    <Content Include="Styles\workflows-activity-isinrole.css" />
-    <Content Include="Styles\workflows-activity-usertask.css" />
     <Content Include="Views\Admin\Create.cshtml" />
     <Content Include="Views\Admin\Edit.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
@@ -181,9 +176,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Activity-IsInRole.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Styles\Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Activity-UserTask.cshtml" />

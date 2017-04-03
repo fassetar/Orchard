@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Reflection;
-using System.Web.Mvc;
-using System.Web.Routing;
-using Orchard.ContentManagement;
+﻿using Orchard.ContentManagement;
 using Orchard.ContentManagement.Aspects;
 using Orchard.ContentManagement.MetaData;
 using Orchard.ContentManagement.MetaData.Models;
@@ -16,16 +9,24 @@ using Orchard.Core.Contents.ViewModels;
 using Orchard.Data;
 using Orchard.DisplayManagement;
 using Orchard.Localization;
+using Orchard.Localization.Services;
 using Orchard.Logging;
 using Orchard.Mvc.Extensions;
 using Orchard.Mvc.Html;
+using Orchard.Settings;
 using Orchard.UI.Navigation;
 using Orchard.UI.Notify;
-using Orchard.Settings;
 using Orchard.Utility.Extensions;
-using Orchard.Localization.Services;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Reflection;
+using System.Web.Mvc;
+using System.Web.Routing;
 
-namespace Orchard.Core.Contents.Controllers {
+namespace Orchard.Core.Contents.Controllers
+{
     [ValidateInput(false)]
     public class AdminController : Controller, IUpdateModel {
         private readonly IContentManager _contentManager;
@@ -111,7 +112,7 @@ namespace Orchard.Core.Contents.Controllers {
                     break;
             }
 
-            if (!String.IsNullOrWhiteSpace(model.Options.SelectedCulture)) {
+            if (!string.IsNullOrWhiteSpace(model.Options.SelectedCulture)) {
                 query = _cultureFilter.FilterCulture(query, model.Options.SelectedCulture);
             }
 
@@ -361,7 +362,7 @@ namespace Orchard.Core.Contents.Controllers {
                 && !string.IsNullOrWhiteSpace(returnUrl)
                 && Request.IsLocalUrl(returnUrl)
                 // only if the original returnUrl is the content itself
-                && String.Equals(returnUrl, Url.ItemDisplayUrl(contentItem), StringComparison.OrdinalIgnoreCase)
+                && string.Equals(returnUrl, Url.ItemDisplayUrl(contentItem), StringComparison.OrdinalIgnoreCase)
                 ) {
                 previousRoute = contentItem.As<IAliasAspect>().Path;
             }
@@ -376,7 +377,7 @@ namespace Orchard.Core.Contents.Controllers {
 
             if (!string.IsNullOrWhiteSpace(returnUrl)
                 && previousRoute != null
-                && !String.Equals(contentItem.As<IAliasAspect>().Path, previousRoute, StringComparison.OrdinalIgnoreCase)) {
+                && !string.Equals(contentItem.As<IAliasAspect>().Path, previousRoute, StringComparison.OrdinalIgnoreCase)) {
                 returnUrl = Url.ItemDisplayUrl(contentItem);
             }
 

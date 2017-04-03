@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using Orchard.Blogs.Routing;
+using Orchard.Mvc.Routes;
+using System.Collections.Generic;
 using System.Web.Mvc;
 using System.Web.Routing;
-using Orchard.Blogs.Routing;
-using Orchard.Mvc.Routes;
 
 namespace Orchard.Blogs {
     public class Routes : IRouteProvider {

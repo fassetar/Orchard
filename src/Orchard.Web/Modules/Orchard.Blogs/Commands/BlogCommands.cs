@@ -1,19 +1,19 @@
-﻿using System;
-using System.Linq;
-using System.Xml.Linq;
-using Orchard.Blogs.Models;
+﻿using Orchard.Blogs.Models;
+using Orchard.Blogs.Services;
 using Orchard.Commands;
 using Orchard.ContentManagement;
 using Orchard.ContentManagement.Aspects;
 using Orchard.ContentPicker.Models;
 using Orchard.Core.Common.Models;
 using Orchard.Core.Navigation.Models;
-using Orchard.Security;
-using Orchard.Blogs.Services;
 using Orchard.Core.Navigation.Services;
-using Orchard.Settings;
 using Orchard.Core.Title.Models;
+using Orchard.Security;
+using Orchard.Settings;
 using Orchard.UI.Navigation;
+using System;
+using System.Linq;
+using System.Xml.Linq;
 
 namespace Orchard.Blogs.Commands {
     public class BlogCommands : DefaultOrchardCommandHandler {
@@ -97,7 +97,7 @@ namespace Orchard.Blogs.Commands {
                     dblog.AutoroutePart.CustomPattern = Homepage ? "/" : Slug;
                 }
             }
-            
+
             _contentManager.Create(blog);
 
             if (!String.IsNullOrWhiteSpace(MenuText)) {
@@ -121,7 +121,7 @@ namespace Orchard.Blogs.Commands {
         public void Import() {
             var owner = _membershipService.GetUser(Owner);
 
-            if(owner == null) {
+            if (owner == null) {
                 Context.Output.WriteLine(T("Invalid username: {0}", Owner));
                 return;
             }
@@ -132,19 +132,18 @@ namespace Orchard.Blogs.Commands {
                 Context.Output.WriteLine(T("Loading feed..."));
                 doc = XDocument.Load(FeedUrl);
                 Context.Output.WriteLine(T("Found {0} items", doc.Descendants("item").Count()));
-            }
-            catch (Exception ex) {
+            } catch (Exception ex) {
                 throw new OrchardException(T("An error occurred while loading the feed at {0}.", FeedUrl), ex);
             }
 
             var blog = _blogService.Get(BlogId, VersionOptions.Latest);
 
-            if ( blog == null ) {
+            if (blog == null) {
                 Context.Output.WriteLine(T("Blog not found with specified Id: {0}", BlogId));
                 return;
             }
 
-            foreach ( var item in doc.Descendants("item") ) {
+            foreach (var item in doc.Descendants("item")) {
                 if (item != null) {
                     var postName = item.Element("title").Value;
 

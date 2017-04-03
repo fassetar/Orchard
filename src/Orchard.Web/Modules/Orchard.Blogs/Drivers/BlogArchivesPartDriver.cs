@@ -1,10 +1,10 @@
-﻿using System.Linq;
-using Orchard.Blogs.Models;
+﻿using Orchard.Blogs.Models;
 using Orchard.Blogs.Services;
 using Orchard.Blogs.ViewModels;
 using Orchard.ContentManagement;
 using Orchard.ContentManagement.Drivers;
 using Orchard.ContentManagement.Handlers;
+using System.Linq;
 
 namespace Orchard.Blogs.Drivers {
     public class BlogArchivesPartDriver : ContentPartDriver<BlogArchivesPart> {
@@ -13,7 +13,7 @@ namespace Orchard.Blogs.Drivers {
         private readonly IContentManager _contentManager;
 
         public BlogArchivesPartDriver(
-            IBlogService blogService, 
+            IBlogService blogService,
             IBlogPostService blogPostService,
             IContentManager contentManager) {
             _blogService = blogService;
@@ -37,7 +37,7 @@ namespace Orchard.Blogs.Drivers {
             var viewModel = new BlogArchivesViewModel {
                 BlogId = part.BlogId,
                 Blogs = _blogService.Get().ToList().OrderBy(b => _contentManager.GetItemMetadata(b).DisplayText)
-                };
+            };
 
             return ContentShape("Parts_Blogs_BlogArchives_Edit",
                                 () => shapeHelper.EditorTemplate(TemplateName: "Parts.Blogs.BlogArchives", Model: viewModel, Prefix: Prefix));

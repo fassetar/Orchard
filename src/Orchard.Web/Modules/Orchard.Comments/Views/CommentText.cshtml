@@ -3,4 +3,4 @@
     CommentPart comment = Model.ContentPart;
 }
 
-<p class="text">@(new MvcHtmlString(Html.Encode(comment.Record.CommentText).Replace("\r\n", "<br />\r\n")))</p>
+<p class="form-control">@(new MvcHtmlString(Html.Encode(comment.Record.CommentText).Replace("\r\n", "<br />\r\n")))</p>

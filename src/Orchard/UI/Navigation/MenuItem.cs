@@ -1,11 +1,12 @@
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Routing;
 using Orchard.ContentManagement;
 using Orchard.Localization;
 using Orchard.Security.Permissions;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web.Routing;
 
-namespace Orchard.UI.Navigation {
+namespace Orchard.UI.Navigation
+{
     public class MenuItem {
         private IList<string> _classes = new List<string>();
         private IEnumerable<MenuItem> _items;

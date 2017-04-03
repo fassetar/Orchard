@@ -46,7 +46,7 @@ namespace Orchard.Core.Common.Drivers {
             return ContentShape("Fields_Common_Text_Edit", GetDifferentiator(field, part),
                 () => {
                     var settings = field.PartFieldDefinition.Settings.GetModel<TextFieldSettings>();
-                    var text = part.IsNew() && String.IsNullOrEmpty(field.Value) ? settings.DefaultValue : field.Value;
+                    var text = part.IsNew() && string.IsNullOrEmpty(field.Value) ? settings.DefaultValue : field.Value;
 
                     var viewModel = new TextFieldDriverViewModel {
                         Field = field,
@@ -68,7 +68,7 @@ namespace Orchard.Core.Common.Drivers {
 
                 field.Value = viewModel.Text;
 
-                if (settings.Required && String.IsNullOrWhiteSpace(field.Value)) {
+                if (settings.Required && string.IsNullOrWhiteSpace(field.Value)) {
                     updater.AddModelError("Text", T("The {0} field is required.", T(field.DisplayName)));
                 }
             }
@@ -84,7 +84,7 @@ namespace Orchard.Core.Common.Drivers {
         }
 
         protected override void Exporting(ContentPart part, TextField field, ExportContentContext context) {
-            if (!String.IsNullOrEmpty(field.Value))
+            if (!string.IsNullOrEmpty(field.Value))
                 context.Element(field.FieldDefinition.Name + "." + field.Name).SetAttributeValue("Text", field.Value);
         }
 

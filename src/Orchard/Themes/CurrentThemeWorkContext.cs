@@ -1,9 +1,7 @@
-﻿using System;
-using Orchard.Mvc;
-using Orchard.Mvc.Extensions;
+﻿using Orchard.Mvc;
+using System;
 
-namespace Orchard.Themes
-{
+namespace Orchard.Themes {
     public class CurrentThemeWorkContext : IWorkContextStateProvider
     {
         private readonly IThemeManager _themeManager;

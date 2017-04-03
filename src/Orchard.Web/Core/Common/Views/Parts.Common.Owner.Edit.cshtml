@@ -3,7 +3,9 @@
 	var OwnerEditor = Model;
 }
 <fieldset>
-    @Html.LabelFor(m => OwnerEditor.Owner, T("Owner"))
-    @Html.EditorFor(m => OwnerEditor.Owner)
-    @Html.ValidationMessageFor(m => OwnerEditor.Owner)
+    <div class="input-group">
+        <span class="input-group-addon">Owner:</span>
+        @Html.TextBoxFor(m => OwnerEditor.Owner,null,  new { @class = "form-control" })
+    </div>
+        @Html.ValidationMessageFor(m => OwnerEditor.Owner)
 </fieldset>

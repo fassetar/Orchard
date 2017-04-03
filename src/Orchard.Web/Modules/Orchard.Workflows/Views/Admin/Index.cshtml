@@ -4,63 +4,68 @@
 @{
     var index = 0;
 
-	var pageSizes = new List<int?>() { 10, 50, 100 };
-	var defaultPageSize = WorkContext.CurrentSite.PageSize;
-	if(!pageSizes.Contains(defaultPageSize)) { 
-		pageSizes.Add(defaultPageSize);
-	}
+    var pageSizes = new List<int?>() { 10, 50, 100 };
+    var defaultPageSize = WorkContext.CurrentSite.PageSize;
+    if (!pageSizes.Contains(defaultPageSize))
+    {
+        pageSizes.Add(defaultPageSize);
+    }
 }
 
-<h1>@Html.TitleForPage(T("Manage Workflow Definitions").ToString()) </h1>
-@using (Html.BeginFormAntiForgeryPost()) { 
+@using (Html.BeginFormAntiForgeryPost())
+{
     @Html.ValidationSummary()
-    <div class="manage">@Html.ActionLink(T("Create new Workflow Definition").Text, "EditProperties", new { Area = "Orchard.Workflows", returnurl = HttpContext.Current.Request.RawUrl }, new { @class = "button primaryAction" })</div>
+    <legend>Manage Workflow Definitions</legend>
+    <div class="manage">@Html.ActionLink(T("Create new Workflow Definition").Text, "EditProperties", new { Area = "Orchard.Workflows", returnurl = HttpContext.Current.Request.RawUrl }, new { @class = "btn btn-primary" })</div>
 
     <fieldset class="bulk-actions">
-        <label for="publishActions">@T("Actions:")</label>
-        <select id="publishActions" name="@Html.NameOf(m => m.Options.BulkAction)">
+        <label for="publishActions">Actions:</label>
+        <select id="publishActions" name="@Html.NameOf(m => m.Options.BulkAction)" class="form-control">
             @Html.SelectOption(Model.Options.BulkAction, WorkflowDefinitionBulk.None, T("Choose action...").ToString())
             @Html.SelectOption(Model.Options.BulkAction, WorkflowDefinitionBulk.Delete, T("Delete").ToString())
         </select>
-        <button type="submit" name="submit.BulkEdit" value="@T("Apply")">@T("Apply")</button>
+        <button type="submit" name="submit.BulkEdit" class="btn btn-primary" value="Apply">Apply</button>
     </fieldset>
     <fieldset class="bulk-actions">
-		<label for="filterResults">@T("Sort by:")</label>
-        <select id="filterResults" name="@Html.NameOf(m => m.Options.Order)">
+        <label for="filterResults">@T("Sort by:")</label>
+        <select id="filterResults" name="@Html.NameOf(m => m.Options.Order)" class="form-control">
             @Html.SelectOption(Model.Options.Order, WorkflowDefinitionOrder.Name, T("Name").ToString())
         </select>
-		<input type="hidden" name="Page" value="1" />
-		<label for="pageSize">@T("Show:")</label>
-		<select id="pageSize" name="PageSize">
-			@Html.SelectOption((int)Model.Pager.PageSize, 0, T("All").ToString())
-			@foreach(int size in pageSizes.OrderBy(p => p)) {
-				@Html.SelectOption((int)Model.Pager.PageSize, size, size.ToString())
-			}
-		</select>
-        <button type="submit" name="submit.Filter" value="@T("Filter")">@T("Filter")</button>
+        <input type="hidden" name="Page" value="1" />
+        <label for="pageSize">@T("Show:")</label>
+        <select id="pageSize" name="PageSize" class="form-control">
+            @Html.SelectOption((int)Model.Pager.PageSize, 0, T("All").ToString())
+            @foreach (int size in pageSizes.OrderBy(p => p))
+            {
+                @Html.SelectOption((int)Model.Pager.PageSize, size, size.ToString())
+            }
+        </select>
+        <button type="submit" name="submit.Filter" value="Filter" class="btn btn-default">Filter</button>
     </fieldset>
-    <fieldset>		
-        <table class="items">
+    <fieldset>
+        <table class="table table-striped">
             <thead>
                 <tr>
-                    <th scope="col" class="checkbox"><input type="checkbox" class="check-all"/></th>
-                    <th scope="col">@T("Name")</th>
+                    <th scope="col"><input type="checkbox" class="check-all" /></th>
+                    <th scope="col">Name</th>
                     <th scope="col">&nbsp;</th>
                     <th scope="col" class="actions">&nbsp;</th>
                 </tr>
             </thead>
-            @foreach (var entry in Model.WorkflowDefinitions) { 
+            @foreach (var entry in Model.WorkflowDefinitions)
+            {
                 <tr>
                     <td>
-                        <input type="hidden" value="@Model.WorkflowDefinitions[index].WokflowDefinitionId" name="@Html.NameOf(m => m.WorkflowDefinitions[index].WokflowDefinitionId)"/>
-                        <input type="checkbox" value="true" name="@Html.NameOf(m => m.WorkflowDefinitions[index].IsChecked)"/>
+                        <input type="hidden" value="@Model.WorkflowDefinitions[index].WokflowDefinitionId" name="@Html.NameOf(m => m.WorkflowDefinitions[index].WokflowDefinitionId)" />
+                        <input type="checkbox" value="true" name="@Html.NameOf(m => m.WorkflowDefinitions[index].IsChecked)" />
                     </td>
                     <td>
-                        @Html.ActionLink(entry.Name, "Edit", new { id = entry.WokflowDefinitionId }) 
+                        @Html.ActionLink(entry.Name, "Edit", new { id = entry.WokflowDefinitionId })
                     </td>
                     <td>
-                        @if (entry.WorkflowDefinitionRecord.WorkflowRecords.Any()) {
-                             @T("{0} Running", entry.WorkflowDefinitionRecord.WorkflowRecords.Count)
+                        @if (entry.WorkflowDefinitionRecord.WorkflowRecords.Any())
+                        {
+                            @T("{0} Running", entry.WorkflowDefinitionRecord.WorkflowRecords.Count)
                         }
                         &nbsp;
                     </td>
@@ -73,6 +78,6 @@
                 index++;
             }
         </table>
-	@Display(Model.Pager)
+        @Display(Model.Pager)
     </fieldset>
 } 

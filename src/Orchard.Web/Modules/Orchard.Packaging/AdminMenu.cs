@@ -1,17 +1,15 @@
-﻿using Orchard.Environment.Extensions;
+﻿using Orchard.Environment.Configuration;
+using Orchard.Environment.Extensions;
 using Orchard.Localization;
-using Orchard.UI.Navigation;
 using Orchard.Security;
-using Orchard.Environment.Configuration;
+using Orchard.UI.Navigation;
 
 namespace Orchard.Packaging {
     [OrchardFeature("Gallery")]
     public class AdminMenu : INavigationProvider {
-        public Localizer T { get; set; }
 
-        public string MenuName {
-            get { return "admin"; }
-        }
+        public Localizer T { get; set; } 
+        public string MenuName { get { return "admin"; }}
         private readonly ShellSettings _shellSettings;
 
         public AdminMenu(ShellSettings shellSettings) {

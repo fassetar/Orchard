@@ -8,7 +8,7 @@
     }
     else {
         if ((bool) Model.Selected) {
-            Model.Classes.Add("current");
+            Model.Classes.Add("active");
         }
 
         if (items.Any()) {
@@ -27,7 +27,7 @@
             @renderedMenuItemLink
 
             if (items.Any()) {
-                <ul>
+                <ul  class="list-group">
                     @DisplayChildren(Model)
                 </ul>
             }

@@ -13,10 +13,10 @@
 @foreach (var sortCriterion in Model.SortCriteria.OrderBy(x => x.Name.Text)) {
     <h2>@sortCriterion.Name</h2>
     
-    <table class="items">
+    <table class="table">
         <thead>
             <tr>
-                <th scope="col" style="width:300px">@T("Name")</th>
+                <th scope="col" style="width:300px">Name</th>
                 <th scope="col">@T("Description")</th>
             </tr>
         </thead>

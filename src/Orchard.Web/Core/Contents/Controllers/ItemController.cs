@@ -1,11 +1,12 @@
-﻿using System.Web.Mvc;
-using Orchard.ContentManagement;
+﻿using Orchard.ContentManagement;
 using Orchard.DisplayManagement;
 using Orchard.Localization;
 using Orchard.Mvc;
 using Orchard.Themes;
+using System.Web.Mvc;
 
-namespace Orchard.Core.Contents.Controllers {
+namespace Orchard.Core.Contents.Controllers
+{
     [Themed]
     public class ItemController : Controller {
         private readonly IContentManager _contentManager;

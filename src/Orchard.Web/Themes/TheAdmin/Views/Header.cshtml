@@ -3,9 +3,8 @@
 @{
     var siteName = WorkContext.CurrentSite.SiteName;
     var siteLinkText = !string.IsNullOrWhiteSpace(siteName) ? siteName : T("Your site").Text;
-    var appLinkText = !string.IsNullOrWhiteSpace(siteName) ? siteName : T("Project Orchard").Text;
 }
-<div id="branding">
-    <div id="app">@Html.Link(appLinkText, Href("~/"))</div>
-    <div id="site">@Html.Link(siteLinkText, Href("~/"))</div>
-</div>
+<a id="site" class="navbar-brand" href="~/" style="float:none">
+    <span><img src="~/Themes/TheAdmin/Styles/Images/orchardLogo.gif" height="50" width="35"/></span>
+    @siteLinkText
+</a>

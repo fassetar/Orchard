@@ -1,11 +1,12 @@
-﻿using System;
-using Orchard.ContentManagement;
+﻿using Orchard.ContentManagement;
 using Orchard.Core.Containers.Models;
 using Orchard.Core.Containers.Services;
 using Orchard.DisplayManagement.Descriptors;
 using Orchard.Environment;
+using System;
 
-namespace Orchard.Lists {
+namespace Orchard.Lists
+{
     public class Shapes : IShapeTableProvider {
         private readonly Work<IContainerService> _containerService;
 

@@ -4,11 +4,11 @@
 
 <h2>@T("Gallery")</h2>
 <div class="manage">
-    @Html.ActionLink(T("Add Feed").Text, "AddSource", new { }, new { @class = "button primaryAction" })
+    @Html.ActionLink(T("Add Feed").Text, "AddSource", new { }, new { @class = "btn btn-primary" })
 </div>
 @using (Html.BeginFormAntiForgeryPost()) {
 <fieldset>
-    <table class="items" summary="@T("This is a table of the gallery feeds in your application")">
+    <table class="table" summary="@T("This is a table of the gallery feeds in your application")">
         <colgroup>
             <col id="Col1" />
             <col id="Col2" />

@@ -7,10 +7,10 @@ namespace Orchard.Widgets {
         public string MenuName { get { return "admin"; } }
 
         public void GetNavigation(NavigationBuilder builder) {
-            builder.AddImageSet("widgets")
+            builder
                 .Add(T("Widgets"), "5",
                     menu => menu.Add(T("Configure"), "0", item => item.Action("Index", "Admin", new { area = "Orchard.Widgets" })
-                        .Permission(Permissions.ManageWidgets)));
+                        .Permission(Permissions.ManageWidgets)), new[] { "object-group" });
         }
     }
 }

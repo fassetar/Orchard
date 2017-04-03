@@ -26,7 +26,7 @@
         @Html.HiddenFor(m => m.FolderPath)
     </fieldset>
     <fieldset>
-        <button class="primaryAction" type="submit">@T("Save")</button>
+        <button class="btn btn-primary" type="submit">Save</button>
         @Html.ActionLink(T("Cancel").ToString(), "Index", "Admin", new { area = "Orchard.MediaLibrary", folderPath = Model.FolderPath }, new { @class= "button"})
     </fieldset>
  }

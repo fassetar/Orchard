@@ -10,18 +10,18 @@
 @using (Html.BeginFormAntiForgeryPost()) {
     @Html.ValidationSummary()
     <fieldset class="bulk-actions">
-        <label for="publishActions">@T("Actions:")</label>
+        <label for="publishActions">Actions:</label>
         <select id="publishActions" name="@Html.NameOf(m => m.BulkAction)">
             @Html.SelectOption(Model.BulkAction, TaxonomiesAdminIndexBulkAction.None, T("Choose action...").ToString())
             @Html.SelectOption(Model.BulkAction, TaxonomiesAdminIndexBulkAction.Delete, T("Remove").ToString())
         </select>
-        <input class="button" type="submit" name="submit.BulkEdit" value="@T("Apply")" />
+        <input class="button" type="submit" name="submit.BulkEdit" value="Apply" />
     </fieldset>
     if (Authorizer.Authorize(Permissions.CreateTaxonomy)) {
-        <div class="manage">@Html.ActionLink(T("Add a taxonomy").Text, "Create", new { Area = "Orchard.Taxonomies", ReturnUrl = Request.RawUrl }, new { @class = "button primaryAction" })</div>
+        <div class="manage">@Html.ActionLink(T("Add a taxonomy").Text, "Create", new { Area = "Orchard.Taxonomies", ReturnUrl = Request.RawUrl }, new { @class = "btn btn-primary" })</div>
     }
     <fieldset>
-        <table class="items" summary="@T("This is a table of the taxonomies in your application")">
+        <table class="table" summary="This is a table of the taxonomies in your application">
             <colgroup>
                 <col id="Col1" />
                 <col id="Col2" />
@@ -30,7 +30,7 @@
             <thead>
                 <tr>
                     <th scope="col"><input type="checkbox" class="check-all" /></th>
-                    <th scope="col">@T("Name")</th>
+                    <th scope="col">Name</th>
                     <th scope="col"></th>
                 </tr>
             </thead>

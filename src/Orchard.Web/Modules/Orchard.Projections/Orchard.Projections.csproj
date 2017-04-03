@@ -108,11 +108,6 @@
     <Content Include="Scripts\admin-projections.js" />
     <Content Include="Scripts\numeric-editor-filter.js" />
     <Content Include="Scripts\datetime-editor-filter.js" />
-    <Content Include="Styles\admin-projections.css" />
-    <Content Include="Styles\datetime-editor-filter.css" />
-    <Content Include="Styles\images\menu.projection.png" />
-    <Content Include="Styles\images\menu.queries.png" />
-    <Content Include="Styles\menu.projector-admin.css" />
     <Content Include="Views\Layout\Add.cshtml" />
     <Content Include="Views\Layout\Edit.cshtml" />
     <Content Include="Views\Property\Add.cshtml" />
@@ -123,7 +118,6 @@
     <Content Include="Views\Binding\Edit.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Scripts\Web.config" />
-    <Content Include="Styles\Web.config" />
     <Compile Include="Permissions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="Module.txt" />

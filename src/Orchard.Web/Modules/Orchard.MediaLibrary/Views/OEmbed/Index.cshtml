@@ -5,9 +5,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     @{
-        Script.Require("jQuery").AtFoot();
-        Script.Require("jQueryUI").AtFoot();
-
         Style.Include("orchard-medialibrary-admin.css");
         Style.Include("orchard-mediaproviders-admin.css");
 
@@ -76,7 +73,7 @@
                     </div>
                     <div>
                         <label for="title">@T("Title")</label>
-                        <input class="text large" type="text" name="title" id="title" value="@title" />
+                        <input class="form-control" type="text" name="title" id="title" value="@title" />
                     </div>
                     <div>
                         <label for="description">@T("Description or caption")</label>

@@ -9,38 +9,38 @@ namespace Orchard.Resources {
             manifest.DefineScript("jQuery").SetUrl("jquery.min.js", "jquery.js").SetVersion("2.1.4").SetCdn("//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js", "//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.js", true);
 
             // jQuery UI (full package).
-            manifest.DefineScript("jQueryUI").SetUrl("jquery-ui.min.js", "jquery-ui.js").SetVersion("1.11.4").SetDependencies("jQuery").SetCdn("//ajax.aspnetcdn.com/ajax/jquery.ui/1.11.4/jquery-ui.min.js", "//ajax.aspnetcdn.com/ajax/jquery.ui/1.11.4/jquery-ui.js", true);
-            manifest.DefineStyle("jQueryUI").SetUrl("jquery-ui.min.css", "jquery-ui.css").SetVersion("1.11.4");
-            manifest.DefineStyle("jQueryUI_Orchard").SetDependencies("jQueryUI"); // Right now no customization in the styles, but the resource might be used later.
+            //manifest.DefineScript("jQueryUI").SetUrl("jquery-ui.min.js", "jquery-ui.js").SetVersion("1.11.4").SetDependencies("jQuery").SetCdn("//ajax.aspnetcdn.com/ajax/jquery.ui/1.11.4/jquery-ui.min.js", "//ajax.aspnetcdn.com/ajax/jquery.ui/1.11.4/jquery-ui.js", true);
+            //manifest.DefineStyle("jQueryUI").SetUrl("jquery-ui.min.css", "jquery-ui.css").SetVersion("1.11.4");
+            //manifest.DefineStyle("jQueryUI_Orchard").SetDependencies("jQueryUI"); // Right now no customization in the styles, but the resource might be used later.
 
             // DEPRECATED for 1.10: Resources for jQuery UI individual components. This now only
             // defer to the full jQueryUI resources. In some cases where modules depend on these,
             // they will now get the full package instead of just the expected individual resource,
             // which could be considered breaking, but was deemed acceptable in the weekly
             // meeting 2016-02-09.
-            manifest.DefineScript("jQueryUI_Core").SetDependencies("jQueryUI");
-            manifest.DefineScript("jQueryUI_Widget").SetDependencies("jQueryUI");
-            manifest.DefineScript("jQueryUI_Mouse").SetDependencies("jQueryUI");
-            manifest.DefineScript("jQueryUI_Position").SetDependencies("jQueryUI");
-            manifest.DefineScript("jQueryUI_Draggable").SetDependencies("jQueryUI");
-            manifest.DefineScript("jQueryUI_Droppable").SetDependencies("jQueryUI");
-            manifest.DefineScript("jQueryUI_Resizable").SetDependencies("jQueryUI");
-            manifest.DefineScript("jQueryUI_Selectable").SetDependencies("jQueryUI");
-            manifest.DefineScript("jQueryUI_Sortable").SetDependencies("jQueryUI");
-            manifest.DefineScript("jQueryUI_Accordion").SetDependencies("jQueryUI");
-            manifest.DefineScript("jQueryUI_Autocomplete").SetDependencies("jQueryUI");
-            manifest.DefineScript("jQueryUI_Button").SetDependencies("jQueryUI");
-            manifest.DefineScript("jQueryUI_Dialog").SetDependencies("jQueryUI");
-            manifest.DefineScript("jQueryUI_Slider").SetDependencies("jQueryUI");
-            manifest.DefineScript("jQueryUI_Tabs").SetDependencies("jQueryUI");
-            manifest.DefineScript("jQueryUI_DatePicker").SetDependencies("jQueryUI");
-            manifest.DefineScript("jQueryUI_Progressbar").SetDependencies("jQueryUI");
-            manifest.DefineScript("jQueryUI_SelectMenu").SetDependencies("jQueryUI");
-            manifest.DefineScript("jQueryUI_Spinner").SetDependencies("jQueryUI");
-            manifest.DefineScript("jQueryUI_Tooltip").SetDependencies("jQueryUI");
-            manifest.DefineScript("jQueryUI_Menu").SetDependencies("jQueryUI");
-            manifest.DefineStyle("jQueryUI_Structure").SetDependencies("jQueryUI");
-            manifest.DefineStyle("jQueryUI_Theme").SetDependencies("jQueryUI");
+            //manifest.DefineScript("jQueryUI_Core").SetDependencies("jQueryUI");
+            //manifest.DefineScript("jQueryUI_Widget").SetDependencies("jQueryUI");
+            //manifest.DefineScript("jQueryUI_Mouse").SetDependencies("jQueryUI");
+            //manifest.DefineScript("jQueryUI_Position").SetDependencies("jQueryUI");
+            //manifest.DefineScript("jQueryUI_Draggable").SetDependencies("jQueryUI");
+            //manifest.DefineScript("jQueryUI_Droppable").SetDependencies("jQueryUI");
+            //manifest.DefineScript("jQueryUI_Resizable").SetDependencies("jQueryUI");
+            //manifest.DefineScript("jQueryUI_Selectable").SetDependencies("jQueryUI");
+            //manifest.DefineScript("jQueryUI_Sortable").SetDependencies("jQueryUI");
+            //manifest.DefineScript("jQueryUI_Accordion").SetDependencies("jQueryUI");
+            //manifest.DefineScript("jQueryUI_Autocomplete").SetDependencies("jQueryUI");
+            //manifest.DefineScript("jQueryUI_Button").SetDependencies("jQueryUI");
+            //manifest.DefineScript("jQueryUI_Dialog").SetDependencies("jQueryUI");
+            //manifest.DefineScript("jQueryUI_Slider").SetDependencies("jQueryUI");
+            //manifest.DefineScript("jQueryUI_Tabs").SetDependencies("jQueryUI");
+            //manifest.DefineScript("jQueryUI_DatePicker").SetDependencies("jQueryUI");
+            //manifest.DefineScript("jQueryUI_Progressbar").SetDependencies("jQueryUI");
+            //manifest.DefineScript("jQueryUI_SelectMenu").SetDependencies("jQueryUI");
+            //manifest.DefineScript("jQueryUI_Spinner").SetDependencies("jQueryUI");
+            //manifest.DefineScript("jQueryUI_Tooltip").SetDependencies("jQueryUI");
+            //manifest.DefineScript("jQueryUI_Menu").SetDependencies("jQueryUI");
+            //manifest.DefineStyle("jQueryUI_Structure").SetDependencies("jQueryUI");
+            //manifest.DefineStyle("jQueryUI_Theme").SetDependencies("jQueryUI");
 
             // Additional utilities and plugins.
             manifest.DefineScript("jQueryUtils").SetUrl("jquery.utils.min.js", "jquery.utils.js").SetDependencies("jQuery");

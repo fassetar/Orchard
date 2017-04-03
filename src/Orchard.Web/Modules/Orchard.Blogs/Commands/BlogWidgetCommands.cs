@@ -1,9 +1,9 @@
-﻿using System;
-using Orchard.Blogs.Models;
+﻿using Orchard.Blogs.Models;
 using Orchard.Blogs.Services;
 using Orchard.Commands;
 using Orchard.ContentManagement;
 using Orchard.Widgets.Services;
+using System;
 
 namespace Orchard.Blogs.Commands {
     public class BlogWidgetCommands : DefaultOrchardCommandHandler {
@@ -14,7 +14,7 @@ namespace Orchard.Blogs.Commands {
         private BlogPart blog;
 
         public BlogWidgetCommands(
-            IWidgetCommandsService widgetCommandsService, 
+            IWidgetCommandsService widgetCommandsService,
             IBlogService blogService,
             IContentManager contentManager) {
             _widgetCommandsService = widgetCommandsService;

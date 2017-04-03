@@ -7,9 +7,6 @@
 @using Orchard.Modules.Models;
 
 @{
-    Style.Require("ModulesAdmin");
-    Style.Require("Switchable");
-    Style.Require("FontAwesome");
     Script.Require("Switchable").AtFoot();
     Script.Include("features.admin.js", "features.admin.min.js").AtFoot();
 
@@ -30,10 +27,10 @@
         <div class="bulk-actions-wrapper">
             <fieldset class="bulk-actions">
                 <label for="search-box">@T("Filter:")</label>
-                <input id="search-box" class="text" type="text" autofocus="autofocus" />
+                <input id="search-box" class="form-control" type="text" autofocus="autofocus" />
             </fieldset>
             <fieldset class="bulk-actions">
-                <label for="publishActions">@T("Actions:")</label>
+                <label for="publishActions">Actions:</label>
                 <select id="publishActions" name="bulkAction">
                     @Html.SelectOption(Model.BulkAction, FeaturesBulkAction.None, T("Choose action...").ToString())
                     @Html.SelectOption(Model.BulkAction, FeaturesBulkAction.Enable, T("Enable").ToString())

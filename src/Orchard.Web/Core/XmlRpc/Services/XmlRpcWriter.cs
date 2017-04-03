@@ -45,7 +45,7 @@ namespace Orchard.Core.XmlRpc.Services {
             if(rpcMethodResponse.Fault != null) {
                 var members = new XRpcStruct();
                 members.Set("faultCode", rpcMethodResponse.Fault.Code);
-                members.Set("faultString", rpcMethodResponse.Fault.Message);
+                members.Set("faultstring", rpcMethodResponse.Fault.Message);
 
                 return new XElement("methodResponse",
                     new XElement("fault",

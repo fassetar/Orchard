@@ -22,15 +22,15 @@
 
 @using (Html.BeginFormAntiForgeryPost()) {
     @Html.ValidationSummary()
-    <div class="manage">@Html.ActionLink(T("Add new Alias").Text, "Add", new { returnurl = HttpContext.Current.Request.RawUrl }, new { @class = "button primaryAction" })</div>
+    <div class="manage">@Html.ActionLink(T("Add new Alias").Text, "Add", new { returnurl = HttpContext.Current.Request.RawUrl }, new { @class = "btn btn-primary" })</div>
 
     <fieldset class="bulk-actions">
-        <label for="publishActions">@T("Actions:")</label>
+        <label for="publishActions">Actions:</label>
         <select id="publishActions" name="@Html.NameOf(m => m.Options.BulkAction)">
             @Html.SelectOption(options.BulkAction, AliasBulkAction.None, T("Choose action...").ToString())
             @Html.SelectOption(options.BulkAction, AliasBulkAction.Delete, T("Delete").ToString())
         </select>
-        <button type="submit" name="submit.BulkEdit" value="@T("Apply")">@T("Apply")</button>
+        <button class="btn btn-primary" type="submit" name="submit.BulkEdit" value="Apply">Apply</button>
     </fieldset>
     <fieldset class="bulk-actions">
         <label for="filterResults">@T("Sort by:")</label>
@@ -48,7 +48,7 @@
         <button type="submit" name="submit.Filter" value="@T("Filter")">@T("Filter")</button>
     </fieldset>
     <fieldset>
-        <table class="items">
+        <table class="table">
             <thead>
                 <tr>
                     <th scope="col" class="checkbox"><input type="checkbox" class="check-all" /></th>

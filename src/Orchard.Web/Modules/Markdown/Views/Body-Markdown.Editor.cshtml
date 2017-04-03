@@ -4,7 +4,6 @@
     var propertyName = Model.PropertyName != null ? (string)Model.PropertyName : "Text";
 
     Script.Require("OrchardMarkdown");
-    Style.Require("OrchardMarkdown");
 
     var idPostfix = Html.FieldIdFor(m => m);
     var shellDescriptor = WorkContext.Resolve<ShellDescriptor>();
@@ -13,7 +12,6 @@
     if (mediaLibraryEnabled) {
         Script.Require("jQueryColorBox");
         Script.Require("OrchardMarkdown-MediaLibrary");
-        Style.Require("jQueryColorBox");
     }
     else {
         Script.Require("OrchardMarkdown-MediaPicker");

@@ -1,7 +1,6 @@
 ﻿@using Orchard.Utility.Extensions;
 @using Orchard.Widgets.Models;
 @{
-    Style.Require("WidgetsAdmin");
     Layout.Title = T("Choose A Widget").ToString();
     IEnumerable<Tuple<string, string>> widgetTypes = Model.WidgetTypes;
 }

@@ -1,15 +1,28 @@
-﻿@model dynamic
-@if (Model.CurrentUser != null)
-{
-    <div id="login">
-        <div class="btn-group">
-            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fa fa-user" aria-hidden="true"></i> @Html.ItemDisplayText((Orchard.ContentManagement.IContent)Model.CurrentUser)@T(" | ")<span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu dropdown-menu-left">
-                <li>@Html.ActionLink(T("Change password").ToString(), "ChangePassword", new { area = "Orchard.Users", Controller = "Account" })</li>
-                <li>@Html.ActionLink(T("Logout").ToString(), "LogOff", new { Area = "Orchard.Users", Controller = "Account", ReturnUrl = Href("~/") })</li>
-            </ul>
-        </div>
-    </div>
-}
+﻿<div class="pull-right">
+    @if (WorkContext.CurrentUser != null)
+    {
+        <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            @T("<strong>{0}</strong>", Html.ItemDisplayText(WorkContext.CurrentUser))
+            <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu text-center">
+            @if (AuthorizedFor(Orchard.Security.StandardPermissions.AccessAdminPanel))
+            {
+                <li>
+                    @Html.ActionLink(T("Dashboard").ToString(), "Index", new { Area = "Dashboard", Controller = "Admin" })
+                </li>
+                <li role="separator" class="divider"></li>
+            }
+            <li>
+                @Html.ActionLink(T("Change Password").ToString(), "ChangePassword", new { Controller = "Account", Area = "Orchard.Users", ReturnUrl = Context.Request.RawUrl }, new { rel = "nofollow" })
+            </li>
+            <li>
+                @Html.ActionLink(T("Sign Out").ToString(), "LogOff", new { Controller = "Account", Area = "Orchard.Users", ReturnUrl = Context.Request.RawUrl }, new { rel = "nofollow" })
+            </li>
+        </ul>
+    }
+    else
+    {
+        @Html.ActionLink(T("Sign In").ToString(), "LogOn", new { Controller = "Account", Area = "Orchard.Users", ReturnUrl = (Request.QueryString["ReturnUrl"] ?? Request.RawUrl) }, new { rel = "nofollow" })
+    }
+</div>

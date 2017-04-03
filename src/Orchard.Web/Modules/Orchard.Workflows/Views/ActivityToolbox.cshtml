@@ -7,7 +7,7 @@
 }
 <fieldset class="bulk-actions">
     <label for="search-box">@T("Filter:")</label>
-    <input id="search-box" class="text" type="text" autocomplete="off" />
+    <input id="search-box" class="form-control" type="text" autocomplete="off" />
 </fieldset>
 <!-- List of available activities -->
 <ul>
@@ -15,7 +15,7 @@
         <li class="activity-toolbox-item toolbox-@(activity.IsEvent ? "event" : "task") toolbox-@activity.Name.HtmlClassify()" data-activity-name="@activity.Name" title="@activity.Description">
             <div>
                 <h2>@activity.Name.CamelFriendly()</h2>
-                <span class="hint">@activity.Description</span>
+                <span class="help-block">@activity.Description</span>
             </div>
         </li>
     }   

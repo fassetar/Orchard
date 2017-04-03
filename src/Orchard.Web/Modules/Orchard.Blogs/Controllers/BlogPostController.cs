@@ -1,6 +1,3 @@
-using System;
-using System.Linq;
-using System.Web.Mvc;
 using Orchard.Blogs.Extensions;
 using Orchard.Blogs.Models;
 using Orchard.Blogs.Routing;
@@ -10,6 +7,9 @@ using Orchard.DisplayManagement;
 using Orchard.Localization;
 using Orchard.Mvc;
 using Orchard.Themes;
+using System;
+using System.Linq;
+using System.Web.Mvc;
 
 namespace Orchard.Blogs.Controllers {
     [Themed]
@@ -21,8 +21,8 @@ namespace Orchard.Blogs.Controllers {
         private readonly IArchiveConstraint _archiveConstraint;
 
         public BlogPostController(
-            IOrchardServices services, 
-            IBlogService blogService, 
+            IOrchardServices services,
+            IBlogService blogService,
             IBlogPostService blogPostService,
             IFeedManager feedManager,
             IShapeFactory shapeFactory,

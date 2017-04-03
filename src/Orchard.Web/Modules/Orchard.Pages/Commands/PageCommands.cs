@@ -14,7 +14,8 @@ using Orchard.Utility;
 using System;
 using System.Web;
 
-namespace Orchard.Pages.Commands {
+namespace Orchard.Pages.Commands
+{
     public class PageCommands : DefaultOrchardCommandHandler {
         private readonly IContentManager _contentManager;
         private readonly IMembershipService _membershipService;

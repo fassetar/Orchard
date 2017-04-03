@@ -1,6 +1,5 @@
 @model Orchard.ContentTypes.ViewModels.AddPartsViewModel
 @{
-    Style.Require("ContentTypesAdmin");
     Layout.Title = T("Add Parts To \"{0}\"", Model.Type.DisplayName).ToString();
 }
 @T("Choose the Parts to add to this Content Type.")
@@ -25,6 +24,6 @@
             "available-parts")
     </fieldset>
     <fieldset>
-        <button class="primaryAction" type="submit">@T("Save")</button>
+        <button class="btn btn-primary" type="submit">Save</button>
     </fieldset>
 }

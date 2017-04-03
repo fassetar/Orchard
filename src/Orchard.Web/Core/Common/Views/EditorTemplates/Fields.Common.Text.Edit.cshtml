@@ -2,7 +2,7 @@
 
 <fieldset>
     <label for="@Html.FieldIdFor(m => m.Text)" @if(Model.Settings.Required) { <text>class="required"</text> }>@Model.Field.DisplayName</label>
-    @if (String.IsNullOrWhiteSpace(Model.Settings.Flavor)) {
+    @if (string.IsNullOrWhiteSpace(Model.Settings.Flavor)) {
         @(Model.Settings.Required
             ? Html.TextBoxFor(m => m.Text, new { @class = "text", required = "required", placeholder = Model.Settings.Placeholder })
             : Html.TextBoxFor(m => m.Text, new { @class = "text", placeholder = Model.Settings.Placeholder }))
@@ -12,6 +12,6 @@
        @Display.Body_Editor(Text: Model.Text, EditorFlavor: Model.Settings.Flavor, Required: Model.Settings.Required, ContentItem: Model.ContentItem, Placeholder: Model.Settings.Placeholder)
     }
     @if (HasText(Model.Settings.Hint)) {
-    <span class="hint">@Model.Settings.Hint</span>
+    <span class="help-block">@Model.Settings.Hint</span>
     }
 </fieldset>

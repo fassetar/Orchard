@@ -155,8 +155,6 @@
       <Generator>DataServiceClientGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
-    <Content Include="Styles\images\installed.gif" />
-    <Content Include="Styles\orchard-packaging-admin.css" />
     <Content Include="Views\Gallery\AddSource.cshtml" />
     <Content Include="Views\Gallery\Modules.cshtml" />
     <Content Include="Views\Gallery\Sources.cshtml" />
@@ -177,11 +175,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Web.config">
-      <SubType>Designer</SubType>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Styles\Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>

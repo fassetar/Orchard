@@ -1,24 +1,24 @@
-﻿using System;
+﻿using Orchard.ContentManagement;
+using Orchard.ContentManagement.Aspects;
+using Orchard.ContentManagement.MetaData;
+using Orchard.Core.Contents.Settings;
+using Orchard.Data;
+using Orchard.DisplayManagement;
+using Orchard.Localization;
+using Orchard.Mvc.Extensions;
+using Orchard.Mvc.Html;
+using Orchard.Settings;
+using Orchard.Taxonomies.Models;
+using Orchard.Taxonomies.Services;
+using Orchard.Taxonomies.ViewModels;
+using Orchard.UI.Navigation;
+using Orchard.UI.Notify;
+using Orchard.Utility.Extensions;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web.Mvc;
-using Orchard.ContentManagement;
-using Orchard.Localization;
-using Orchard.Settings;
-using Orchard.Taxonomies.Models;
-using Orchard.Taxonomies.ViewModels;
-using Orchard.Taxonomies.Services;
-using Orchard.UI.Navigation;
-using Orchard.UI.Notify;
-using Orchard.DisplayManagement;
-using Orchard.ContentManagement.MetaData;
-using Orchard.Data;
-using Orchard.ContentManagement.Aspects;
-using Orchard.Core.Contents.Settings;
-using Orchard.Mvc.Html;
-using Orchard.Utility.Extensions;
-using Orchard.Mvc.Extensions;
 using System.Web.Routing;
 
 namespace Orchard.Taxonomies.Controllers {
@@ -299,15 +299,13 @@ namespace Orchard.Taxonomies.Controllers {
                     if (level == previousLevel + 1) {
                         parentTerm = parents.Peek();
                         parents.Push(new TermPosition { Term = term });
-                    }
-                    else if (level == previousLevel) {
+                    } else if (level == previousLevel) {
                         // same parent term
                         if (parents.Any())
                             parents.Pop();
 
                         parents.Push(new TermPosition { Term = term });
-                    }
-                    else if (level < previousLevel) {
+                    } else if (level < previousLevel) {
                         for (var i = previousLevel; i >= level; i--)
                             parents.Pop();
 
@@ -332,8 +330,7 @@ namespace Orchard.Taxonomies.Controllers {
                     if (scIndex != -1) {
                         term.Name = line.Substring(0, scIndex);
                         term.Slug = line.Substring(scIndex + 1);
-                    }
-                    else {
+                    } else {
                         term.Name = line;
                     }
 

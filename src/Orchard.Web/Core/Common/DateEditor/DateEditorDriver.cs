@@ -72,7 +72,7 @@ namespace Orchard.Core.Common.DateEditor {
                     if (updater != null) {
                         updater.TryUpdateModel(model, Prefix, null, null);
 
-                        if (!String.IsNullOrWhiteSpace(model.Editor.Date) && !String.IsNullOrWhiteSpace(model.Editor.Time)) {
+                        if (!string.IsNullOrWhiteSpace(model.Editor.Date) && !string.IsNullOrWhiteSpace(model.Editor.Time)) {
                             try {
                                 var utcDateTime = _dateLocalizationServices.ConvertFromLocalizedString(model.Editor.Date, model.Editor.Time);
                                 part.CreatedUtc = utcDateTime;
@@ -81,7 +81,7 @@ namespace Orchard.Core.Common.DateEditor {
                                 updater.AddModelError(Prefix, T("'{0} {1}' could not be parsed as a valid date and time.", model.Editor.Date, model.Editor.Time));
                             }
                         }
-                        else if (!String.IsNullOrWhiteSpace(model.Editor.Date) || !String.IsNullOrWhiteSpace(model.Editor.Time)) {
+                        else if (!string.IsNullOrWhiteSpace(model.Editor.Date) || !string.IsNullOrWhiteSpace(model.Editor.Time)) {
                             updater.AddModelError(Prefix, T("Both the date and time need to be specified."));
                         }
 

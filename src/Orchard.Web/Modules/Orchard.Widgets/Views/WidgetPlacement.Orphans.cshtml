@@ -1,7 +1,6 @@
 ﻿@using Orchard.Utility.Extensions;
 @using Orchard.Widgets.Models;
 @{
-    Style.Require("WidgetsAdmin");
     IEnumerable<WidgetPart> widgets = Model.OrphanWidgets;
     var returnUrl = Request.RawUrl;
 }

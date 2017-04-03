@@ -1,8 +1,7 @@
-using System.Web.Routing;
 using Orchard.Blogs.Models;
 using Orchard.ContentManagement;
 using Orchard.ContentManagement.Handlers;
-using Orchard.Data;
+using System.Web.Routing;
 
 namespace Orchard.Blogs.Handlers {
     public class BlogPartHandler : ContentHandler {

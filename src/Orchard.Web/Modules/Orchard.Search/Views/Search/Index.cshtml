@@ -1,7 +1,5 @@
 ﻿@model Orchard.Search.ViewModels.SearchViewModel
 @{
-    Style.Require("Search");
-
     IEnumerable<object> searchResults = Model.ContentItems;
     Model.ContentItems.Classes.Add("content-items");
     Model.ContentItems.Classes.Add("search-results");

@@ -1,12 +1,12 @@
-﻿using System;
-using System.Linq;
-using Orchard.Blogs.Models;
+﻿using Orchard.Blogs.Models;
 using Orchard.Blogs.Services;
 using Orchard.Blogs.ViewModels;
 using Orchard.ContentManagement;
 using Orchard.ContentManagement.Drivers;
 using Orchard.ContentManagement.Handlers;
 using Orchard.Core.Common.Models;
+using System;
+using System.Linq;
 
 namespace Orchard.Blogs.Drivers {
     public class RecentBlogPostsPartDriver : ContentPartDriver<RecentBlogPostsPart> {
@@ -14,7 +14,7 @@ namespace Orchard.Blogs.Drivers {
         private readonly IContentManager _contentManager;
 
         public RecentBlogPostsPartDriver(
-            IBlogService blogService, 
+            IBlogService blogService,
             IContentManager contentManager) {
             _blogService = blogService;
             _contentManager = contentManager;
@@ -22,7 +22,7 @@ namespace Orchard.Blogs.Drivers {
 
         protected override DriverResult Display(RecentBlogPostsPart part, string displayType, dynamic shapeHelper) {
             return ContentShape("Parts_Blogs_RecentBlogPosts", () => {
-            var blog = _contentManager.Get<BlogPart>(part.BlogId);
+                var blog = _contentManager.Get<BlogPart>(part.BlogId);
 
                 if (blog == null) {
                     return null;

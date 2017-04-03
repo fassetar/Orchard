@@ -13,7 +13,7 @@ if (!HasText(Model.Text)) {
     @tag.StartElement
     <a href="@Model.Href">@Model.Text</a>
     if (items.Any()) {
-        <ul>
+        <ul  class="list-group">
         @DisplayChildren(Model)
         </ul>
     }

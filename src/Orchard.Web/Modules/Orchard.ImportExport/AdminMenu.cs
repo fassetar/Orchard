@@ -10,7 +10,8 @@ namespace Orchard.ImportExport {
         }
 
         public void GetNavigation(NavigationBuilder builder) {
-            builder.AddImageSet("importexport")
+            builder
+                //.AddImageSet("importexport")
                 .Add(T("Import/Export"), "42", BuildMenu);
         }
 

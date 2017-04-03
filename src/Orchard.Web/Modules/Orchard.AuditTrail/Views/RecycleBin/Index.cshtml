@@ -16,7 +16,7 @@
     @Html.ValidationSummary()
     @using (Html.BeginFormAntiForgeryPost()) {
         <fieldset class="bulk-actions">
-            <label>@T("Actions:")</label>
+            <label>Actions:</label>
             <select name="RecycleBinCommand">
                 <option></option>
                 <option value="@RecycleBinCommand.Restore" data-unsafe-action="@T("Are you sure you want to restore the selected items?")" @if(Model.RecycleBinCommand == RecycleBinCommand.Restore){<text>selected="selected"</text>}>@T("Restore")</option>
@@ -32,7 +32,7 @@
                 <p class="info">@T("There are no records to display.")</p>
             }
             else {
-                <table class="items">
+                <table class="table">
                     <thead>
                         <tr>
                             <th class="content-checkbox"><input type="checkbox" class="check-all" /></th>

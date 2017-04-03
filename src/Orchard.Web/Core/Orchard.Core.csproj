@@ -306,7 +306,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Common\Module.txt" />
-    <Content Include="Common\Styles\datetime-editor.css" />
     <Content Include="Common\Views\DefinitionTemplates\BodyTypePartSettings.cshtml" />
     <Content Include="Common\Views\DefinitionTemplates\BodyPartSettings.cshtml" />
     <Content Include="Common\Views\Fields.Common.Text.cshtml" />
@@ -315,13 +314,9 @@
     <Content Include="Common\Views\CommonMetadataLastModified.cshtml" />
     <Content Include="Containers\Module.txt" />
     <Content Include="Shapes\Scripts\admin-localnavigation.js" />
-    <Content Include="Contents\Styles\images\menu.content.png" />
-    <Content Include="Contents\Styles\menu.content-admin.css" />
     <Content Include="Contents\Views\Admin\Create.cshtml" />
     <Content Include="Contents\Views\Admin\Edit.cshtml" />
     <Content Include="Contents\Views\Admin\List.cshtml" />
-    <Content Include="Dashboard\styles\menu.dashboard-admin.css" />
-    <Content Include="Dashboard\styles\images\menu.dashboard.png" />
     <Content Include="Feeds\Views\Feed.cshtml" />
     <Content Include="Contents\Views\Parts.Contents.Publish.cshtml" />
     <Content Include="Contents\Views\Parts.Contents.Publish.SummaryAdmin.cshtml" />
@@ -332,17 +327,8 @@
     <Content Include="Contents\Views\Admin\CreatableTypeList.cshtml" />
     <Content Include="Navigation\Scripts\jquery.mjs.nestedSortable.js" />
     <Content Include="Navigation\Scripts\navigation-admin.js" />
-    <Content Include="Navigation\Styles\images\move.gif" />
-    <Content Include="Navigation\Styles\navigation-admin.css" />
-    <Content Include="Navigation\Styles\images\menu.navigation.png" />
-    <Content Include="Navigation\Styles\menu.navigation-admin.css" />
     <Content Include="Reports\Module.txt" />
-    <Content Include="Reports\Styles\images\menu.reports.png" />
-    <Content Include="Reports\Styles\menu.reports-admin.css" />
     <Content Include="Settings\Module.txt" />
-    <Content Include="Settings\Styles\admin.css" />
-    <Content Include="Settings\Styles\images\menu.settings.png" />
-    <Content Include="Settings\Styles\menu.settings-admin.css" />
     <Content Include="Settings\Views\Admin\Index.cshtml" />
     <Content Include="Settings\Views\Admin\Culture.cshtml" />
     <Content Include="Contents\Views\Content.Edit.cshtml" />
@@ -353,16 +339,6 @@
     <Content Include="Shapes\Scripts\base.js" />
     <Content Include="Shapes\Scripts\html5.js" />
     <Content Include="Shapes\Scripts\jquery.switchable.js" />
-    <Content Include="Shapes\Styles\Images\detail-view-on.gif" />
-    <Content Include="Shapes\Styles\Images\detail-view.gif" />
-    <Content Include="Shapes\Styles\Images\summary-view-on.gif" />
-    <Content Include="Shapes\Styles\Images\summary-view.gif" />
-    <Content Include="Shapes\Styles\Images\toolBarActiveButtonBackground.gif" />
-    <Content Include="Shapes\Styles\Images\toolBarBackground.gif" />
-    <Content Include="Shapes\Styles\Images\toolBarHoverButtonBackground.gif" />
-    <Content Include="Shapes\Styles\jquery.switchable.css" />
-    <Content Include="Shapes\Styles\site.css" />
-    <Content Include="Shapes\Styles\special.css" />
     <Content Include="Shapes\Views\HeadPreload.cshtml" />
     <Content Include="Shapes\Views\Message.cshtml" />
     <Content Include="Shapes\Views\NotFound.cshtml" />
@@ -417,12 +393,6 @@
     <Content Include="Shapes\Scripts\Web.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Shapes\Styles\Web.config">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Settings\Styles\Web.config">
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="Containers\Placement.info" />
     <Content Include="Containers\Views\EditorTemplates\Container.cshtml" />
     <Content Include="Containers\Views\DefinitionTemplates\ContainerPartSettings.cshtml" />
@@ -438,19 +408,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Shapes\Views\LocalMenuItem.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Dashboard\styles\Web.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Contents\Styles\Web.config">
-      <SubType>Designer</SubType>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Navigation\Styles\Web.config">
-      <SubType>Designer</SubType>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Common\Views\Parts.Common.Metadata.SummaryAdmin.cshtml" />
@@ -574,9 +531,6 @@
     <Content Include="Common\Views\EditorTemplates\DateTimeEditor.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Common\Styles\Web.config" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Containers\Views\EditorTemplates\ContainerWidget.cshtml" />
     <Content Include="Containers\Views\Parts.ContainerWidget.cshtml" />
   </ItemGroup>
@@ -584,7 +538,6 @@
     <Content Include="Common\Views\EditorTemplates\Flavor.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Reports\Styles\Web.config" />
     <Content Include="Reports\Views\Admin\Display.cshtml" />
     <Content Include="Reports\Views\Admin\Index.cshtml" />
   </ItemGroup>

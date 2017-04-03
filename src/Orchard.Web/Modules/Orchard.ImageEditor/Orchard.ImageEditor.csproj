@@ -101,14 +101,8 @@
     <Content Include="Scripts\jcrop\js\jquery.Jcrop.js" />
     <Content Include="Scripts\jcrop\js\jquery.Jcrop.min.js" />
     <Content Include="Scripts\jcrop\MIT-LICENSE.txt" />
-    <Content Include="Styles\image-editor.css" />
-    <Content Include="Styles\jcrop\css\Jcrop.gif" />
-    <Content Include="Styles\jcrop\css\jquery.Jcrop.css" />
-    <Content Include="Styles\jcrop\css\jquery.Jcrop.min.css" />
-    <Content Include="Styles\orchard-imageeditor-admin.css" />
     <Content Include="Web.config" />
     <Content Include="Scripts\Web.config" />
-    <Content Include="Styles\Web.config" />
     <Compile Include="Drivers\ImageEditorRotatePartDriver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="Module.txt" />

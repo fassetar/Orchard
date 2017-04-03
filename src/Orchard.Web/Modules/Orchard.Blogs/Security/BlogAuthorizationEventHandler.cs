@@ -12,7 +12,7 @@ namespace Orchard.Blogs.Security {
             if (!context.Granted &&
                 context.Content.Is<ICommonPart>()) {
 
-                if (context.Content.ContentItem.ContentType == "BlogPost" && 
+                if (context.Content.ContentItem.ContentType == "BlogPost" &&
                     BlogPostVariationExists(context.Permission)) {
                     context.Adjusted = true;
                     context.Permission = GetBlogPostVariation(context.Permission);
@@ -75,13 +75,11 @@ namespace Orchard.Blogs.Security {
             return null;
         }
 
-        private static bool BlogPostVariationExists(Permission permission)
-        {
+        private static bool BlogPostVariationExists(Permission permission) {
             return GetBlogPostVariation(permission) != null;
         }
 
-        private static Permission GetBlogPostVariation(Permission permission)
-        {
+        private static Permission GetBlogPostVariation(Permission permission) {
             if (permission.Name == Orchard.Core.Contents.Permissions.PublishContent.Name)
                 return Permissions.PublishBlogPost;
             if (permission.Name == Orchard.Core.Contents.Permissions.PublishOwnContent.Name)

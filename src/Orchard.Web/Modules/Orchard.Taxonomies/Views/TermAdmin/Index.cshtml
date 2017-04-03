@@ -3,7 +3,6 @@
 @using Orchard.Taxonomies.ViewModels;
 @using Orchard.Taxonomies.Helpers;
 @{
-    Style.Include("admin-taxonomy.css");
     Layout.Title = T("Manage terms for {0}", Model.Taxonomy.Name).ToString();
 
     var termIndex = 0;
@@ -13,26 +12,26 @@
     @Html.ValidationSummary()
     @Html.HiddenFor(m => m.TaxonomyId)
     <fieldset class="bulk-actions">
-        <label for="publishActions">@T("Actions:")</label>
+        <label for="publishActions">Actions:</label>
         <select id="publishActions" name="@Html.NameOf(m => m.BulkAction)">
             @Html.SelectOption(Model.BulkAction, TermsAdminIndexBulkAction.None, T("Choose action...").ToString())
             @Html.SelectOption(Model.BulkAction, TermsAdminIndexBulkAction.Delete, T("Remove").ToString())
             @Html.SelectOption(Model.BulkAction, TermsAdminIndexBulkAction.Move, T("Move").ToString())
         </select>
-        <input class="button" type="submit" name="submit.BulkEdit" value="@T("Apply")" />
+        <input class="button" type="submit" name="submit.BulkEdit" value="Apply"/>
     </fieldset>
     if (Authorizer.Authorize(Permissions.CreateTerm)) {
-        <div class="manage">@Html.ActionLink(T("Add a term").ToString(), "SelectTerm", new { taxonomyId = Model.Taxonomy.Id }, new { @class = "button primaryAction" })</div>
+        <div class="manage">@Html.ActionLink(T("Add a term").ToString(), "SelectTerm", new { taxonomyId = Model.Taxonomy.Id }, new { @class = "btn btn-primary" })</div>
     }
     <fieldset>
-        <table class="items" summary="@T("This is a table of the terms in your application")">
+        <table class="table" summary="This is a table of the terms in your application">
             <colgroup>
                 <col id="Col1" />
                 <col id="Col2" />
             </colgroup>
             <thead>
                 <tr>
-                    <th scope="col"><input type="checkbox" class="check-all" /> @T("Name")</th>
+                    <th scope="col"><input type="checkbox" class="check-all" />Name</th>
                     <th scope="col"></th>
                 </tr>
             </thead>

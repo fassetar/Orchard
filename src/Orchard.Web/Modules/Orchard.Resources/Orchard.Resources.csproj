@@ -338,7 +338,6 @@
     <Content Include="Assets\Js\FileUpload\jquery.fileupload-validate.js" />
     <Content Include="Assets\Js\FileUpload\jquery.fileupload.js" />
     <Content Include="Assets\Js\History\history.js" />
-    <Content Include="Assets\Js\jQueryUI\jquery-ui.js" />
     <Content Include="Assets\Js\jQuery\jquery-2.1.4.js" />
     <Content Include="Assets\Js\jQuery\jquery.cookie.js" />
     <Content Include="Assets\Js\FileUpload\jquery.iframe-transport.js" />
@@ -740,8 +739,6 @@
     <Content Include="Scripts\Calendars\jquery.calendars.validation.min.js" />
     <Content Include="Scripts\history.js" />
     <Content Include="Scripts\history.min.js" />
-    <Content Include="Scripts\jquery-ui.js" />
-    <Content Include="Scripts\jquery-ui.min.js" />
     <Content Include="Scripts\jquery.blockui.js" />
     <Content Include="Scripts\jquery.blockui.min.js" />
     <Content Include="Scripts\jquery.colorbox.js" />
@@ -820,8 +817,6 @@
     <Content Include="Styles\Images\ui-icons_ffffff_256x240.png" />
     <Content Include="Styles\jquery-datetime-editor.css" />
     <Content Include="Styles\jquery-datetime-editor.min.css" />
-    <Content Include="Styles\jquery-ui.css" />
-    <Content Include="Styles\jquery-ui.min.css" />
     <Content Include="Styles\jquery.colorbox.css" />
     <Content Include="Styles\jquery.colorbox.min.css" />
     <Content Include="Styles\TimeEntry\jquery.timeentry.css" />
@@ -844,7 +839,9 @@
       <Private>false</Private>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Styles\bootstrap.min.css.map" />
+  </ItemGroup>
   <ItemGroup>
     <Compile Include="Uri.cs" />
     <Compile Include="BlockUI.cs" />
@@ -1056,6 +1053,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Styles\bootstrap.css.map" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

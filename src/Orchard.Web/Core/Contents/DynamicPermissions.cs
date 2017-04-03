@@ -1,11 +1,10 @@
-﻿using System;
-using System.Linq;
-using System.Collections.Generic;
-using Orchard.ContentManagement.MetaData;
+﻿using Orchard.ContentManagement.MetaData;
 using Orchard.ContentManagement.MetaData.Models;
 using Orchard.Core.Contents.Settings;
 using Orchard.Environment.Extensions.Models;
 using Orchard.Security.Permissions;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Orchard.Core.Contents {
     public class DynamicPermissions : IPermissionProvider {
@@ -57,9 +56,7 @@ namespace Orchard.Core.Contents {
             return Enumerable.Empty<PermissionStereotype>();
         }
 
-        /// <summary>
-        /// Returns a dynamic permission for a content type, based on a global content permission template
-        /// </summary>
+        /// <summary>Returns a dynamic permission for a content type, based on a global content permission template.</summary>
         public static Permission ConvertToDynamicPermission(Permission permission) {
             if (PermissionTemplates.ContainsKey(permission.Name)) {
                 return PermissionTemplates[permission.Name];
@@ -68,13 +65,11 @@ namespace Orchard.Core.Contents {
             return null;
         }
 
-        /// <summary>
-        /// Generates a permission dynamically for a content type
-        /// </summary>
+        /// <summary>Generates a permission dynamically for a content type.</summary>
         public static Permission CreateDynamicPermission(Permission template, ContentTypeDefinition typeDefinition) {
             return new Permission {
-                Name = String.Format(template.Name, typeDefinition.Name),
-                Description = String.Format(template.Description, typeDefinition.DisplayName),
+                Name = string.Format(template.Name, typeDefinition.Name),
+                Description = string.Format(template.Description, typeDefinition.DisplayName),
                 Category = typeDefinition.DisplayName,
                 ImpliedBy = (template.ImpliedBy ?? new Permission[0]).Select(t => CreateDynamicPermission(t, typeDefinition))
             };

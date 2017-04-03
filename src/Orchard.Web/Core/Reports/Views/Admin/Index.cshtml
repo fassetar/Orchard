@@ -6,7 +6,7 @@
 @using(Html.BeginFormAntiForgeryPost()) {
     @Html.ValidationSummary()
     <fieldset>
-        <table class="items" summary="@T("This is a table of the reports in your application")">
+        <table class="table" summary="@T("This is a table of the reports in your application")">
             <colgroup>
                 <col id="Col1" />
                 <col id="Col2" />
@@ -15,7 +15,7 @@
             </colgroup>
             <thead>
                 <tr>
-                    <th scope="col">@T("Name")</th>
+                    <th scope="col">Name</th>
                     <th scope="col">@T("Title")</th>
                     <th scope="col">@T("Date")</th>
                     <th scope="col"></th>
@@ -30,7 +30,7 @@
                     @report.Title
                 </td>
                 <td>
-                    @report.Utc.ToLocalTime().ToShortDateString() @report.Utc.ToLocalTime().ToShortTimeString()
+                    @report.Utc.ToLocalTime().ToShortDatestring() @report.Utc.ToLocalTime().ToShortTimestring()
                 </td>
             </tr>
             }

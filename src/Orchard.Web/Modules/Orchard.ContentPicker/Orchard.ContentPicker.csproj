@@ -105,12 +105,8 @@
     <Compile Include="ViewModels\NavigationPartViewModel.cs" />
     <Content Include="Scripts\ContentPicker.js" />
     <Content Include="Scripts\SelectableContentTab.js" />
-    <Content Include="Styles\content-picker-admin.css" />
-    <Content Include="Styles\ContentPicker.css" />
-    <Content Include="Styles\Images\move.gif" />
     <Content Include="Web.config" />
     <Content Include="Scripts\Web.config" />
-    <Content Include="Styles\Web.config" />
     <Compile Include="Drivers\ContentMenuItemPartDriver.cs" />
     <Compile Include="Drivers\NavigationPartDriver.cs" />
     <Compile Include="Handlers\ContentMenuItemPartHandler.cs" />

@@ -1,9 +1,7 @@
 ﻿@using Orchard.Utility.Extensions;
 @using Orchard.Widgets.Models;
 @{
-    Style.Require("WidgetsAdmin");
     Script.Require("Switchable").AtFoot();
-    Style.Require("Switchable");
     IEnumerable<LayerPart> layers = Model.Layers;
     IEnumerable<string> cultures = Model.Cultures;
     var returnUrl = Request.RawUrl;
@@ -43,7 +41,7 @@
 
     @if (!String.IsNullOrEmpty(Model.CurrentLayer.Description)) {
         <div>
-            <span class="hint" id="widgets-layer-description">@Model.CurrentLayer.Description</span>
+            <span class="help-block" id="widgets-layer-description">@Model.CurrentLayer.Description</span>
             <br />
         </div>
     }

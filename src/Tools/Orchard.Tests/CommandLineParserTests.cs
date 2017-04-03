@@ -1,8 +1,9 @@
-﻿using System.Linq;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using Orchard.Parameters;
+using System.Linq;
 
-namespace Orchard.Tests {
+namespace Orchard.Tests
+{
     [TestFixture]
     public class CommandLineParseTests {
         [Test]

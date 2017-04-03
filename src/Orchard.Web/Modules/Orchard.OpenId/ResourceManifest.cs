@@ -8,7 +8,7 @@ namespace Orchard.OpenId
         {
             var manifest = builder.Add();
 
-            manifest.DefineStyle("TwitterAdmin").SetUrl("twitter-admin.css");
+            //manifest.DefineStyle("TwitterAdmin").SetUrl("twitter-admin.css");
             manifest.DefineScript("TwitterAdmin").SetUrl("twitter-admin.js");
         }
     }

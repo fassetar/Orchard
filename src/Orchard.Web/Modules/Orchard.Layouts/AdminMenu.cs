@@ -8,12 +8,9 @@ namespace Orchard.Layouts {
         public string MenuName { get { return "admin"; } }
 
         public void GetNavigation(NavigationBuilder builder) {
-            builder
-                .AddImageSet("layouts")
-                .Add(T("Layouts"), "8.5", layouts => layouts
-                    .Action("List", "Admin", new {id = "Layout", area = "Contents"}).Permission(Permissions.ManageLayouts)
-                    .LinkToFirstChild(false)
-                    .Add(T("Elements"), "1", elements => elements.Action("Index", "BlueprintAdmin", new {area = "Orchard.Layouts"}).Permission(Permissions.ManageLayouts)));
+            builder.Add(T("Layouts"), "8", layouts => layouts.LinkToFirstChild(false).AddClass("list-alt")
+                    .Add(T("Elements"), "1", elements => elements.Action("Index", "BlueprintAdmin", new { area = "Orchard.Layouts" }).Permission(Permissions.ManageLayouts))
+                    .Add(T("List"), "0", elements => elements.Action("List", "Admin", new { id = "Layout", area = "Contents" }).Permission(Permissions.ManageLayouts)));
         }
     }
 }

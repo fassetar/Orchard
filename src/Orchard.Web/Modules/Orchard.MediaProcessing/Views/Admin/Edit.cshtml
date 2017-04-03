@@ -12,10 +12,10 @@
     </fieldset>
 
     <div class="manage">
-        @Html.ActionLink(T("Add a new Filter").Text, "Add", new { controller = "Filter", id = Model.Id }, new { @class = "button primaryAction" })
+        @Html.ActionLink(T("Add a new Filter").Text, "Add", new { controller = "Filter", id = Model.Id }, new { @class = "btn btn-primary" })
     </div>
     
-    <table class="items">
+    <table class="table">
         <thead>
             <tr>
                 <th scope="col" >@T("Description")</th>
@@ -41,7 +41,7 @@
         }
     </table>
     
-    <span class="hint">@T("Usage example: ")@("@Display.MediaUrl(Profile: \"")@Model.Name@("\", Path: Model.ContentItem.Contact.Picture.Url)")</span>
+    <span class="help-block">@T("Usage example: ")@("@Display.MediaUrl(Profile: \"")@Model.Name@("\", Path: Model.ContentItem.Contact.Picture.Url)")</span>
         
     <fieldset>
         @*@Html.ActionLink(T("Preview").ToString(), "Preview", new { Model.Id }, new { @class = "button" })*@

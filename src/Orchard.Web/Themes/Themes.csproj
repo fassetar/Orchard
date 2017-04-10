@@ -90,29 +90,25 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="TheAdmin\Scripts\admin.js" />
-    <Content Include="TheAdmin\Styles\ie.css" />
-    <Content Include="TheAdmin\Styles\ie7.css" />
-    <Content Include="TheAdmin\Styles\ie8.css" />
-    <Content Include="TheAdmin\Styles\images\adminNavBackground.gif" />
-    <Content Include="TheAdmin\Styles\images\error.gif" />
-    <Content Include="TheAdmin\Styles\images\icon-advisory.png" />
-    <Content Include="TheAdmin\Styles\images\icon-contribute.png" />
-    <Content Include="TheAdmin\Styles\images\icon-docs.png" />
-    <Content Include="TheAdmin\Styles\images\icon-friends.png" />
-    <Content Include="TheAdmin\Styles\images\icon-gallery.png" />
-    <Content Include="TheAdmin\Styles\images\icon-settings.png" />
-    <Content Include="TheAdmin\Styles\images\info.gif" />
-    <Content Include="TheAdmin\Styles\images\menu-closed.png" />
-    <Content Include="TheAdmin\Styles\images\menu-default.png" />
-    <Content Include="TheAdmin\Styles\images\menu-glyph.png" />
-    <Content Include="TheAdmin\Styles\images\menu-open.png" />
-    <Content Include="TheAdmin\Styles\images\menuClosed.gif" />
-    <Content Include="TheAdmin\Styles\images\menuClosedHover.gif" />
-    <Content Include="TheAdmin\Styles\images\menuOpen.gif" />
-    <Content Include="TheAdmin\Styles\images\menuOpenHover.gif" />
-    <Content Include="TheAdmin\Styles\images\vinesBackgroundBottom.gif" />
-    <Content Include="TheAdmin\Styles\images\menu-filter.png" />
-    <Content Include="TheThemeMachine\Styles\default-grid.css" />
+    <Content Include="TheAdmin\Styles\Images\adminNavBackground.gif" />
+    <Content Include="TheAdmin\Styles\Images\error.gif" />
+    <Content Include="TheAdmin\Styles\Images\icon-advisory.png" />
+    <Content Include="TheAdmin\Styles\Images\icon-contribute.png" />
+    <Content Include="TheAdmin\Styles\Images\icon-docs.png" />
+    <Content Include="TheAdmin\Styles\Images\icon-friends.png" />
+    <Content Include="TheAdmin\Styles\Images\icon-gallery.png" />
+    <Content Include="TheAdmin\Styles\Images\icon-settings.png" />
+    <Content Include="TheAdmin\Styles\Images\info.gif" />
+    <Content Include="TheAdmin\Styles\Images\menu-closed.png" />
+    <Content Include="TheAdmin\Styles\Images\menu-default.png" />
+    <Content Include="TheAdmin\Styles\Images\menu-glyph.png" />
+    <Content Include="TheAdmin\Styles\Images\menu-open.png" />
+    <Content Include="TheAdmin\Styles\Images\menuClosed.gif" />
+    <Content Include="TheAdmin\Styles\Images\menuClosedHover.gif" />
+    <Content Include="TheAdmin\Styles\Images\menuOpen.gif" />
+    <Content Include="TheAdmin\Styles\Images\menuOpenHover.gif" />
+    <Content Include="TheAdmin\Styles\Images\vinesBackgroundBottom.gif" />
+    <Content Include="TheAdmin\Styles\Images\menu-filter.png" />
     <Content Include="TheThemeMachine\Styles\Site.css" />
     <Content Include="TheThemeMachine\Theme.png" />
     <Content Include="TheThemeMachine\Theme.txt" />
@@ -133,14 +129,14 @@
     <Content Include="TheThemeMachine\Views\BadgeOfHonor.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="TheAdmin\Styles\images\icons.png" />
-    <Content Include="TheAdmin\Styles\images\tableHeaderBackgroundRed.gif" />
-    <Content Include="TheAdmin\Styles\site.css" />
+    <Content Include="TheAdmin\Styles\Images\icons.png" />
+    <Content Include="TheAdmin\Styles\Images\tableHeaderBackgroundRed.gif" />
+    <Content Include="TheAdmin\Styles\Site.css" />
     <Content Include="TheAdmin\Theme.txt" />
     <Content Include="TheAdmin\Views\Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="TheAdmin\Styles\images\icons.psd" />
+    <Content Include="TheAdmin\Styles\Images\icons.psd" />
     <Content Include="SafeMode\Content\orchard.ico" />
     <Content Include="SafeMode\Styles\ie6.css" />
     <Content Include="SafeMode\Styles\images\backgroundHeader.gif" />
@@ -150,9 +146,9 @@
     <Content Include="SafeMode\Theme.png" />
     <Content Include="SafeMode\Theme.txt" />
     <Content Include="SafeMode\Views\Layout.cshtml" />
-    <Content Include="TheAdmin\Styles\images\backgroundGradient.gif" />
-    <Content Include="TheAdmin\Styles\images\backgroundHeader.gif" />
-    <Content Include="TheAdmin\Styles\images\orchardLogo.gif" />
+    <Content Include="TheAdmin\Styles\Images\backgroundGradient.gif" />
+    <Content Include="TheAdmin\Styles\Images\backgroundHeader.gif" />
+    <Content Include="TheAdmin\Styles\Images\orchardLogo.gif" />
     <Content Include="TheAdmin\Theme.png" />
     <Content Include="TheAdmin\Views\User.cshtml" />
     <Content Include="TheAdmin\Views\Header.cshtml" />

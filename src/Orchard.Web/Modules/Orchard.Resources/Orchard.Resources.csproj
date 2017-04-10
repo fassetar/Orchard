@@ -768,8 +768,6 @@
     <Content Include="Scripts\underscore.min.js" />
     <Content Include="Scripts\uri.js" />
     <Content Include="Scripts\uri.min.js" />
-    <Content Include="Styles\bootstrap-theme.css" />
-    <Content Include="Styles\bootstrap-theme.min.css" />
     <Content Include="Styles\bootstrap.css" />
     <Content Include="Styles\bootstrap.min.css" />
     <Content Include="Styles\Calendars\jquery.calendars.picker.full.css" />
@@ -1063,10 +1061,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Styles\bootstrap.css.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Styles\bootstrap-theme.css.map" />
-    <Content Include="Styles\bootstrap-theme.min.css.map" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

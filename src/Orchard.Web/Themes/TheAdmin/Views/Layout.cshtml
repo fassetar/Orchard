@@ -1,14 +1,12 @@
 ﻿@model dynamic
-@using Orchard;
-
 @{
     SetMeta("X-UA-Compatible", "IE=edge,chrome=1");
-    Style.Include("site.css");
-    Style.Include("ie.css").UseCondition("gte IE 9").SetAttribute("media", "screen, projection");
-    Style.Include("ie8.css").UseCondition("IE 8").SetAttribute("media", "screen, projection");
-    Style.Include("ie7.css").UseCondition("lte IE 7").SetAttribute("media", "screen, projection");
+    //Style.Include("site.css");
+    //Style.Include("ie.css").UseCondition("gte IE 9").SetAttribute("media", "screen, projection");
+    //Style.Include("ie8.css").UseCondition("IE 8").SetAttribute("media", "screen, projection");
+    //Style.Include("ie7.css").UseCondition("lte IE 7").SetAttribute("media", "screen, projection");
     Style.Include("bootstrap.css");
-    Style.Include("font-awesome.css");
+    //Style.Include("font-awesome.css");
     Script.Require("jQuery").AtFoot();
     Script.Require("Bootstrap").AtFoot();
     Script.Require("ShapesBase").AtFoot();
@@ -23,9 +21,9 @@
     ***************************************************************/
 
     // these are just hacked together to fire existing partials... can change
-    Model.Header.Add(Display.Header());
+    //Model.Header.Add(Display.Header());
 
-    Model.Header.Add(Display.User(CurrentUser: WorkContext.CurrentUser));
+    //Model.Header.Add(Display.User(CurrentUser: WorkContext.CurrentUser));
     Model.Footer.Add(Display.OrchardVersion());
 
     if (Model.Title != null)

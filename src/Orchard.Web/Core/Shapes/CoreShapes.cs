@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using System.Web.Mvc.Html;
-using System.Web.Routing;
-using Orchard.ContentManagement;
+﻿using Orchard.ContentManagement;
 using Orchard.DisplayManagement;
 using Orchard.DisplayManagement.Descriptors;
 using Orchard.DisplayManagement.Descriptors.ResourceBindingStrategy;
@@ -19,10 +10,20 @@ using Orchard.UI;
 using Orchard.UI.Resources;
 using Orchard.UI.Zones;
 using Orchard.Utility.Extensions;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using System.Web.Mvc.Html;
+using System.Web.Routing;
 
 // ReSharper disable InconsistentNaming
 
-namespace Orchard.Core.Shapes {
+namespace Orchard.Core.Shapes
+{
     public class CoreShapes : IShapeTableProvider {
         private readonly Work<WorkContext> _workContext;
         private readonly Work<IResourceManager> _resourceManager;
@@ -86,8 +87,8 @@ namespace Orchard.Core.Shapes {
                 .OnDisplaying(displaying => {
                     var menu = displaying.Shape;
                     string menuName = menu.MenuName;
-                    menu.Classes.Add("menu-" + menuName.HtmlClassify());
-                    menu.Classes.Add("menu");
+                    menu.Classes.Add("nav-" + menuName.HtmlClassify());
+                    menu.Classes.Add("nav navbar-nav");
                     menu.Metadata.Alternates.Add("Menu__" + EncodeAlternateElement(menuName));
                 });
 

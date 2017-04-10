@@ -340,9 +340,6 @@
     <Content Include="Reports\Styles\images\menu.reports.png" />
     <Content Include="Reports\Styles\menu.reports-admin.css" />
     <Content Include="Settings\Module.txt" />
-    <Content Include="Settings\Styles\admin.css" />
-    <Content Include="Settings\Styles\images\menu.settings.png" />
-    <Content Include="Settings\Styles\menu.settings-admin.css" />
     <Content Include="Settings\Views\Admin\Index.cshtml" />
     <Content Include="Settings\Views\Admin\Culture.cshtml" />
     <Content Include="Contents\Views\Content.Edit.cshtml" />
@@ -418,9 +415,6 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Shapes\Styles\Web.config">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Settings\Styles\Web.config">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Containers\Placement.info" />

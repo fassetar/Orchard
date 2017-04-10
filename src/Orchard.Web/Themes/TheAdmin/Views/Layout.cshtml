@@ -1,18 +1,16 @@
 ﻿@model dynamic
-@using Orchard;
-
 @{
     SetMeta("X-UA-Compatible", "IE=edge,chrome=1");
-    Style.Include("site.css");
-    Style.Include("ie.css").UseCondition("gte IE 9").SetAttribute("media", "screen, projection");
-    Style.Include("ie8.css").UseCondition("IE 8").SetAttribute("media", "screen, projection");
-    Style.Include("ie7.css").UseCondition("lte IE 7").SetAttribute("media", "screen, projection");
+    //Style.Include("ie.css").UseCondition("gte IE 9").SetAttribute("media", "screen, projection");
+    //Style.Include("ie8.css").UseCondition("IE 8").SetAttribute("media", "screen, projection");
+    //Style.Include("ie7.css").UseCondition("lte IE 7").SetAttribute("media", "screen, projection");
     Style.Include("bootstrap.css");
     Style.Include("font-awesome.css");
+    Style.Include("site.css");
     Script.Require("jQuery").AtFoot();
     Script.Require("Bootstrap").AtFoot();
-    Script.Require("ShapesBase").AtFoot();
-    Script.Include("admin.js").AtFoot();
+    //Script.Require("ShapesBase").AtFoot();
+    //Script.Include("admin.js").AtFoot();
 
     /* Some useful shortcuts or settings
     ***************************************************************/
@@ -23,9 +21,9 @@
     ***************************************************************/
 
     // these are just hacked together to fire existing partials... can change
-    Model.Header.Add(Display.Header());
+    //Model.Header.Add(Display.Header());
 
-    Model.Header.Add(Display.User(CurrentUser: WorkContext.CurrentUser));
+    //Model.Header.Add(Display.User(CurrentUser: WorkContext.CurrentUser));
     Model.Footer.Add(Display.OrchardVersion());
 
     if (Model.Title != null)
@@ -34,22 +32,44 @@
     }
 }
 
-<div id="layout-content">
+<div id="layout-content" class="row affix-row">
 
-    @if (Model.Header != null)
-    {
-        <div id="header" role="banner">
-            @Zone(Model.Header)
+    <div class="col-sm-3 col-md-2 affix-sidebar">
+        <div class="sidebar-nav">
+            <div class="navbar navbar-default" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <span class="visible-xs navbar-brand" id="header" role="banner">
+                        @if (Model.Header != null)
+                        {
+                            @Zone(Model.Header)
+                        }
+                    </span>
+                </div>
+                @if (Model.Navigation != null)
+                {
+                    <div class="navbar-collapse collapse sidebar-navbar-collapse">
+                        <nav id="menu" class="sidebar" role="navigation">
+                            @Zone(Model.Navigation)
+                        </nav>
+                    </div>
+                }
+            </div>
         </div>
-    }
-    <div id="navshortcut">
-        <a href="#Menu-admin">
-            @T("Skip to navigation")
-        </a>
     </div>
-
-    <div id="layout-main">
-        <div id="main" role="main">
+    <div id="layout-main" class="col-sm-9 col-md-10 affix-content">
+        <div id="main" role="main" class="container-fluid">
+            @if (Model.Header != null)
+            {
+                <h3 class="hidden-xs">
+                    @Zone(Model.Header)
+                </h3>
+            }
             @if (Model.Messages != null)
             {
                 <div id="messages">
@@ -84,23 +104,15 @@
                     @Zone(Model.AfterContent)
                 </div>
             }
+            @if (Model.Footer != null)
+            {
+                <div id="footer" role="contentinfo" class="pull-right">
+                    @Zone(Model.Footer)
+                </div>
+            }
         </div>
     </div>
-
-    @if (Model.Navigation != null)
-    {
-        <nav id="menu" class="sidebar" role="navigation">
-            @Zone(Model.Navigation)
-        </nav>
-    }
 </div>
-
-@if (Model.Footer != null)
-{
-    <div id="footer" role="contentinfo">
-        @Zone(Model.Footer)
-    </div>
-}
 
 @using (Script.Foot())
 {

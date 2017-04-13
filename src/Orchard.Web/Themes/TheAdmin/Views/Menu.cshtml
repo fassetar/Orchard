@@ -24,10 +24,10 @@
         var firstLevelMenuItemUrl = firstLevelMenuItem.Href;
 
         var itemClassName = HasText(sectionHeaderTextHint)
-            ? "navicon-" + sectionHeaderTextHint.HtmlClassify()
-            : "navicon";
+            ? "fa-" + sectionHeaderTextHint.HtmlClassify()
+            : "fa";
         var itemId = HasText(firstLevelMenuItem.IdHint)
-            ? "navicon-" + firstLevelMenuItem.IdHint
+            ? "fa-" + firstLevelMenuItem.IdHint
             : null;
 
         IHtmlString sectionHeaderMarkup;
@@ -73,7 +73,7 @@
 
         var firstLevelTag = Tag(firstLevelMenuItem, "li");
         @firstLevelTag.StartElement
-            <h3>@sectionHeaderMarkup</h3>
+            @sectionHeaderMarkup
             if (secondLevelMenuItems.Count(menuItem => !menuItem.LocalNav) > 1 || !firstLevelMenuItem.LinkToFirstChild) {
                 <ul class="menuItems">
                 @{ var first = true;}
@@ -87,10 +87,10 @@
                     var firstOfTheThird = ((IEnumerable<dynamic>)secondLevelMenuItem.Items).FirstOrDefault();
 
                     var secondLevelItemClassName = HasText(secondLevelTextHint)
-                        ? "subnavicon-" + secondLevelTextHint.HtmlClassify()
-                        : "subnavicon";
+                        ? "fa-" + secondLevelTextHint.HtmlClassify()
+                        : "fa";
                     var secondLevelItemId = HasText(secondLevelMenuItem.IdHint)
-                        ? "subnavicon-" + secondLevelMenuItem.IdHint
+                        ? "fa-" + secondLevelMenuItem.IdHint
                         : null;
 
                     if (secondLevelMenuItem.Selected) {

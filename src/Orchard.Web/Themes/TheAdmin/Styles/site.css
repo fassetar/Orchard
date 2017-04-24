@@ -52,6 +52,22 @@ h4{
     }
 }
 
+body {
+    font-family: Segoe UI,Trebuchet,Arial,Sans-Serif;
+}
+.group-list ul {
+    list-style: none;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    background-color: #428bca;
+    color: white;
+}
+
+.navbar-default .navbar-nav > li > a {
+    line-height: 16px;
+    color: #aec3ce;
+}
+
 /* make sidebar nav vertical */
 @media (min-width: 768px) {
     .affix-content .container {

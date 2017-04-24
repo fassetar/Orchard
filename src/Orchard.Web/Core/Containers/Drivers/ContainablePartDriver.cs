@@ -1,18 +1,19 @@
-﻿using System;
-using System.Linq;
-using System.Web.Mvc;
-using System.Xml;
-using Orchard.ContentManagement;
+﻿using Orchard.ContentManagement;
 using Orchard.ContentManagement.Drivers;
+using Orchard.ContentManagement.Handlers;
 using Orchard.Core.Common.Models;
 using Orchard.Core.Containers.Models;
 using Orchard.Core.Containers.Services;
 using Orchard.Core.Containers.Settings;
 using Orchard.Core.Containers.ViewModels;
 using Orchard.Localization;
-using Orchard.ContentManagement.Handlers;
+using System;
+using System.Linq;
+using System.Web.Mvc;
+using System.Xml;
 
-namespace Orchard.Core.Containers.Drivers {
+namespace Orchard.Core.Containers.Drivers
+{
     public class ContainablePartDriver : ContentPartDriver<ContainablePart> {
         private readonly IContentManager _contentManager;
         private readonly IContainerService _containerService;

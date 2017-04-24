@@ -4,6 +4,17 @@ Author: Orchard Team – http://www.orchardproject.net
 Copyright: 2017, Orchard. All Rights Reserved
 */
 
+body {
+    font-family: Segoe UI,Trebuchet,Arial,Sans-Serif;
+}
+.group-list ul {
+    list-style: none;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    background-color: #428bca;
+    color: white;
+}
+
 /* make sidebar nav vertical */
 @media (min-width: 768px) {
     .affix-content .container {
@@ -38,7 +49,7 @@ Copyright: 2017, Orchard. All Rights Reserved
     }
 
     .affix-content {
-        background-color: white;
+        background: #f3f4f5;
     }
 
     .sidebar-nav .navbar .navbar-collapse {
@@ -64,8 +75,8 @@ Copyright: 2017, Orchard. All Rights Reserved
         }
 
             .sidebar-nav .navbar li a {
-                padding-top: 12px;
-                padding-bottom: 12px;
+                padding-top: 8px;
+                padding-bottom: 8px;
             }
 }
 

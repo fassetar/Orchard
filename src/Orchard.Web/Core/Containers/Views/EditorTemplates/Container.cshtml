@@ -5,7 +5,7 @@
 <fieldset>
     <span class="checkbox-and-label">
         @Html.EditorFor(m => m.ItemsShown)
-        <label for="@Html.FieldIdFor(m => m.ItemsShown)" class="forcheckbox">@T("Show contained items list")</label>
+        <label for="@Html.FieldIdFor(m => m.ItemsShown)" class="form-control">@T("Show contained items list")</label>
         <span class="hint">@T("Renders the contained items when this list is displayed.")</span>
     </span>
 </fieldset>
@@ -13,7 +13,7 @@
     <fieldset>
         <span class="checkbox-and-label">
             @Html.EditorFor(m => m.EnablePositioning)
-            @Html.LabelFor(m => m.EnablePositioning, @T("Enable positoning").ToString(), new { @class = "forcheckbox" })
+            @Html.LabelFor(m => m.EnablePositioning, @T("Enable positoning").ToString(), new { @class = "form-control" })
             <span class="hint">@T("Check this option to enable manual repositioning of items.")</span>
         </span>
     </fieldset>
@@ -21,7 +21,7 @@
 @if (Model.AvailableItemContentTypes.Any()) {
     <fieldset>
         @Html.LabelFor(m => m.SelectedItemContentTypes, T("Contains"))
-        <select name="@Html.FieldNameFor(m => m.SelectedItemContentTypes)" multiple="multiple" size="10" class="text-box">
+        <select name="@Html.FieldNameFor(m => m.SelectedItemContentTypes)" multiple="multiple" size="10" class="form-control">
             @Html.SelectOption("", !Model.SelectedItemContentTypes.Any(), T("(Any)").ToString())
             @foreach (var contentType in Model.AvailableItemContentTypes) {
                 @Html.SelectOption(contentType.Name, Model.SelectedItemContentTypes.Contains(contentType.Name), contentType.DisplayName)
@@ -33,7 +33,7 @@
 <fieldset class="with-checkbox">
     <span>
         @Html.LabelFor(m => m.PageSize, T("Page size"))
-        @Html.TextBoxFor(m => m.PageSize, new { @class = "text text-small" })
+        @Html.TextBoxFor(m => m.PageSize, new { @class = "form-control" })
     </span>
     <span class="checkbox-and-label">
         @Html.CheckBoxFor(m => m.Paginated)
@@ -42,15 +42,15 @@
 </fieldset>
 <fieldset>
     @Html.EditorFor(m => m.ShowOnAdminMenu)
-    @Html.LabelFor(m => m.ShowOnAdminMenu, T("Show on admin menu").ToString(), new { @class = "forcheckbox" })
+    @Html.LabelFor(m => m.ShowOnAdminMenu, T("Show on admin menu").ToString(), new { @class = "form-control" })
     <div data-controllerid="@Html.FieldIdFor(m => m.ShowOnAdminMenu)">
         @Html.LabelFor(m => m.AdminMenuText, T("Menu text"))
-        @Html.TextBoxFor(m => m.AdminMenuText, new { @class = "text-box single-line" })
+        @Html.TextBoxFor(m => m.AdminMenuText, new { @class = "form-control" })
 
         @Html.LabelFor(m => m.AdminMenuPosition, T("Position"))
-        @Html.TextBoxFor(m => m.AdminMenuPosition, new { @class = "text-box single-line" })
+        @Html.TextBoxFor(m => m.AdminMenuPosition, new { @class = "form-control" })
         
         @Html.LabelFor(m => m.AdminMenuImageSet, T("Image Set"))
-        @Html.TextBoxFor(m => m.AdminMenuImageSet, new { @class = "text-box single-line" })
+        @Html.TextBoxFor(m => m.AdminMenuImageSet, new { @class = "form-control" })
     </div>
 </fieldset>

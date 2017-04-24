@@ -6,7 +6,7 @@
 @if (Model.IndexEntries.Any()) {
     using (Html.BeginFormAntiForgeryPost()) {
     <fieldset class="contentItems bulk-items">
-        <ul>
+        <ul class="list-group">
             @foreach (var index in Model.IndexEntries) {
                 <li>
                 <div class="summary">

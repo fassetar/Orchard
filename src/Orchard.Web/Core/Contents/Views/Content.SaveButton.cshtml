@@ -1,12 +1,59 @@
 ﻿@using Orchard.Utility.Extensions
 <fieldset class="save-button">
     <button class="btn btn-success btn-sm" type="submit" name="submit.Save" value="submit.Save">@T("Save")</button>
-    
+
     @{
         var returnUrl = Request.QueryString["returnUrl"];
     }
-    
-    @if (!string.IsNullOrWhiteSpace(returnUrl) && Request.IsLocalUrl(returnUrl)) {
+
+    @if (!string.IsNullOrWhiteSpace(returnUrl) && Request.IsLocalUrl(returnUrl))
+    {
         <a id="button-cancel" href="@returnUrl" class="btn btn-warning btn-sm">@T("Cancel")</a>
     }
 </fieldset>
+
+
+
+<div class="col-md-12">
+    <div class="row">
+        <div class="col-md-8 col-sm-12"><img class="img-responsive img-thumbnail" alt="Retirement Income Evaluator (RIE)" src="/Media/Default/Images/RIE-screen-explore-options-noborder.jpg" style="width: 100%;" /></div>
+        <div class="col-md-4 col-sm-12">
+            <div class="txt-green" style="font-weight: 100;">
+                <h4 class="media-heading" style="color: #626262; text-align: left; font-size: 32px; line-height: 38px; font-family: 'Open Sans', sans-serif; font-weight: 400;"><span>Retirement Income Evaluator (RIE)</span></h4>
+                <br />
+                <p style="color: #626262; text-align: left; font-size: 18px; line-height: 29px; font-family: 'Open Sans', sans-serif; font-weight: 300;">RIE is a planning tool that helps Financial&nbsp;Advisors show and track progress toward&nbsp;a client&rsquo;s retirement income goals. It is one of a suite of advanced financial planning tools in Janney's implementation of Advicent's NaviPlan platform.</p>
+                <br />
+                <ul style="font-size: 20px; line-height: 37px;">
+                    <li>One easy to use tool</li>
+                    <li>Asset allocation</li>
+                    <li>Review gains &amp; losses</li>
+                    <li>Performace snapshots</li>
+                    <li>Capture &amp; review notes</li>
+                    <li>Upload data to other planning tools</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="media">
+    <div class="media-left"><img width="670" alt="Retirement Income Evaluator (RIE)" src="/Media/Default/Images/RIE-screen-explore-options-noborder.jpg" /> &nbsp;</div>
+    <div class="media-body">
+        <h4 class="media-heading" style="color: #626262; text-align: left; font-size: 32px; line-height: 38px; font-family: 'Open Sans', sans-serif; font-weight: 400;">Retirement Income Evaluator (RIE)</h4>
+        <br /> <br />
+        <p style="color: #626262; text-align: left; font-size: 18px; line-height: 29px; font-family: 'Open Sans', sans-serif; font-weight: 300;">RIE is a planning tool that helps Financial&nbsp;Advisors show and track progress toward&nbsp;a client&rsquo;s retirement income goals. It is one of a suite of advanced financial planning tools in Janney's implementation of Advicent's NaviPlan platform.</p>
+        <br /> <br />
+        <ul style="font-family: 'Open Sans', sans-serif; font-weight: 300;">
+            <li>One easy to use tool</li>
+            <li>Asset allocation</li>
+            <li>Review gains &amp; losses</li>
+            <li>Performace snapshots</li>
+            <li>Capture &amp; review notes</li>
+            <li>Upload data to other planning tools</li>
+        </ul>
+        <p></p>
+        <p></p>
+        <p></p>
+    </div>
+</div>

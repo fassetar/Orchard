@@ -28,10 +28,10 @@
     var firstLevelMenuItemUrl = firstLevelMenuItem.Href;
 
     var itemClassName = HasText(sectionHeaderTextHint)
-        ? "fa fa-" + sectionHeaderTextHint.HtmlClassify()
-        : "fa";
+        ? "" + sectionHeaderTextHint.HtmlClassify()
+        : "";
     var itemId = HasText(firstLevelMenuItem.IdHint)
-        ? "fa fa-" + firstLevelMenuItem.IdHint
+        ? "" + firstLevelMenuItem.IdHint
         : null;
 
     IHtmlString sectionHeaderMarkup;

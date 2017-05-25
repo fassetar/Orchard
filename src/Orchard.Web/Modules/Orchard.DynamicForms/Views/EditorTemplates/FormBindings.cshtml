@@ -12,7 +12,7 @@
         var partState = Model.Parts.ElementAtOrDefault(partIndex) ?? new PartBindingSettings();
 
         <input type="hidden" name="Parts[@partIndex].Name" value="@partDescriptor.Part.PartDefinition.Name" />
-        <table class="items">
+        <table class="table">
             <thead>
                 <tr>
                     <th class="property-name">@partDescriptor.Part.PartDefinition.Name</th>

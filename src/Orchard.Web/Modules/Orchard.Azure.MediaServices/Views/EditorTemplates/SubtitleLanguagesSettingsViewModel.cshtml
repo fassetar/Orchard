@@ -11,7 +11,7 @@
 
 <fieldset>
     <legend>@T("Subtitle languages")</legend>
-    <table id="languages-table" class="items">
+    <table id="languages-table" class="table">
         <thead>
             <tr>
                 <th scope="col">@T("Culture code")</th>
@@ -20,7 +20,7 @@
         </thead>
         <tbody data-bind="foreach: subtitleLanguages">
             <tr>
-                <td><input type="text" class="text" data-bind="value: value, attr: { id: 'SubtitleLanguages_Languages_' + $index(), name: 'SubtitleLanguages.Languages[' + $index() + ']'}" /></td>
+                <td><input type="text" class="form-control" data-bind="value: value, attr: { id: 'SubtitleLanguages_Languages_' + $index(), name: 'SubtitleLanguages.Languages[' + $index() + ']'}" /></td>
                 <td><a href="#" data-bind="click: Orchard.Azure.MediaServices.Admin.Settings.deleteSubtitleLanguage">@T("Delete")</a></td>
             </tr>
         </tbody>

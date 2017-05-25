@@ -377,7 +377,7 @@ namespace Orchard.Core.Contents.Controllers
 
             if (!string.IsNullOrWhiteSpace(returnUrl)
                 && previousRoute != null
-                && !String.Equals(contentItem.As<IAliasAspect>().Path, previousRoute, StringComparison.OrdinalIgnoreCase)) {
+                && !string.Equals(contentItem.As<IAliasAspect>().Path, previousRoute, StringComparison.OrdinalIgnoreCase)) {
                 returnUrl = Url.ItemDisplayUrl(contentItem);
             }
 

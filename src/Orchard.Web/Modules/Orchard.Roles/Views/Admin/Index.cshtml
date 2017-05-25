@@ -11,14 +11,14 @@
     @Html.ValidationSummary();
     <fieldset class="bulk-actions">
         <label for="publishActions">@T("Actions:")</label>
-        <select id="Select1" name="roleActions">
+        <select id="Select1" name="roleActions" class="form-control">
             <option value="1">@T("Delete")</option>
         </select>
-        <button type="submit">@T("Apply")</button>
+        <button type="submit" class="btn btn-success">@T("Apply")</button>
     </fieldset>
-    <div class="manage">@Html.ActionLink(T("Add a role").ToString(), "Create", new { }, new { @class = "button primaryAction" })</div>
+    <div class="manage">@Html.ActionLink(T("Add a role").ToString(), "Create", new { }, new { @class = "btn btn-success" })</div>
     <fieldset>
-        <table class="items" summary="@T("This is a table of the roles currently available for use in your application.")">
+        <table class="table" summary="@T("This is a table of the roles currently available for use in your application.")">
             <colgroup>
                 <col id="Col1" />
                 <col id="Col2" />

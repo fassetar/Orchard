@@ -104,7 +104,7 @@
 					&& this.placeholder[intersection == 1 ? "next" : "prev"]()[0] != itemElement //no useless actions that have been done before
 					&& !$.contains(this.placeholder[0], itemElement) //no action if the item moved is the parent of the item checked
 					&& (this.options.type == 'semi-dynamic' ? !$.contains(this.element[0], itemElement) : true)
-                //&& itemElement.parentNode == this.placeholder[0].parentNode // only rearrange items within the same container
+                    //&& itemElement.parentNode == this.placeholder[0].parentNode // only rearrange items within the same container
 				) {
 
                     $(itemElement).mouseenter();
@@ -157,7 +157,7 @@
                 this._clearEmpty(parentItem[0]);
                 this._trigger("change", event, this._uiHash());
             }
-            // If the item is below another one and is moved to the right, make it a children of it
+                // If the item is below another one and is moved to the right, make it a children of it
             else if (previousItem != null &&
 						(o.rtl && (this.positionAbs.left + this.helper.outerWidth() < previousItem.offset().left + previousItem.outerWidth() - o.tabSize) ||
 						!o.rtl && (this.positionAbs.left > previousItem.offset().left + o.tabSize))) {

@@ -8,10 +8,11 @@
     }
 }
 @{
-    /* Global includes for the theme
-    ***************************************************************/
+/* Global includes for the theme
+***************************************************************/
 
-    SetMeta(name: "viewport", content: "width=device-width, intial-scale=1, IE=edge,chrome=1");
+    SetMeta(null, content: "IE=edge", httpEquiv: "X-UA-Compatible");
+    SetMeta(name: "viewport", content: "width=device-width, initial-scale=1");
     Style.Include("site.css");
     Style.Include("bootstrap.css");
     Script.Require("jQuery").AtFoot();
@@ -51,7 +52,7 @@
 
     WorkContext.Layout.Header.Add(New.Branding(), "5"); // Site name and link to the home page
     WorkContext.Layout.Navigation.Add(New.User(), "5"); // Login and dashboard links
-    WorkContext.Layout.Footer.Add(New.BadgeOfHonor(), "5"); // Powered by Orchard    
+    WorkContext.Layout.Footer.Add(New.BadgeOfHonor(), "5"); // Powered by Orchard
 
     /* Last bit of code to prep the layout wrapper
     ***************************************************************/

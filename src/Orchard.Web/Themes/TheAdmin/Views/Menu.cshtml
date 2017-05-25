@@ -61,18 +61,10 @@
         }
 
         sectionHeaderMarkup = HasText(itemId)
-            ? new HtmlString(string.Format(@"<a href=""#"" class=""{1}"" id=""{2}"">{0} TEST</a>", Html.Encode(sectionHeaderText), Html.Encode(itemClassName), Html.Encode(itemId)))
+            ? new HtmlString(string.Format(@"<a href=""#"" class=""{1}"" id=""{2}"">{0}</a>", Html.Encode(sectionHeaderText), Html.Encode(itemClassName), Html.Encode(itemId)))
             : new HtmlString(string.Format(@"<a href=""#"">{0}<button class=""btn btn-link btn-xs"" data-toggle=""collapse"" data-target=""#{0}"" data-parent=""#sidenav01"">&#9660;</button></a>", Html.Encode(sectionHeaderText), Html.Encode(itemClassName)));
     }
 
-    //if (firstLevelMenuItem == firstLevelMenuItems.First())
-    //{
-    //    firstLevelMenuItem.Classes.Add("first");
-    //}
-    //if (firstLevelMenuItem == firstLevelMenuItems.Last())
-    //{
-    //    firstLevelMenuItem.Classes.Add("last");
-    //}
     if (firstLevelMenuItem.Selected)
     {
         firstLevelMenuItem.Classes.Add("active");

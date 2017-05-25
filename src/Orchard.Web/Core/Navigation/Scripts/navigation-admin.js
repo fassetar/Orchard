@@ -1,5 +1,4 @@
-﻿
-(function ($) {
+﻿(function ($) {
 
     var populate = function (el, prefix) {
         var pos = 1;
@@ -38,7 +37,7 @@
         stop: function (event, ui) {
             // update all positions whenever a menu item was moved
             populate(this, '');
-            $('#save-message').show();
+            $('#save-message').removeClass('hide');
 
             // display a message on leave if changes have been made
             window.onbeforeunload = function (e) {
@@ -51,7 +50,4 @@
             });
         }
     });
-
-    
-
 })(jQuery);

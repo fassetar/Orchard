@@ -150,7 +150,6 @@
     <Content Include="TheAdmin\Styles\Images\backgroundHeader.gif" />
     <Content Include="TheAdmin\Styles\Images\orchardLogo.gif" />
     <Content Include="TheAdmin\Theme.png" />
-    <Content Include="TheAdmin\Views\User.cshtml" />
     <Content Include="TheAdmin\Views\Header.cshtml" />
     <Content Include="TheThemeMachine\Views\Layout.cshtml" />
   </ItemGroup>
@@ -202,6 +201,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TheAdmin\Views\User.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

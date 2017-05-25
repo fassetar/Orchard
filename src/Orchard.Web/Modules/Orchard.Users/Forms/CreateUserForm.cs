@@ -1,8 +1,9 @@
-﻿using System;
-using Orchard.Environment.Extensions;
+﻿using Orchard.Environment.Extensions;
 using Orchard.Forms.Services;
+using System;
 
-namespace Orchard.Users.Forms {
+namespace Orchard.Users.Forms
+{
     [OrchardFeature("Orchard.Users.Workflows")]
     public class CreateUserForm : Component, IFormProvider, IFormEventHandler {
         void IFormProvider.Describe(DescribeContext context) {

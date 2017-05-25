@@ -5,7 +5,7 @@
 }
 
 <div id="culture-selection">
-    <select>
+    <select class="form-control">
         @foreach (var supportedCulture in supportedCultures)
         {
             var cultureInfo = CultureInfo.GetCultureInfo(supportedCulture);

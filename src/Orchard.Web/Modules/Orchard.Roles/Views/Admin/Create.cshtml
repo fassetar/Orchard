@@ -8,14 +8,14 @@
     <fieldset>
         <legend>@T("Information")</legend>
         <label for="pageTitle">@T("Role Name:")</label>
-        <input id="Name" class="text" name="Name" type="text" value="@Model.Name" />
+        <input id="Name" class="form-control" name="Name" type="text" value="@Model.Name" />
     </fieldset>
     <fieldset>
         <legend>@T("Permissions")</legend>
         @foreach (var featureName in Model.FeaturePermissions.Keys) {
         <fieldset>
             <legend>@T("{0} Module", featureName)</legend>
-            <table class="items">
+            <table class="table">
                 <colgroup>
                     <col id="Permission" />
                     <col id="Allow" />

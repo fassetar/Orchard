@@ -1,8 +1,4 @@
-﻿#save-message {
-    display: none;
-}
-
-.navigation-menu ol ol {
+﻿.navigation-menu ol ol {
 	margin: 0;
 	padding: 0;
 	padding-left: 30px; /* gap between each level */

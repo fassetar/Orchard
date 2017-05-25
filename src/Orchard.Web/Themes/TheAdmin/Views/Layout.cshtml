@@ -1,16 +1,15 @@
 ﻿@model dynamic
 @{
-    SetMeta("X-UA-Compatible", "IE=edge,chrome=1");
-    //Style.Include("ie.css").UseCondition("gte IE 9").SetAttribute("media", "screen, projection");
-    //Style.Include("ie8.css").UseCondition("IE 8").SetAttribute("media", "screen, projection");
-    //Style.Include("ie7.css").UseCondition("lte IE 7").SetAttribute("media", "screen, projection");
+    SetMeta(null, content: "IE=edge", httpEquiv: "X-UA-Compatible");
+    SetMeta(name: "viewport", content: "width=device-width, initial-scale=1");
+    Style.Include("ie.css").UseCondition("gte IE 9").SetAttribute("media", "screen, projection");
     Style.Include("bootstrap.css");
     Style.Include("font-awesome.css");
     Style.Include("site.css");
     Script.Require("jQuery").AtFoot();
     Script.Require("Bootstrap").AtFoot();
-    //Script.Require("ShapesBase").AtFoot();
-    //Script.Include("admin.js").AtFoot();
+    Script.Require("ShapesBase").AtFoot();
+    Script.Include("admin.js").AtFoot();
 
     /* Some useful shortcuts or settings
     ***************************************************************/
@@ -21,9 +20,9 @@
     ***************************************************************/
 
     // these are just hacked together to fire existing partials... can change
-    //Model.Header.Add(Display.Header());
+    //Model.Navigation.Add(Display.Header());
 
-    //Model.Header.Add(Display.User(CurrentUser: WorkContext.CurrentUser));
+    Model.Header.Add(Display.User(CurrentUser: WorkContext.CurrentUser));
     Model.Footer.Add(Display.OrchardVersion());
 
     if (Model.Title != null)
@@ -32,43 +31,42 @@
     }
 }
 
-<div id="layout-content" class="row affix-row">
-
-    <div class="col-sm-3 col-md-2 affix-sidebar">
-        <div class="sidebar-nav">
-            <div class="navbar navbar-default" role="navigation">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <span class="visible-xs navbar-brand" id="header" role="banner">
-                        @if (Model.Header != null)
-                        {
-                            @Zone(Model.Header)
-                        }
-                    </span>
-                </div>
-                @if (Model.Navigation != null)
-                {
-                    <div class="navbar-collapse collapse sidebar-navbar-collapse">
-                        <nav id="menu" class="sidebar" role="navigation">
-                            @Zone(Model.Navigation)
-                        </nav>
+<div id="layout-content" class="affix-row">
+        <div class="col-sm-3 col-md-2 affix-sidebar">
+            <div class="sidebar-nav">
+                <div class="navbar navbar-default" role="navigation">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <span class="visible-xs navbar-brand" id="header" role="banner">
+                            @Display.Header()
+                        </span>
                     </div>
-                }
+                    @if (Model.Navigation != null)
+                    {
+                        <div class="navbar-collapse collapse sidebar-navbar-collapse">
+                            <nav id="menu" class="sidebar" role="navigation">
+                                <h3 class="hidden-xs" id="header" role="banner">
+                                    @Display.Header()
+                                </h3>
+                                @Zone(Model.Navigation)
+                            </nav>
+                        </div>
+                    }
+                </div>
             </div>
         </div>
-    </div>
     <div id="layout-main" class="col-sm-9 col-md-10 affix-content">
         <div id="main" role="main" class="container-fluid">
             @if (Model.Header != null)
             {
-                <h3 class="hidden-xs">
+                <div class="navbar">
                     @Zone(Model.Header)
-                </h3>
+                </div>
             }
             @if (Model.Messages != null)
             {
@@ -93,8 +91,10 @@
 
             @if (Model.Content != null)
             {
-                <div id="content" class="group">
-                    @Zone(Model.Content)
+                <div id="content" class="group panel panel-default">
+                    <div class="panel-body">
+                        @Zone(Model.Content)
+                    </div>
                 </div>
             }
 

@@ -1,11 +1,12 @@
-﻿using System.Collections.Generic;
-using Orchard.ContentManagement;
+﻿using Orchard.ContentManagement;
 using Orchard.ContentManagement.MetaData;
 using Orchard.ContentManagement.MetaData.Builders;
 using Orchard.ContentManagement.MetaData.Models;
 using Orchard.ContentManagement.ViewModels;
+using System.Collections.Generic;
 
-namespace Orchard.Core.Navigation.Settings {
+namespace Orchard.Core.Navigation.Settings
+{
     public class AdminMenuPartTypeSettings {
         public string DefaultPosition { get; set; }
     }

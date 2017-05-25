@@ -13,7 +13,7 @@
 @foreach (var filter in Model.Filters.OrderBy(x => x.Name.Text)) {
     <h2>@filter.Name</h2>
     
-    <table class="items">
+    <table class="table">
         <thead>
             <tr>
                 <th scope="col" style="width:300px">@T("Name")</th>

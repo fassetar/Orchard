@@ -2,9 +2,9 @@
 @model Orchard.Layouts.ViewModels.LayoutEditor
 @{
     // Library dependencies.
-    Style.Require("jQueryUI_Orchard");
-    Style.Require("Bootstrap");
-    Style.Require("FontAwesome");
+    //Style.Require("jQueryUI_Orchard");
+    //Style.Require("Bootstrap");
+    //Style.Require("FontAwesome");
 
     // We need these styles to properly render selected media items.
     // Ideally the MediaLibrary is refactored such that each media item type provides its own set of styles, enabling extensibility of the set of media item types.
@@ -12,7 +12,7 @@
     Style.Include("~/Modules/Orchard.MediaLibrary/Styles/media-library-picker-admin.css");
 
     Script.Require("jQueryCookie");
-    Script.Require("jQueryUI");
+    //Script.Require("jQueryUI");
     Script.Require("Layouts.LayoutEditor");
     Script.Include("jquery.deserialize.js");
 
@@ -67,7 +67,6 @@
     var contentId = Model.Content != null ? Model.Content.Id : default(int?);
     var contentType = Model.Content != null ? Model.Content.ContentItem.ContentType : default(string);
 }
-
 <fieldset>
     <div class="layout-designer"
          data-modelstate-valid="@ViewData.ModelState.IsValid.ToString().ToLower()"
@@ -84,12 +83,12 @@
         @Html.HiddenFor(m => m.Data, new { @class = "layout-data-field" })
         @Html.HiddenFor(m => m.RecycleBin, new { @class = "recycle-bin-data-field" })
         <div class="layout-editor-toolbar">
-            <ol class="layout-editor-toolbar-group">
+            <ol class="layout-editor-toolbar-group list-unstyled">
                 <li>
                     <label>@T("Layout")</label>
                 </li>
             </ol>
-            <ol class="layout-editor-toolbar-group">
+            <ol class="layout-editor-toolbar-group list-unstyled">
                 <li>
                     <a class="layout-editor-help-link" href="#"><i class="fa fa-info-circle"></i> @T("Clipboard, keyboard shortcuts, etc.")</a>
                 </li>
@@ -234,3 +233,4 @@
         </div>
     </div>
 </fieldset>
+<br/>

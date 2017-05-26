@@ -2,7 +2,5 @@
 @using Orchard.Core.Contents;
 
 @if (Authorizer.Authorize(Permissions.PublishContent, (IContent)Model.ContentItem)) {
-<fieldset class="publish-button">
-    <button type="submit" name="submit.Publish" value="submit.Publish" class="btn btn-primary btn-sm">@T("Publish Now")</button>
-</fieldset>
+    <button type="submit" name="submit.Publish" value="submit.Publish" class="btn btn-primary ">@T("Publish Now")</button>
 }

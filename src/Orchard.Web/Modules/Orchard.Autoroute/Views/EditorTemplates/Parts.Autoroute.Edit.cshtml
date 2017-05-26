@@ -3,7 +3,8 @@
 @using Orchard.Mvc.Extensions
 @model Orchard.Autoroute.ViewModels.AutoroutePartEditViewModel
 
-@if (Model.Settings.Patterns.Where(x => x.Culture == Model.CurrentCulture).Count() == 0) {
+@if (Model.Settings.Patterns.Where(x => x.Culture == Model.CurrentCulture).Count() == 0)
+{
     <div class="message message-Error">@T("The current Content Type does not have a default Autoroute Pattern. Please edit the settings first.")</div>
     return;
 }
@@ -13,34 +14,41 @@
     var pattern = Model.Settings.Patterns.Where(x => x.Culture == Model.CurrentCulture);
 
     var urlPrefix = WorkContext.Resolve<ShellSettings>().RequestUrlPrefix;
-    if (!String.IsNullOrWhiteSpace(urlPrefix)) {
+    if (!String.IsNullOrWhiteSpace(urlPrefix))
+    {
         urlPrefix += "/";
     }
 }
 
 
 <fieldset class="permalink">
-    <label>@T("Permalink")</label>
-    @if (Model.Settings.AllowCustomPattern) {
-        <span class="permalink-definition" dir="ltr">
-            <span>@Url.MakeAbsolute("/")@urlPrefix</span>
-            <span>@Html.TextBoxFor(m => m.CurrentUrl, new { @class = "text is-url" })</span>
-        </span>
-        <span class="hint">@T("Save the current item and leave the input empty to have it automatically generated using the pattern {0} e.g., {1}.", pattern.ElementAtOrDefault(Convert.ToInt32(defaultPattern.PatternIndex)).Name, pattern.ElementAtOrDefault(Convert.ToInt32(defaultPattern.PatternIndex)).Description)</span>
+    @if (Model.Settings.AllowCustomPattern)
+    {
+        <div class="permalink-definition" dir="ltr">
+            <div class="input-group">
+                <span class="input-group-addon"><b>@T("Permalink"):</b> @Url.MakeAbsolute("/")@urlPrefix</span>
+                <span>@Html.TextBoxFor(m => m.CurrentUrl, new { @class = "form-control is-url" })</span>
+            </div>
+        </div>
+        <p class="help-block">@T("Save the current item and leave the input empty to have it automatically generated using the pattern {0} e.g., {1}.", pattern.ElementAtOrDefault(Convert.ToInt32(defaultPattern.PatternIndex)).Name, pattern.ElementAtOrDefault(Convert.ToInt32(defaultPattern.PatternIndex)).Description)</p>
     }
-    else {
+    else
+    {
         var hintClass = string.Empty;
-        if (!string.IsNullOrEmpty(Model.CurrentUrl)) {
+        if (!string.IsNullOrEmpty(Model.CurrentUrl))
+        {
             hintClass = "hint";
             <span>@Url.MakeAbsolute("/")@urlPrefix@Model.CurrentUrl</span>
         }
 
         if (string.IsNullOrEmpty(Model.CurrentUrl)
-            || (!string.IsNullOrEmpty(Model.CurrentUrl) && Model.Settings.AutomaticAdjustmentOnEdit)) {
+            || (!string.IsNullOrEmpty(Model.CurrentUrl) && Model.Settings.AutomaticAdjustmentOnEdit))
+        {
             <span class="@hintClass">@T("Save the current item and the url will be generated using the pattern {0} e.g., {1}.", pattern.ElementAtOrDefault(Convert.ToInt32(defaultPattern.PatternIndex)).Name, pattern.ElementAtOrDefault(Convert.ToInt32(defaultPattern.PatternIndex)).Description)</span>
         }
     }
-    @if (!String.IsNullOrEmpty(Model.CurrentUrl)) {
+    @if (!String.IsNullOrEmpty(Model.CurrentUrl))
+    {
         <span>
             @Html.Link(
                 T("View").Text,
@@ -50,17 +58,19 @@
     }
 
 </fieldset>
-@if (!Model.IsHomePage) {
-    if (AuthorizedFor(Permissions.SetHomePage)) {
+@if (!Model.IsHomePage)
+{
+    if (AuthorizedFor(Permissions.SetHomePage))
+    {
         <fieldset>
             <span class="checkbox-and-label">
                 @Html.CheckBoxFor(m => m.PromoteToHomePage)
                 <label for="@Html.FieldIdFor(m => m.PromoteToHomePage)" class="forcheckbox">@T("Set as home page")</label>
             </span>
-            <span class="hint">@T("Check to promote this content as the home page.")</span>
         </fieldset>
     }
 }
-else {
+else
+{
     <span>@T("This content is the current home page")</span>
 }

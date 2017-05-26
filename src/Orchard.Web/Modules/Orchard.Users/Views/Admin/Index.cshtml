@@ -40,7 +40,7 @@
     </div>
     <hr/>
     <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-6 panel-body">
             <div class="input-group">
                 <span class="input-group-addon">
                     @T("Sort by:")
@@ -53,7 +53,7 @@
                 </select>
             </div>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-6 panel-body">
             <div class="input-group">
                   <div class="input-group-btn">
                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@T("Filter:") <span class="caret"></span></button>
@@ -71,7 +71,7 @@
                 </span>
 
             </div>
-            @*<div class="input-group hidden">
+            <div class="input-group hidden">
                 <select id="filterResults" name="@Html.NameOf(m => m.Options.Filter)" class="hidden">
                     @Html.SelectOption(Model.Options.Filter, UsersFilter.All, T("All Users").ToString())
                     @Html.SelectOption(Model.Options.Filter, UsersFilter.Approved, T("Approved Users").ToString())
@@ -79,12 +79,11 @@
                     @Html.SelectOption(Model.Options.Filter, UsersFilter.EmailPending, T("Pending Emails").ToString())
                 </select>
                 <span class="input-group-btn">
-                    <button type="submit" name="submit.Filter" class="btn btn-sm btn-success" value="@T("Filter")">@T("Filter")</button>
+                    <button type="submit" name="submit.Filter" class="btn  btn-success" value="@T("Filter")">@T("Filter")</button>
                 </span>
-            </div>*@
+            </div>
         </div>
     </div>
-    <fieldset class="bulk-actions"></fieldset>
     <fieldset>
         <br />
         <div class="table-responsive panel panel-default">

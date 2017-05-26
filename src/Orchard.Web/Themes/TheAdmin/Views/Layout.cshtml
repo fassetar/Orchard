@@ -6,10 +6,12 @@
     Style.Include("bootstrap.css");
     Style.Include("font-awesome.css");
     Style.Include("site.css");
+    Style.Include("https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.standalone.min.css");
     Script.Require("jQuery").AtFoot();
     Script.Require("Bootstrap").AtFoot();
     Script.Require("ShapesBase").AtFoot();
     Script.Include("admin.js").AtFoot();
+    Script.Include("https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js");
 
     /* Some useful shortcuts or settings
     ***************************************************************/
@@ -34,7 +36,7 @@
 <div id="layout-content" class="affix-row">
         <div class="col-sm-3 col-md-2 affix-sidebar">
             <div class="sidebar-nav">
-                <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+                <div class="navbar navbar-default" role="navigation">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
                             <span class="sr-only">Toggle navigation</span>

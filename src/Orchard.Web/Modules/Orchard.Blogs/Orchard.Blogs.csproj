@@ -144,11 +144,6 @@
     <Compile Include="ViewModels\RecentBlogPostsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Admin\images\draft.gif" />
-    <Content Include="Content\Admin\images\offline.gif" />
-    <Content Include="Content\Admin\images\online.gif" />
-    <Content Include="Content\Admin\images\published.gif" />
-    <Content Include="Content\Admin\images\scheduled.gif" />
     <Content Include="Module.txt" />
     <Content Include="Scripts\orchard-blogs-archives.js" />
     <Content Include="Styles\images\menu.blog.png" />
@@ -215,9 +210,6 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Styles\Web.config">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Content\Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>

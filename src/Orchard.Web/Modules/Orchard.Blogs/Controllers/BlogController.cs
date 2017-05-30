@@ -1,17 +1,17 @@
-using System.Linq;
-using System.Web.Mvc;
 using Orchard.Blogs.Extensions;
+using Orchard.Blogs.Models;
 using Orchard.Blogs.Services;
+using Orchard.ContentManagement;
 using Orchard.Core.Feeds;
 using Orchard.DisplayManagement;
 using Orchard.Localization;
 using Orchard.Logging;
 using Orchard.Mvc;
+using Orchard.Settings;
 using Orchard.Themes;
 using Orchard.UI.Navigation;
-using Orchard.Settings;
-using Orchard.ContentManagement;
-using Orchard.Blogs.Models;
+using System.Linq;
+using System.Web.Mvc;
 
 namespace Orchard.Blogs.Controllers {
 
@@ -24,10 +24,10 @@ namespace Orchard.Blogs.Controllers {
         private readonly ISiteService _siteService;
 
         public BlogController(
-            IOrchardServices services, 
+            IOrchardServices services,
             IBlogService blogService,
             IBlogPostService blogPostService,
-            IFeedManager feedManager, 
+            IFeedManager feedManager,
             IShapeFactory shapeFactory,
             ISiteService siteService) {
             _services = services;
@@ -46,7 +46,7 @@ namespace Orchard.Blogs.Controllers {
 
         public ActionResult List() {
             var blogs = _blogService.Get()
-                .Where(b => _services.Authorizer.Authorize(Orchard.Core.Contents.Permissions.ViewContent,b))
+                .Where(b => _services.Authorizer.Authorize(Orchard.Core.Contents.Permissions.ViewContent, b))
                 .Select(b => _services.ContentManager.BuildDisplay(b, "Summary"));
 
             var list = Shape.List();

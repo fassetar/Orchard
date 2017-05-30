@@ -1,18 +1,17 @@
-using System.Linq;
-using System.Web.Mvc;
 using Orchard.Blogs.Extensions;
 using Orchard.Blogs.Models;
-using Orchard.Blogs.Routing;
 using Orchard.Blogs.Services;
 using Orchard.ContentManagement;
 using Orchard.Data;
 using Orchard.DisplayManagement;
 using Orchard.Localization;
 using Orchard.Mvc;
+using Orchard.Settings;
 using Orchard.UI.Admin;
 using Orchard.UI.Navigation;
 using Orchard.UI.Notify;
-using Orchard.Settings;
+using System.Linq;
+using System.Web.Mvc;
 
 namespace Orchard.Blogs.Controllers {
 
@@ -151,10 +150,10 @@ namespace Orchard.Blogs.Controllers {
             list.AddRange(_blogService.Get(VersionOptions.Latest)
                 .Where(x => Services.Authorizer.Authorize(Permissions.MetaListOwnBlogs, x))
                 .Select(b => {
-                            var blog = Services.ContentManager.BuildDisplay(b, "SummaryAdmin");
-                            blog.TotalPostCount = _blogPostService.PostCount(b, VersionOptions.Latest);
-                            return blog;
-                        }));
+                    var blog = Services.ContentManager.BuildDisplay(b, "SummaryAdmin");
+                    blog.TotalPostCount = _blogPostService.PostCount(b, VersionOptions.Latest);
+                    return blog;
+                }));
 
             var viewModel = Services.New.ViewModel()
                 .ContentItems(list);

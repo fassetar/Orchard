@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
-using Orchard.Environment.Extensions.Models;
+﻿using Orchard.Environment.Extensions.Models;
 using Orchard.Security.Permissions;
+using System.Collections.Generic;
 
-namespace Orchard.Lists {
+namespace Orchard.Lists
+{
     public class Permissions : IPermissionProvider {
         public static readonly Permission ManageLists = new Permission { Description = "Manage lists", Name = "ManageLists" };
 

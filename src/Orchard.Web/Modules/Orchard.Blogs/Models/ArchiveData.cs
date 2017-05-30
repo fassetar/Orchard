@@ -36,8 +36,7 @@ namespace Orchard.Blogs.Models {
                 if (archiveDataMatch.Groups["page"].Success &&
                     int.TryParse(archiveDataMatch.Groups["page"].Value, out page)) {
                     Page = page;
-                }
-                else {
+                } else {
                     Page = 1;
                 }
             }

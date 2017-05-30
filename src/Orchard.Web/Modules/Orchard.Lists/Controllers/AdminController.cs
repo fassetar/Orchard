@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Mvc;
 using Orchard.ContentManagement;
 using Orchard.ContentManagement.MetaData;
 using Orchard.ContentManagement.MetaData.Models;
@@ -9,7 +5,6 @@ using Orchard.Core.Common.Models;
 using Orchard.Core.Containers.Models;
 using Orchard.Core.Containers.Services;
 using Orchard.Core.Containers.ViewModels;
-using Orchard.Core.Contents;
 using Orchard.Core.Contents.ViewModels;
 using Orchard.Core.Title.Models;
 using Orchard.Data;
@@ -22,11 +17,16 @@ using Orchard.Mvc;
 using Orchard.Mvc.Extensions;
 using Orchard.UI.Navigation;
 using Orchard.UI.Notify;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web.Mvc;
 using ContentOptions = Orchard.Lists.ViewModels.ContentOptions;
 using ContentsBulkAction = Orchard.Lists.ViewModels.ContentsBulkAction;
 using ListContentsViewModel = Orchard.Lists.ViewModels.ListContentsViewModel;
 
-namespace Orchard.Lists.Controllers {
+namespace Orchard.Lists.Controllers
+{
     public class AdminController : Controller {
         private readonly IContentManager _contentManager;
         private readonly IContentDefinitionManager _contentDefinitionManager;
@@ -61,12 +61,12 @@ namespace Orchard.Lists.Controllers {
         public ActionResult Index(Core.Contents.ViewModels.ListContentsViewModel model, PagerParameters pagerParameters) {
             var query = _containerService.GetContainersQuery(VersionOptions.Latest);
 
-            if (!String.IsNullOrEmpty(model.TypeName)) {
+            if (!string.IsNullOrEmpty(model.TypeName)) {
                 var contentTypeDefinition = _contentDefinitionManager.GetTypeDefinition(model.TypeName);
                 if (contentTypeDefinition == null)
                     return HttpNotFound();
 
-                model.TypeDisplayName = !String.IsNullOrWhiteSpace(contentTypeDefinition.DisplayName)
+                model.TypeDisplayName = !string.IsNullOrWhiteSpace(contentTypeDefinition.DisplayName)
                                             ? contentTypeDefinition.DisplayName
                                             : contentTypeDefinition.Name;
                 query = query.ForType(model.TypeName);
@@ -389,9 +389,7 @@ namespace Orchard.Lists.Controllers {
             return RedirectToAction("List", new { containerId, page = pagerParameters.Page, pageSize = pagerParameters.PageSize });
         }
 
-        /// <summary>
-        /// Only publishes the content if it is already published.
-        /// </summary>
+        /// <summary>Only publishes the content if it is already published.</summary>
         private void RePublish(IContent content) {
             if(content.ContentItem.VersionRecord.Published)
                 _contentManager.Publish(content.ContentItem);

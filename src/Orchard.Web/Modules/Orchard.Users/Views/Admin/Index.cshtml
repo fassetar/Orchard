@@ -35,7 +35,7 @@
             <div class="manage">@Html.ActionLink(T("Add a new user").ToString(), "Create", new { }, new { @class = "btn btn-success pull-right" })</div>
         </div>
     </div>
-    <hr/>
+    <hr />
     <div class="row">
         <div class="col-lg-6 panel-body">
             <div class="input-group">
@@ -52,15 +52,15 @@
         </div>
         <div class="col-lg-6 panel-body">
             <div class="input-group">
-                  <div class="input-group-btn">
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@T("Filter:") <span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
-                </ul>
+                <div class="input-group-btn">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@T("Filter:") <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                    </ul>
                 </div>
                 @Html.TextBoxFor(m => m.Options.Search, new { @class = "form-control" })
                 <span class="input-group-btn">
@@ -80,7 +80,7 @@
             </div>
         </div>
     </div>
-        <br />
+    <br />
         <div class="table-responsive panel panel-default">
             <table class="table table-striped">
                 <thead>
@@ -103,11 +103,11 @@
                         <td>
                             @if (entry.User.RegistrationStatus == UserStatus.Approved && entry.User.EmailStatus == UserStatus.Approved)
                             {
-                                <img class="icon" src="@Href("~/Modules/Orchard.Users/Content/Admin/images/online.gif") " alt="@T("Approved") " title="@T("User is approved") " />
+                                <img class="icon" src="@Href("~/Modules/Orchard.Users/Content/Admin/images/online.gif") " alt="Approved" title="User is approved" />
                             }
                             else
                             {
-                                <img class="icon" src="@Href("~/Modules/Orchard.Users/Content/Admin/images/offline.gif") " alt="@T("Moderated") " title="@if (entry.User.EmailStatus == UserStatus.Approved) { @T("User is moderated") } else { @T("E-mail validation is pending") }" />
+                                <img class="icon" src="@Href("~/Modules/Orchard.Users/Content/Admin/images/offline.gif") " alt="Moderated" title="@if (entry.User.EmailStatus == UserStatus.Approved) { @T("User is moderated") } else { @T("E-mail validation is pending") }" />
                             }
                             @Html.ActionLink(entry.User.UserName, "Edit", new { entry.User.Id })
                         </td>

@@ -55,7 +55,7 @@ namespace Orchard.Lists {
                 var closureContainer = container;
 
                 if (!String.IsNullOrWhiteSpace(container.AdminMenuImageSet)) {
-                    builder.AddImageSet(container.AdminMenuImageSet.Trim());                    
+                    builder.AddImageSet(container.AdminMenuImageSet.Trim());
                 }
 
                 builder.Add(T(container.AdminMenuText), container.AdminMenuPosition, item => {

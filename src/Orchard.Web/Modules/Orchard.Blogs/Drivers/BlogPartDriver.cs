@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using Orchard.Blogs.Models;
+﻿using Orchard.Blogs.Models;
 using Orchard.ContentManagement;
 using Orchard.ContentManagement.Drivers;
+using System;
+using System.Collections.Generic;
 
 namespace Orchard.Blogs.Drivers {
     public class BlogPartDriver : ContentPartDriver<BlogPart> {
@@ -29,7 +29,7 @@ namespace Orchard.Blogs.Drivers {
                              () => shapeHelper.EditorTemplate(TemplateName: "Parts.Blogs.Blog.Fields", Model: blogPart, Prefix: Prefix))
             };
 
-            
+
             if (blogPart.Id > 0)
                 results.Add(ContentShape("Blog_DeleteButton",
                     deleteButton => deleteButton));

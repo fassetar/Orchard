@@ -38,8 +38,7 @@ namespace Orchard.Blogs.Feeds {
 
             if (context.Format == "rss") {
                 context.Response.Element.SetElementValue("description", blog.Description);
-            }
-            else {
+            } else {
                 context.Builder.AddProperty(context, null, "description", blog.Description);
             }
         }

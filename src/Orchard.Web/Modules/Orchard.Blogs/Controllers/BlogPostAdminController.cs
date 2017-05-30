@@ -1,6 +1,3 @@
-using System;
-using System.Reflection;
-using System.Web.Mvc;
 using Orchard.Blogs.Extensions;
 using Orchard.Blogs.Models;
 using Orchard.Blogs.Services;
@@ -13,6 +10,8 @@ using Orchard.Mvc.AntiForgery;
 using Orchard.Mvc.Extensions;
 using Orchard.UI.Admin;
 using Orchard.UI.Notify;
+using System;
+using System.Web.Mvc;
 
 namespace Orchard.Blogs.Controllers {
 
@@ -48,7 +47,7 @@ namespace Orchard.Blogs.Controllers {
                 return new HttpUnauthorizedResult();
 
             var model = Services.ContentManager.BuildEditor(blogPost);
-            
+
             return View(model);
         }
 
@@ -78,7 +77,7 @@ namespace Orchard.Blogs.Controllers {
 
             if (!Services.Authorizer.Authorize(Permissions.EditBlogPost, blogPost, T("Couldn't create blog post")))
                 return new HttpUnauthorizedResult();
-            
+
             Services.ContentManager.Create(blogPost, VersionOptions.Draft);
             var model = Services.ContentManager.UpdateEditor(blogPost, this);
 

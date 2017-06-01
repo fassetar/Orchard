@@ -24,7 +24,7 @@ namespace Orchard.Core.Common.Services {
                 var flavors = shapeTable.Bindings.Keys
                     .Where(x => x.StartsWith("Body_Editor__", StringComparison.OrdinalIgnoreCase))
                     .Select(x => x.Substring("Body_Editor__".Length))
-                    .Where(x => !String.IsNullOrWhiteSpace(x))
+                    .Where(x => !string.IsNullOrWhiteSpace(x))
                     .Select(x => x[0].ToString(CultureInfo.InvariantCulture).ToUpper() + x.Substring(1))
                     .Select(x => x.CamelFriendly());
 

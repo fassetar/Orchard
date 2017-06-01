@@ -51,9 +51,9 @@ namespace Orchard.Core.Containers.Handlers {
 
                 part.AdminListViewField.Loader(() => {
                     var providers = _listViewService.Providers.ToList();
-                    var listViewProviderName = !String.IsNullOrWhiteSpace(part.Record.AdminListViewName)
+                    var listViewProviderName = !string.IsNullOrWhiteSpace(part.Record.AdminListViewName)
                         ? part.Record.AdminListViewName
-                        : !String.IsNullOrWhiteSpace(part.ContainerSettings.AdminListViewName)
+                        : !string.IsNullOrWhiteSpace(part.ContainerSettings.AdminListViewName)
                             ? part.ContainerSettings.AdminListViewName
                             : providers.Any() ? providers.First().Name : null;
 

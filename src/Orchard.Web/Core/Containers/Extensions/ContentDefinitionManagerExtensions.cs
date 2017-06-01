@@ -16,7 +16,7 @@ namespace Orchard.Core.Containers.Extensions {
         }
 
         public static string JoinContentTypeDefinitions(this IContentDefinitionManager contentDefinitionManager, IEnumerable<ContentTypeDefinition> contentTypes) {
-            return contentTypes == null ? null : String.Join(",", contentTypes.Select(x => x.Name));
+            return contentTypes == null ? null : string.Join(",", contentTypes.Select(x => x.Name));
         }
     }
 }

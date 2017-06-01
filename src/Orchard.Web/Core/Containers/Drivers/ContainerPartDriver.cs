@@ -61,18 +61,18 @@ namespace Orchard.Core.Containers.Drivers {
                 }
 
                 // Retrieving pager parameters.
-                var queryString = _orchardServices.WorkContext.HttpContext.Request.QueryString;
+                var querystring = _orchardServices.WorkContext.HttpContext.Request.QueryString;
 
                 var page = 0;
                 // Don't try to page if not necessary.
-                if (part.Paginated && queryString["page"] != null) {
-                    Int32.TryParse(queryString["page"], out page);
+                if (part.Paginated && querystring["page"] != null) {
+                    Int32.TryParse(querystring["page"], out page);
                 }
 
                 var pageSize = part.PageSize;
                 // If the container is paginated and pageSize is provided in the query string then retrieve it.
-                if (part.Paginated && queryString["pageSize"] != null) {
-                    Int32.TryParse(queryString["pageSize"], out pageSize);
+                if (part.Paginated && querystring["pageSize"] != null) {
+                    Int32.TryParse(querystring["pageSize"], out pageSize);
                 }
 
                 var pager = new Pager(_siteService.GetSiteSettings(), page, pageSize);

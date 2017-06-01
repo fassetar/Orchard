@@ -12,12 +12,6 @@
     } else {
         <li class="text-danger"><i class="fa fa-times-circle fa-fw" title="The page is currently offline"></i> Not Published</li>
     }
-    @* Does the page have a draft *@
-    @if (publishLaterPart.HasDraft()) {
-        <li class="text-warning"><i class="fa fa-pencil-square-o fa-fw" title="The page has a draft"></i> Draft</li>
-    } else {
-        @*<li>No Draft</li>*@
-    }
     @if ((((DateTime?)Model.ScheduledPublishUtc).HasValue && ((DateTime?)Model.ScheduledPublishUtc).Value > DateTime.UtcNow) || (publishLaterPart.IsPublished() && versionPublishedUtc.HasValue)) {
         if (publishLaterPart.IsPublished() && versionPublishedUtc.HasValue) {
             <li>@T(": {0}", Display.DateTimeRelative(DateTimeUtc: versionPublishedUtc.Value))</li>
@@ -27,5 +21,11 @@
                 @Display.DateTime(DateTimeUtc: ((DateTime?)Model.ScheduledPublishUtc).Value, CustomFormat: null)
             </li>
         }
+    }
+    @* Does the page have a draft *@
+    @if (publishLaterPart.HasDraft()) {
+        <li class="text-warning"><i class="fa fa-pencil-square-o fa-fw" title="The page has a draft"></i> Draft</li>
+    } else {
+        @*<li>No Draft</li>*@
     }
 </ul>

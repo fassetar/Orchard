@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Orchard.ContentManagement;
+﻿using Orchard.ContentManagement;
 using Orchard.ContentManagement.MetaData;
 using Orchard.ContentManagement.MetaData.Models;
 using Orchard.Core.Common.Models;
 using Orchard.Core.Containers.Models;
 using Orchard.Core.Containers.ViewModels;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Orchard.Core.Containers.Services {
     public interface IContainerService : IDependency {
@@ -161,7 +161,7 @@ namespace Orchard.Core.Containers.Services {
                     Sort(list, sortDirection, (a, b) => a.As<CommonPart>().PublishedUtc.GetValueOrDefault().CompareTo(b.As<CommonPart>().PublishedUtc.GetValueOrDefault()));
                     break;
                 case SortBy.DisplayText:
-                    Sort(list, sortDirection, (a, b) => String.CompareOrdinal(_contentManager.GetItemMetadata(a).DisplayText, _contentManager.GetItemMetadata(b).DisplayText));
+                    Sort(list, sortDirection, (a, b) => string.CompareOrdinal(_contentManager.GetItemMetadata(a).DisplayText, _contentManager.GetItemMetadata(b).DisplayText));
                     break;
             }
             UpdatePositions(list);

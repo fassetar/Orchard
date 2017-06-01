@@ -64,7 +64,7 @@ namespace Orchard.Core.Navigation.Drivers {
                     }
 
                     // if the menu item is culture neutral or of the current culture
-                    else if (String.IsNullOrEmpty(menuItem.Culture) || String.Equals(menuItem.Culture, currentCulture, StringComparison.OrdinalIgnoreCase)) {
+                    else if (string.IsNullOrEmpty(menuItem.Culture) || string.Equals(menuItem.Culture, currentCulture, StringComparison.OrdinalIgnoreCase)) {
                         localized.Add(menuItem);
                     }
                 }
@@ -104,7 +104,7 @@ namespace Orchard.Core.Navigation.Drivers {
                     }
 
                     // prevent the home page to be added as the home page and the current page
-                    if (result.Count == 2 && String.Equals(result[0].Href, result[1].Href, StringComparison.OrdinalIgnoreCase)) {
+                    if (result.Count == 2 && string.Equals(result[0].Href, result[1].Href, StringComparison.OrdinalIgnoreCase)) {
                         result.RemoveAt(1);
                     }
 

@@ -46,6 +46,9 @@ h4{
     .navbar-default {
         margin: 0 -15px;
     }
+    body {
+        background-color:#f3f4f5;
+    }
 }
 
 /* make sidebar nav vertical */

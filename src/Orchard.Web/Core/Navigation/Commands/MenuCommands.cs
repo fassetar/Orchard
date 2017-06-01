@@ -63,7 +63,7 @@ namespace Orchard.Core.Navigation.Commands {
             menuItem.As<MenuPart>().Menu = menu.ContentItem;
             menuItem.As<MenuItemPart>().Url = Url;
 
-            if (String.IsNullOrEmpty(Owner)) {
+            if (string.IsNullOrEmpty(Owner)) {
                 Owner = _siteService.GetSiteSettings().SuperUser;
             }
             var owner = _membershipService.GetUser(Owner);
@@ -88,7 +88,7 @@ namespace Orchard.Core.Navigation.Commands {
             }
 
             var menuItem = _menuService.Create(MenuName);
-            if (menuItem.Has<IdentityPart>() && !String.IsNullOrEmpty(Identity)) {
+            if (menuItem.Has<IdentityPart>() && !string.IsNullOrEmpty(Identity)) {
                 menuItem.As<IdentityPart>().Identifier = Identity;
             }
 

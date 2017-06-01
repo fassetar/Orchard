@@ -77,8 +77,8 @@ namespace Orchard.Core.Settings.Drivers {
                 updater.TryUpdateModel(model, Prefix, new[] { "Site.SuperUser", "Site.MaxPageSize", "Site.BaseUrl", "Site.MaxPagedCount" }, null);
 
                 // ensures the super user is fully empty
-                if (String.IsNullOrEmpty(model.SuperUser)) {
-                    model.SuperUser = String.Empty;
+                if (string.IsNullOrEmpty(model.SuperUser)) {
+                    model.SuperUser = string.Empty;
                 }
                     // otherwise the super user must be a valid user, to prevent an external account to impersonate as this name
                     //the user management module ensures the super user can't be deleted, but it can be disabled
@@ -89,12 +89,12 @@ namespace Orchard.Core.Settings.Drivers {
                 }
 
                 // ensure the base url is absolute if provided
-                if (!String.IsNullOrWhiteSpace(model.Site.BaseUrl)) {
+                if (!string.IsNullOrWhiteSpace(model.Site.BaseUrl)) {
                     if (!Uri.IsWellFormedUriString(model.Site.BaseUrl, UriKind.Absolute)) {
                         updater.AddModelError("BaseUrl", T("The base url must be absolute."));
                     }
                     // if the base url has been modified, try to ping it
-                    else if (!String.Equals(previousBaseUrl, model.Site.BaseUrl, StringComparison.OrdinalIgnoreCase)) {
+                    else if (!string.Equals(previousBaseUrl, model.Site.BaseUrl, StringComparison.OrdinalIgnoreCase)) {
                         try {
                             var request = WebRequest.Create(model.Site.BaseUrl) as HttpWebRequest;
                             if (request != null) {

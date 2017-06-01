@@ -37,7 +37,7 @@ namespace Orchard.Core.Settings.Metadata {
         }
 
         public ContentTypeDefinition GetTypeDefinition(string name) {
-            if (String.IsNullOrWhiteSpace(name)) {
+            if (string.IsNullOrWhiteSpace(name)) {
                 return null;
             }
 
@@ -82,7 +82,7 @@ namespace Orchard.Core.Settings.Metadata {
         }
 
         public ContentPartDefinition GetPartDefinition(string name) {
-            if (String.IsNullOrWhiteSpace(name)) {
+            if (string.IsNullOrWhiteSpace(name)) {
                 return null;
             }
 

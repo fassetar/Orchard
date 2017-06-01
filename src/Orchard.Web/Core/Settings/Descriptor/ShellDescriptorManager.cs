@@ -74,7 +74,7 @@ namespace Orchard.Core.Settings.Descriptor {
             foreach (var feature in enabledFeatures) {
                 shellDescriptorRecord.Features.Add(new ShellFeatureRecord { Name = feature.Name, ShellDescriptorRecord = shellDescriptorRecord });
             }
-            Logger.Debug("Enabled features for shell '{0}' set: {1}.", _shellSettings.Name, String.Join(", ", enabledFeatures.Select(feature => feature.Name)));
+            Logger.Debug("Enabled features for shell '{0}' set: {1}.", _shellSettings.Name, string.Join(", ", enabledFeatures.Select(feature => feature.Name)));
 
 
             shellDescriptorRecord.Parameters.Clear();
@@ -86,7 +86,7 @@ namespace Orchard.Core.Settings.Descriptor {
                     ShellDescriptorRecord = shellDescriptorRecord
                 });
             }
-            Logger.Debug("Parameters for shell '{0}' set: {1}.", _shellSettings.Name, String.Join(", ", parameters.Select(parameter => parameter.Name + "-" + parameter.Value)));
+            Logger.Debug("Parameters for shell '{0}' set: {1}.", _shellSettings.Name, string.Join(", ", parameters.Select(parameter => parameter.Name + "-" + parameter.Value)));
 
             Logger.Information("Shell descriptor updated for shell '{0}'.", _shellSettings.Name);
 

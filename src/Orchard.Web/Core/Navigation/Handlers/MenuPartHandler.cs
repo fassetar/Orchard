@@ -17,7 +17,7 @@ namespace Orchard.Core.Navigation.Handlers {
             Filters.Add(StorageFilter.For(menuPartRepository));
 
             OnInitializing<MenuPart>((ctx, x) => {
-                                      x.MenuText = String.Empty;
+                                      x.MenuText = string.Empty;
                                   });
 
             OnActivated<MenuPart>(PropertySetHandlers);

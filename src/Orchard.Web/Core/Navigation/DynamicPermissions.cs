@@ -36,8 +36,8 @@ namespace Orchard.Core.Navigation {
             var metadata = contentManager.GetItemMetadata(menu);
 
             return new Permission {
-                Name = String.Format(ManageMenu.Name, metadata.Identity),
-                Description = String.Format(ManageMenu.Description, metadata.DisplayText),
+                Name = string.Format(ManageMenu.Name, metadata.Identity),
+                Description = string.Format(ManageMenu.Description, metadata.DisplayText),
                 Category = "Navigation Feature",
                 ImpliedBy = new[] { Permissions.ManageMenus }
             };

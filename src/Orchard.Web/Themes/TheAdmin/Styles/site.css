@@ -6,8 +6,12 @@ Copyright: 2017, Orchard. All Rights Reserved
 #layout-main {
    background: #f3f4f5;
 }
-.navbar{ 
+.navbar { 
     margin-bottom:0;
+}
+
+.navbar-default {
+    background: #323232;
 }
 
 body {

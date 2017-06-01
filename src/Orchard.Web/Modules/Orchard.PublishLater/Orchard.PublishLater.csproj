@@ -105,11 +105,6 @@
     <Compile Include="ViewModels\PublishLaterViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Web.config">
-      <SubType>Designer</SubType>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\..\..\Orchard\Orchard.Framework.csproj">
       <Project>{2D1D92BB-4555-4CBE-8D0E-63563D6CE4C6}</Project>
       <Name>Orchard.Framework</Name>
@@ -122,11 +117,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Admin\images\draft.gif" />
-    <Content Include="Content\Admin\images\offline.gif" />
-    <Content Include="Content\Admin\images\online.gif" />
-    <Content Include="Content\Admin\images\published.gif" />
-    <Content Include="Content\Admin\images\scheduled.gif" />
     <Content Include="Module.txt" />
   </ItemGroup>
   <ItemGroup>

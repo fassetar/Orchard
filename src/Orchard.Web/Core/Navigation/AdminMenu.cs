@@ -26,7 +26,8 @@ namespace Orchard.Core.Navigation {
                 }
             }
 
-            builder.AddImageSet("navigation")
+            builder
+                //.AddImageSet("navigation")
                 .Add(T("Navigation"), "7",
                     menu => menu
                         .Add(T("Main Menu"), "0", item => item.Action("Index", "Admin", new { area = "Navigation" })

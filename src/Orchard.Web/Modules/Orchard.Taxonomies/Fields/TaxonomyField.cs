@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-using Orchard.Taxonomies.Models;
-using Orchard.ContentManagement;
+﻿using Orchard.ContentManagement;
 using Orchard.ContentManagement.Utilities;
+using Orchard.Taxonomies.Models;
+using System.Collections.Generic;
 
 namespace Orchard.Taxonomies.Fields {
     /// <summary>

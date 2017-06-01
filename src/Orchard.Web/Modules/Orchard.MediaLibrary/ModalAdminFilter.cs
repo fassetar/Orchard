@@ -1,6 +1,6 @@
-﻿using System.Web.Mvc;
-using Orchard.Mvc.Filters;
+﻿using Orchard.Mvc.Filters;
 using Orchard.UI.Resources;
+using System.Web.Mvc;
 
 namespace Orchard.MediaLibrary {
     public class ModalAdminFilter : FilterProvider, IResultFilter {
@@ -14,7 +14,6 @@ namespace Orchard.MediaLibrary {
             // should only run on a full view rendering result
             if (!(filterContext.Result is ViewResult) || !UI.Admin.AdminFilter.IsApplied(filterContext.RequestContext))
                 return;
-            _resourceManager.Include("stylesheet", "~/Modules/Orchard.MediaLibrary/Styles/dialog-mode.css", null);
             _resourceManager.Include("script", "~/Modules/Orchard.MediaLibrary/Scripts/modal-window.js", null).AtFoot();
         }
 

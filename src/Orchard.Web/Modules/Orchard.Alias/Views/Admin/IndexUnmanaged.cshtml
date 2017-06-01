@@ -25,7 +25,7 @@
     <div class="manage">@Html.ActionLink(T("Add new Alias").Text, "Add", new { returnurl = HttpContext.Current.Request.RawUrl }, new { @class = "btn btn-primary" })</div>
 
     <fieldset class="bulk-actions">
-        <label for="publishActions">@T("Actions:")</label>
+        <label for="publishActions">Actions:</label>
         <select id="publishActions" name="@Html.NameOf(m => m.Options.BulkAction)">
             @Html.SelectOption(options.BulkAction, AliasBulkAction.None, T("Choose action...").ToString())
             @Html.SelectOption(options.BulkAction, AliasBulkAction.Delete, T("Delete").ToString())

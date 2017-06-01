@@ -9,7 +9,7 @@
     using(Html.BeginFormAntiForgeryPost(Url.Action("List", "Admin", new { area = "Contents", id = "" }))) {
         <fieldset class="bulk-actions">
             <label><input type="checkbox" class="check-all" />@T("Select all")</label>@T(" | ")
-            <label for="publishActions">@T("Actions:")</label>
+            <label for="publishActions">Actions:</label>
             <select id="publishActions" name="Options.BulkAction">
                 @Html.SelectOption(ContentsBulkAction.None, ContentsBulkAction.None, T("Choose action...").ToString())
                 @Html.SelectOption(ContentsBulkAction.None, ContentsBulkAction.Remove, T("Delete").ToString())

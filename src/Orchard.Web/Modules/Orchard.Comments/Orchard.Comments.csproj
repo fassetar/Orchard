@@ -138,10 +138,6 @@
     <Content Include="Assets\Scripts\Orchard.Comments.Threaded.js" />
     <Content Include="Scripts\Orchard.Comments.Threaded.js" />
     <Content Include="Scripts\Orchard.Comments.Threaded.min.js" />
-    <Content Include="Styles\images\menu.comments.png" />
-    <Content Include="Styles\menu.comments-admin.css" />
-    <Content Include="Styles\orchard-comments-admin.css" />
-    <Content Include="Styles\workflows-activity-close-comments.css" />
     <Content Include="Views\Admin\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -176,11 +172,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Placement.info">
-      <SubType>Designer</SubType>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Styles\Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>

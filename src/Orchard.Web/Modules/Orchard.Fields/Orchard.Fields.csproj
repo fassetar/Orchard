@@ -96,10 +96,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Styles\media-gallery-admin.css" />
-    <Content Include="Styles\Images\move.gif" />
     <Content Include="Web.config" />
-    <Content Include="Styles\Web.config" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="Module.txt" />
   </ItemGroup>

@@ -7,7 +7,7 @@ namespace Orchard.Pages {
         public string MenuName { get { return "admin"; } }
 
         public void GetNavigation(NavigationBuilder builder) {
-            builder.AddImageSet("page");
+            //builder.AddImageSet("page");
         }
     }
 }

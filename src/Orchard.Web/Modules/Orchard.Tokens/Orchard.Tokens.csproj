@@ -97,9 +97,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\orchard-tokens-admin.js" />
-    <Content Include="Styles\Images\closeButtons.png" />
-    <Content Include="Styles\orchard-tokens-admin.css" />
-    <Content Include="Styles\Images\tokensPopup.gif" />
     <Content Include="Web.config" />
     <Compile Include="Filters\TokensFilter.cs" />
     <Compile Include="Migrations.cs" />
@@ -147,11 +144,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\Web.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Styles\Web.config">
-      <SubType>Designer</SubType>
-    </Content>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

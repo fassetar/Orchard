@@ -9,7 +9,7 @@ namespace Orchard.Layouts {
 
         public void GetNavigation(NavigationBuilder builder) {
             builder
-                .AddImageSet("layouts")
+                //.AddImageSet("layouts")
                 .Add(T("Layouts"), "8.5", layouts => layouts
                     .Action("List", "Admin", new {id = "Layout", area = "Contents"}).Permission(Permissions.ManageLayouts)
                     .LinkToFirstChild(false)

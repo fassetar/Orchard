@@ -24,7 +24,7 @@ namespace Orchard.Workflows {
 
             //manifest.DefineStyle("WorkflowsActivities").SetUrl("workflows-activity.css").SetDependencies(activityNames);
 
-            manifest.DefineScript("jsPlumb").SetUrl("jquery.jsPlumb-1.4.1-all-min.js").SetDependencies("jQueryUI");
+            manifest.DefineScript("jsPlumb").SetUrl("jquery.jsPlumb-1.4.1-all-min.js");
         }
     }
 }

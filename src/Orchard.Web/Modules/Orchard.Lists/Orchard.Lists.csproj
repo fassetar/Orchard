@@ -108,14 +108,6 @@
     <Content Include="Scripts\nprogress.min.js">
       <DependentUpon>nprogress.js</DependentUpon>
     </Content>
-    <Content Include="Styles\common-admin.css" />
-    <Content Include="Styles\common-admin.min.css">
-      <DependentUpon>common-admin.css</DependentUpon>
-    </Content>
-    <Content Include="Styles\images\icons.png" />
-    <Content Include="Styles\images\view.default.png" />
-    <Content Include="Styles\images\view.condensed.png" />
-    <Content Include="Styles\nprogress.css" />
     <Content Include="Scripts\nprogress.js" />
     <Content Include="Scripts\orchard-lists-admin.js" />
     <Compile Include="Services\ISortCriterionProvider.cs" />
@@ -143,24 +135,9 @@
     <Content Include="Scripts\orchard-lists-admin.min.js">
       <DependentUpon>orchard-lists-admin.js</DependentUpon>
     </Content>
-    <Content Include="Styles\images\menu.list-definition.png" />
-    <Content Include="Styles\images\move.gif" />
-    <Content Include="Styles\images\offline.gif" />
-    <Content Include="Styles\images\online.gif" />
-    <Content Include="Styles\list-admin.css" />
-    <Content Include="Styles\images\menu.list.png" />
-    <Content Include="Styles\list-admin.min.css">
-      <DependentUpon>list-admin.css</DependentUpon>
-    </Content>
-    <Content Include="Styles\menu.list-admin.css" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Web.config">
-      <SubType>Designer</SubType>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Styles\Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>

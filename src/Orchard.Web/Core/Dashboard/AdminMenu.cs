@@ -8,7 +8,8 @@ namespace Orchard.Core.Dashboard {
         public string MenuName { get { return "admin"; } }
 
         public void GetNavigation(NavigationBuilder builder) {
-            builder.AddImageSet("dashboard")
+            builder
+                //.AddImageSet("dashboard")
                 .Add(T("Dashboard"), "-5",
                     menu => menu.Add(T("Orchard"), "-5",
                         item => item

@@ -7,7 +7,7 @@
 </div>
 @using (Html.BeginFormAntiForgeryPost()) {
     <fieldset class="bulk-actions">
-        <label for="publishActions">@T("Actions:")</label>
+        <label for="publishActions">Actions:</label>
         <select id="publishActions" name="Options.BulkAction">
             @Html.SelectOption("", false, T("Choose action...").ToString())
             @Html.SelectOption("Delete", false, T("Delete").ToString())

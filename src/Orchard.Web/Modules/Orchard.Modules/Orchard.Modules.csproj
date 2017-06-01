@@ -119,10 +119,6 @@
     <Content Include="Scripts\features.admin.min.js">
       <DependentUpon>features.admin.js</DependentUpon>
     </Content>
-    <Content Include="Styles\images\menu.modules.png" />
-    <Content Include="Styles\images\new.gif" />
-    <Content Include="Styles\images\update.gif" />
-    <Content Include="Styles\menu.modules-admin.css" />
     <Content Include="Views\Admin\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -135,16 +131,10 @@
   <ItemGroup>
     <Content Include="Content\Admin\images\disabled.gif" />
     <Content Include="Content\Admin\images\enabled.gif" />
-    <Content Include="Styles\orchard-modules-admin.css" />
     <Content Include="Views\Admin\Features.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Web.config">
-      <SubType>Designer</SubType>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Styles\Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>

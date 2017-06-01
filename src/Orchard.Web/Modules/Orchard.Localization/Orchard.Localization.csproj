@@ -127,13 +127,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Module.txt" />
-    <Content Include="Styles\orchard-localization-admin.css" />
-    <Content Include="Styles\orchard-localization-base.css" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Styles\Web.config">
-      <SubType>Designer</SubType>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\EditorTemplates\Parts\Localization.ContentTranslations.Edit.cshtml" />

@@ -28,7 +28,8 @@ namespace Orchard.Core.Contents {
             foreach(var contentTypeDefinition in listableContentTypes) {
                 listableCi = _contentManager.New(contentTypeDefinition.Name);
                 if(_authorizer.Authorize(Permissions.EditContent, listableCi)) {
-                    builder.AddImageSet("content")
+                    builder
+                        //.AddImageSet("content")
                         .Add(T("Content"), "1.4", menu => menu
                         .Add(T("Content Items"), "1", item => item.Action("List", "Admin", new { area = "Contents", id = "" }).LocalNav()));
                     break;

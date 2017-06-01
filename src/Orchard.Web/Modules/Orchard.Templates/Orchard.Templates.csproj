@@ -148,12 +148,8 @@
     <Content Include="Scripts\codemirror\theme\vibrant-ink.css" />
     <Content Include="Scripts\codemirror\theme\xq-dark.css" />
     <Content Include="Scripts\codemirror\theme\xq-light.css" />
-    <Content Include="Styles\template-editor.css" />
-    <Content Include="Styles\menu.templates-admin.css" />
-    <Content Include="Styles\menu.templates.png" />
     <Content Include="Web.config" />
     <Content Include="Scripts\Web.config" />
-    <Content Include="Styles\Web.config" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="Module.txt" />
   </ItemGroup>

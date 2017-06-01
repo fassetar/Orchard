@@ -94,18 +94,11 @@
     <Content Include="Scripts\jquery.scrollTo-1.4.4.min.js" />
     <Content Include="Scripts\jquery.tmpl.js" />
     <Content Include="Scripts\jquery.tmpl.min.js" />
-    <Content Include="Styles\CodeMirror\codemirror.css" />
-    <Content Include="Styles\CodeMirror\razor.css" />
-    <Content Include="Styles\CodeMirror\css.css" />
-    <Content Include="Styles\CodeMirror\javascript.css" />
-    <Content Include="Styles\Images\menu-glyph.png" />
     <Content Include="Scripts\orchard-designertools-shapetracing.js" />
-    <Content Include="Styles\orchard-designertools-shapetracing.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Scripts\Web.config" />
-    <Content Include="Styles\Web.config" />
     <Compile Include="Controllers\ShapeTracingController.cs" />
     <Compile Include="Events\FeatureEventHandler.cs" />
     <Compile Include="Handlers\ShapeTracingSiteSettingsPartHandler.cs" />

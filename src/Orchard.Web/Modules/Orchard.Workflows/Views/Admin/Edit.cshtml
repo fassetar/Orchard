@@ -4,13 +4,13 @@
 
 @{
     Layout.Title = @T("Edit Workflow {0}", Model.WorkflowDefinition.Name);
-    Style.Require("WorkflowsAdmin");
-    Style.Require("WorkflowsActivities");
-    Style.Require("jQueryUI_Orchard");
-    Script.Require("jQueryUI_Dialog").AtFoot();
-    Script.Require("jsPlumb").AtFoot();
-    Script.Include("orchard-workflows-serialize.js").AtFoot();
-    Script.Include("orchard-workflows.js").AtFoot();
+    //Style.Require("WorkflowsAdmin");
+    //Style.Require("WorkflowsActivities");
+    //Style.Require("jQueryUI_Orchard");
+    //Script.Require("jQueryUI_Dialog").AtFoot();
+    //Script.Require("jsPlumb").AtFoot();
+    //Script.Include("orchard-workflows-serialize.js").AtFoot();
+    //Script.Include("orchard-workflows.js").AtFoot();
 }
 
 @using (Html.BeginFormAntiForgeryPost("Edit")) {

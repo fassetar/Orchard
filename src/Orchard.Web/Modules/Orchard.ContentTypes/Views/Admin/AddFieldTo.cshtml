@@ -1,8 +1,6 @@
 @using Orchard.Utility.Extensions
 @model Orchard.ContentTypes.ViewModels.AddFieldViewModel
 @{
-    Style.Require("ContentTypesAdmin");
-
     Layout.Title = T("Add New Field To \"{0}\"", Model.Part.DisplayName).ToString();
 
     var returnUrl = Request.QueryString["returnUrl"];

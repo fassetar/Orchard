@@ -1,7 +1,6 @@
 @using Orchard.Utility.Extensions;
 @model Orchard.ContentTypes.ViewModels.EditTypeViewModel
 @{
-    Style.Require("ContentTypesAdmin");
     Script.Require("jQuery");
     Layout.Title = T("Edit Content Type - {0}", Html.Raw(Model.DisplayName)).Text;
     var returnUrl = ViewContext.RequestContext.HttpContext.Request.ToUrlString();

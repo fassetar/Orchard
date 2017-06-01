@@ -21,7 +21,7 @@
     <div class="manage"></div>
 
     <fieldset class="bulk-actions">
-        <label for="publishActions">@T("Actions:")</label>
+        <label for="publishActions">Actions:</label>
         <select id="publishActions" name="@Html.NameOf(m => m.Options.BulkAction)">
             @Html.SelectOption(Model.Options.BulkAction, SpamBulkAction.None, T("Choose action...").ToString())
             @Html.SelectOption(Model.Options.BulkAction, SpamBulkAction.Spam, T("Mark as Spam").ToString())

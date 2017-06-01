@@ -97,8 +97,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ViewModels\SecurableContentItemsSettingsViewModel.cs" />
-    <Content Include="Styles\Images\lock.gif" />
-    <Content Include="Styles\orchard-contentpermissions-admin.css" />
     <Content Include="Web.config" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="Module.txt" />
@@ -134,11 +132,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Placement.info" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Styles\Web.config">
-      <SubType>Designer</SubType>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\DefinitionTemplates\ContentPermissionsPartViewModel.cshtml" />

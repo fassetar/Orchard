@@ -18,7 +18,8 @@ namespace Orchard.Core.Settings {
         public IOrchardServices Services { get; private set; }
 
         public void GetNavigation(NavigationBuilder builder) {
-            builder.AddImageSet("settings")
+            builder
+                //.AddImageSet("settings")
                 .Add(T("Settings"), "99",
                     menu => menu.Add(T("General"), "0", item => item.Action("Index", "Admin", new { area = "Settings", groupInfoId = "Index" })
                         .Permission(Permissions.ManageSettings)), new [] {"collapsed"});

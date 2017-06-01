@@ -9,7 +9,7 @@
 }
 
 <div class="manage">
-    @Html.ActionLink(createLinkText.Text, "Create", "Admin", new { area = "Contents", id = "Dashboard", returnUrl = Url.Action("List", "Dashboard", new { area = "Orchard.Dashboards" }) }, new { @class = "button primaryAction" })
+    @Html.ActionLink(createLinkText.Text, "Create", "Admin", new { area = "Contents", id = "Dashboard", returnUrl = Url.Action("List", "Dashboard", new { area = "Orchard.Dashboards" }) }, new { @class = "btn btn-primary" })
 </div>
 @using (Html.BeginFormAntiForgeryPost()) {
     <fieldset class="bulk-actions">
@@ -20,7 +20,7 @@
             @Html.SelectOption((ContentsBulkAction)Model.Options.BulkAction, ContentsBulkAction.Unpublish, T("Unpublish").ToString())
             @Html.SelectOption((ContentsBulkAction)Model.Options.BulkAction, ContentsBulkAction.Remove, T("Delete").ToString())
         </select>
-        <button type="submit" name="submit.BulkEdit" value="yes">@T("Apply")</button>
+        <button type="submit" name="submit.BulkEdit" value="yes">Apply</button>
     </fieldset>
     <fieldset class="bulk-actions">
         @if (cultures.Count() > 1) {
@@ -46,7 +46,7 @@
             @Html.SelectOption((ContentsStatus)Model.Options.ContentsStatus, ContentsStatus.Draft, T("unpublished").ToString())
             @Html.SelectOption((ContentsStatus)Model.Options.ContentsStatus, ContentsStatus.AllVersions, T("all versions").ToString())
         </select>
-        <button type="submit" name="submit.Filter" value="yes please">@T("Apply")</button>
+        <button type="submit" name="submit.Filter" value="yes please">Apply</button>
     </fieldset>
     <fieldset class="contentItems bulk-items">
 @Display(Model.ContentItems)

@@ -4,7 +4,6 @@
 @using Orchard.Taxonomies.ViewModels;
 
 @{
-    Style.Include("admin-taxonomy.css");
     Script.Require("jQuery");
     Script.Include("~/Themes/TheAdmin/scripts/admin.js").AtFoot();
     Script.Include("admin-taxonomy-expando.js").AtFoot();
@@ -18,7 +17,7 @@
 
     <div class="expando">
         @if (!String.IsNullOrWhiteSpace(Model.Settings.Hint)) {
-            <span class="hint">@Model.Settings.Hint</span>
+            <span class="help-block">@Model.Settings.Hint</span>
         }
 
         <ul class="terms">

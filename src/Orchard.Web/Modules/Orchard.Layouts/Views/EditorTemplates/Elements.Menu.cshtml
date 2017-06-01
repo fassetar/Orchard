@@ -9,12 +9,12 @@
 </fieldset>
 <fieldset>
     @Html.LabelFor(m => m.StartLevel, T("Start Level"))
-    @Html.TextBoxFor(m => m.StartLevel, new {@class = "text small"})
+    @Html.TextBoxFor(m => m.StartLevel, new {@class = "form-control"})
     @Html.Hint(T("The level the menu should start at."))
 </fieldset>
 <fieldset>
     @Html.LabelFor(m => m.StopLevel, T("Levels to display"))
-    @Html.TextBoxFor(m => m.StopLevel, new {@class = "text small"})
+    @Html.TextBoxFor(m => m.StopLevel, new {@class = "form-control"})
     @Html.Hint(T("The number of levels to display, \"0\" meaning all levels."))
 </fieldset>
 <fieldset>

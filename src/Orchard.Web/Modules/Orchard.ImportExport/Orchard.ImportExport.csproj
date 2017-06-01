@@ -166,15 +166,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Styles\images\menu.importexport.png" />
-    <Content Include="Styles\exportstep-data.css" />
-    <Content Include="Styles\menu.importexport-admin.css" />
     <Content Include="Web.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Styles\Web.config">
-      <SubType>Designer</SubType>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Admin\Import.cshtml" />

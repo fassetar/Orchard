@@ -121,20 +121,10 @@
     <Content Include="Scripts\audittrail-expando.js" />
     <Content Include="Scripts\audittrail-checkall.js" />
     <Content Include="Scripts\audittrail-disabledcontent.js" />
-    <Content Include="Styles\audittrail-content-event.css" />
-    <Content Include="Styles\audittrail-recycle-bin.css" />
-    <Content Include="Styles\audittrail-display.css" />
-    <Content Include="Styles\audittrail-disabledcontent.css" />
-    <Content Include="Styles\audittrail-part.css" />
-    <Content Include="Styles\audittrail-contentdefinition-event.css" />
-    <Content Include="Styles\audittrail-settings-event.css" />
-    <Content Include="Styles\audittrail-settings.css" />
-    <Content Include="Styles\menu.audit-trail-admin.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Scripts\Web.config" />
-    <Content Include="Styles\Web.config" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="Module.txt" />
     <Content Include="Views\Parts.Contents.AuditTrail.SummaryAdmin.cshtml" />

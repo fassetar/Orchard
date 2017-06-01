@@ -14,11 +14,11 @@
                     @Html.SelectOption(Model.CurrentMenuId, menu.Id, Html.ItemDisplayText(menu, false).ToString())
                 }
             </select>
-            <span class="hint">@T("Select which menu you want the content item to be displayed on.")</span>
+            <span class="help-block">@T("Select which menu you want the content item to be displayed on.")</span>
 
             <label for="MenuText">@T("Menu text")</label>
             @Html.TextBoxFor(m => m.MenuText, new { @class = "text single-line" })
-            <span class="hint">@T("The text that should appear in the menu.")</span>
+            <span class="help-block">@T("The text that should appear in the menu.")</span>
         </div>
     </fieldset>
 
@@ -28,7 +28,7 @@ else {
     <fieldset>
         <label for="MenuText">@T("Menu text")</label>
         @Html.TextBoxFor(m => m.MenuText, new { @class = "text medium", autofocus = "autofocus" })
-        <span class="hint">@T("The text that should appear in the menu.")</span>
+        <span class="help-block">@T("The text that should appear in the menu.")</span>
         @Html.HiddenFor(m => m.OnMenu, true)
         @Html.HiddenFor(m => m.CurrentMenuId, Request["menuId"])
     </fieldset>

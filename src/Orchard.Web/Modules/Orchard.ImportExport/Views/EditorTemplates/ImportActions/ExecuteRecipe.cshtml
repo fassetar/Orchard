@@ -10,19 +10,17 @@
     };
 }
 <p>
-    @T("Choose a recipe file to import. Please consider {0} or backing up your data first.", @Html.Link(T("exporting").Text, Url.Action("Export", "Admin", new { area = "Orchard.ImportExport" })))
+   @T("Choose a recipe file to import. Please consider {0} or backing up your data first.", @Html.Link(T("exporting").Text, Url.Action("Export", "Admin", new { area = "Orchard.ImportExport" })))
 </p>
 <fieldset>
-    <label for="RecipeFile">@T("Recipe File")</label>
-    <input type="file" id="RecipeFile" size="64" name="RecipeFile" value="@T("Browse...")"/>
+    <label for="RecipeFile">Recipe File</label>
+    <input type="file" id="RecipeFile" size="64" name="RecipeFile" value="Browse..."/>
 </fieldset>
 <fieldset>
-    <legend>
-        @T("Import Options")
-    </legend>
+    <legend>Import Options</legend>
     <ul>
         @foreach (var option in importOptions) {
-                var importOptionId = String.Format("{0}_{1}", Html.FieldIdFor(m => m.ResetSite), option.Value);
+                var importOptionId = string.Format("{0}_{1}", Html.FieldIdFor(m => m.ResetSite), option.Value);
             <li>
                 <input type="radio" id="@importOptionId" name="@Html.FieldNameFor(m => m.ResetSite)" value="@option.Value" @if (option.Selected) { <text> checked="checked" </text> } />
                 <label for="@importOptionId" class="forradiobutton">@option.Text</label>
@@ -30,7 +28,7 @@
         }
     </ul>
     @Html.Hint(T("Select whether you want to import the selected recipe into the current site or if you want to do a full site reset first."))
-    <div data-controllerid="@String.Format("{0}_{1}", Html.FieldIdFor(m => m.ResetSite), "true")" style="display: none;">
+    <div data-controllerid="@string.Format("{0}_{1}", Html.FieldIdFor(m => m.ResetSite), "true")" style="display: none;">
         <div class="message message-Warning">@T("This will delete your database tables. Please consider creating a backup first.")</div>
         <div>
             @Html.LabelFor(m => m.SuperUserPassword, T("Site Owner Password"))

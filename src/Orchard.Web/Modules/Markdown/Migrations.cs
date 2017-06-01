@@ -1,5 +1,4 @@
-﻿using Orchard.ContentManagement.MetaData;
-using Orchard.Data.Migration;
+﻿using Orchard.Data.Migration;
 
 namespace Markdown {
     public class Migrations : DataMigrationImpl {

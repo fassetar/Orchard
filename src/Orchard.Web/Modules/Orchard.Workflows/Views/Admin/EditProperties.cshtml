@@ -7,13 +7,13 @@
 
     <fieldset>
         <div>
-            <label for="name">@T("Name")</label>
+            <label for="name">Name</label>
             @Html.TextBoxFor(m => m.WorkflowDefinition.Name, new { @class = "text medium" })
-            <span class="hint">@T("The name of the Workflow.")</span>
+            <span class="help-block">@T("The name of the Workflow.")</span>
         </div>
     </fieldset>
     
     <fieldset>
-        <button class="primaryAction" type="submit">@T("Save")</button>
+        <button class="btn btn-primary" type="submit">Save</button>
     </fieldset>
 }

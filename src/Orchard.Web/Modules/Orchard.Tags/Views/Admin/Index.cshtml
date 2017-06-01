@@ -22,7 +22,7 @@
                     @Html.SelectOption(Model.BulkAction, TagAdminIndexBulkAction.Delete, T("Delete").ToString())
                 </select>
                 <span class="input-group-btn">
-                    <button class="btn btn-primary" type="submit" name="submit.BulkEdit" value="@T("Apply")">@T("Apply")</button>
+                    <button class="btn btn-primary" type="submit" name="submit.BulkEdit" value="Apply">Apply</button>
                 </span>
             </div>
         }
@@ -34,7 +34,7 @@
 </div>
 <br />
 <fieldset>
-    <table class="table table-striped" summary="@T("This is a table of the tags in your application")">
+    <table class="table table-striped" summary="This is a table of the tags in your application">
         <colgroup>
             <col id="Name" />
             <col id="Email" />
@@ -42,7 +42,7 @@
         </colgroup>
         <thead>
         <th scope="col"><input type="checkbox" class="check-all" /></th>
-        <th scope="col">@T("Name")</th>
+        <th scope="col">Name</th>
         <th scope="col"></th>
         </thead>
         @{var tagIndex = 0;}

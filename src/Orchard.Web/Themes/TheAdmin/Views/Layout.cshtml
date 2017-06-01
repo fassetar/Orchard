@@ -7,6 +7,7 @@
     Style.Include("font-awesome.css");
     Style.Include("site.css");
     Style.Include("https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.standalone.min.css");
+
     Script.Require("jQuery").AtFoot();
     Script.Require("Bootstrap").AtFoot();
     Script.Require("ShapesBase").AtFoot();
@@ -52,15 +53,10 @@
                     {
                         <div class="navbar-collapse collapse sidebar-navbar-collapse">
                             <nav id="menu" class="sidebar" role="navigation">
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                    </div>
-                                    <div class="col-sm-6">                                        
-                                    </div>
-                                </div>
-                                <h3 class="hidden-xs" id="header" role="banner">
+                                <div class="hidden-xs" id="header" role="banner">
+                                    <br />
                                     @Display.Header()
-                                </h3>
+                                </div>
                                 @Zone(Model.Navigation)
                             </nav>
                         </div>

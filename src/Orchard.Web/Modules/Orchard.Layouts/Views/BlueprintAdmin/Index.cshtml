@@ -3,7 +3,7 @@
     Layout.Title = T("Elements");
 }
 <div class="manage">
-    @Html.ActionLink(T("Create").Text, "Create", "BlueprintAdmin", new { area = "Orchard.Layouts" }, new { @class = "button primaryAction" })
+    @Html.ActionLink(T("Create").Text, "Create", "BlueprintAdmin", new { area = "Orchard.Layouts" }, new { @class = "btn btn-primary" })
 </div>
 @using (Html.BeginFormAntiForgeryPost()) {
     <fieldset class="bulk-actions">
@@ -12,14 +12,14 @@
             @Html.SelectOption("", false, T("Choose action...").ToString())
             @Html.SelectOption("Delete", false, T("Delete").ToString())
         </select>
-        <button type="submit" name="submit.BulkEdit" value="yes">@T("Apply")</button>
+        <button type="submit" name="submit.BulkEdit" value="yes">Apply</button>
     </fieldset>
     <table class="table">
         <thead>
             <tr>
                 <th><input type="checkbox" class="check-all" /></th>
                 <th>@T("Display Name")</th>
-                <th>@T("Name")</th>
+                <th>Name</th>
                 <th>@T("Base Element")</th>
                 <th></th>
             </tr>

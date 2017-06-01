@@ -44,7 +44,7 @@
             @Html.SelectOption((ContentsOrder)Model.Options.OrderBy, ContentsOrder.Modified, T("recently modified").ToString())
             @Html.SelectOption((ContentsOrder)Model.Options.OrderBy, ContentsOrder.Published, T("recently published").ToString())
         </select>
-        <button type="submit" name="submit.Filter" value="yes please">@T("Apply")</button>
+        <button type="submit" name="submit.Filter" value="yes please">Apply</button>
     </fieldset>
     <fieldset class="contentItems bulk-items">
 @Display(Model.ContentItems)

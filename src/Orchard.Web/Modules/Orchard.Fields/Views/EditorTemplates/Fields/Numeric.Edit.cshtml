@@ -24,6 +24,6 @@
     @Html.TextBoxFor(m => m.Value, attributes)
     @Html.ValidationMessageFor(m => m.Value)
     @if (HasText(Model.Settings.Hint)) {
-        <span class="hint">@Model.Settings.Hint</span>
+        <span class="help-block">@Model.Settings.Hint</span>
     }
 </fieldset>

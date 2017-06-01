@@ -12,7 +12,7 @@
 }
 
 <div class="manage">
-    @Html.ActionLink(createLinkText.Text, "Create", new { Area = "Orchard.Templates", Id = (string)Model.Options.SelectedFilter }, new { @class = "button primaryAction" })
+    @Html.ActionLink(createLinkText.Text, "Create", new { Area = "Orchard.Templates", Id = (string)Model.Options.SelectedFilter }, new { @class = "btn btn-primary" })
 </div>
 @using (Html.BeginFormAntiForgeryPost()) {
     <fieldset class="bulk-actions">
@@ -24,7 +24,7 @@
             @Html.SelectOption((ContentsBulkAction)Model.Options.BulkAction, ContentsBulkAction.Unpublish, T("Unpublish").ToString())
             @Html.SelectOption((ContentsBulkAction)Model.Options.BulkAction, ContentsBulkAction.Remove, T("Delete").ToString())
         </select>
-        <button type="submit" name="submit.BulkEdit" value="yes">@T("Apply")</button>
+        <button type="submit" name="submit.BulkEdit" value="yes">Apply</button>
     </fieldset>
     <fieldset class="bulk-actions">
         <label for="filterResults" class="bulk-filter">@T("Show")</label>
@@ -40,7 +40,7 @@
             @Html.SelectOption((ContentsOrder)Model.Options.OrderBy, ContentsOrder.Modified, T("recently modified").ToString())
             @Html.SelectOption((ContentsOrder)Model.Options.OrderBy, ContentsOrder.Published, T("recently published").ToString())
         </select>
-        <button type="submit" name="submit.Filter" value="yes please">@T("Apply")</button>
+        <button type="submit" name="submit.Filter" value="yes please">Apply</button>
     </fieldset>
     <fieldset class="contentItems bulk-items">
 @Display(Model.ContentItems)

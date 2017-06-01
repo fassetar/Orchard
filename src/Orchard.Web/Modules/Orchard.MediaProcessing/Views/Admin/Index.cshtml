@@ -14,7 +14,7 @@
 
 @using (Html.BeginFormAntiForgeryPost()) { 
     @Html.ValidationSummary()
-    <div class="manage">@Html.ActionLink(T("Add a new Media Profile").ToString(), "Create", new { Area = "Contents", id = "ImageProfile", returnurl = HttpContext.Current.Request.RawUrl }, new { @class = "button primaryAction" })</div>
+    <div class="manage">@Html.ActionLink(T("Add a new Media Profile").ToString(), "Create", new { Area = "Contents", id = "ImageProfile", returnurl = HttpContext.Current.Request.RawUrl }, new { @class = "btn btn-primary" })</div>
 
     <fieldset class="bulk-actions">
         <label for="publishActions">@T("Actions:")</label>
@@ -22,7 +22,7 @@
             @Html.SelectOption(Model.Options.BulkAction, ImageProfilesBulkAction.None, T("Choose action...").ToString())
             @Html.SelectOption(Model.Options.BulkAction, ImageProfilesBulkAction.Delete, T("Delete").ToString())
         </select>
-        <button type="submit" name="submit.BulkEdit" value="@T("Apply")">@T("Apply")</button>
+        <button type="submit" name="submit.BulkEdit" value="Apply">Apply</button>
     </fieldset>
     <fieldset class="bulk-actions">
 		<input type="hidden" name="Page" value="1" />
@@ -40,7 +40,7 @@
             <thead>
                 <tr>
                     <th scope="col" class="checkbox">&nbsp;&darr;</th>
-                    <th scope="col">@T("Name")</th>
+                    <th scope="col">Name</th>
                     <th scope="col" class="actions">&nbsp;</th>
                 </tr>
             </thead>

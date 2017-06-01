@@ -1,8 +1,5 @@
 ﻿@using Orchard.AuditTrail.ViewModels
 @{
-    Style.Include("audittrail-settings-event.css");
-}
-@{
     var diff = (IList<AuditTrailEventDescriptorSettingViewModel>)Model.Diff;
     var groups = diff.GroupBy(x => x.Descriptor.CategoryDescriptor.Name).OrderBy(x => x.Key.Text);
 }

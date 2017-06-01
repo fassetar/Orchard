@@ -4,7 +4,6 @@
 
 @{ 
     Layout.Title = T("Navigation").ToString();
-    Style.Include("navigation-admin.css");
 
     Script.Require("jQueryUI_Sortable").AtFoot();
     Script.Include("jquery.mjs.nestedSortable.js").AtFoot();
@@ -77,7 +76,7 @@
                     <li>
                         <div class="menu-item-description"><h4>@T(descriptor.DisplayName)</h4>
                             @if (!string.IsNullOrWhiteSpace(descriptor.Description)) {
-                                <span class="hint">@T(descriptor.Description)</span>
+                                <span class="help-block">@T(descriptor.Description)</span>
                             }
                         </div>
                         <div class="menu-item-actions">@Html.ActionLink(T("Add").Text, "CreateMenuItem", "Admin", new { area = "Navigation", id = descriptor.Type, menuId = Model.CurrentMenu.Id, returnUrl = Request.RawUrl }, new { @class = "btn btn-default grey" })</div>

@@ -2,7 +2,7 @@
 @model Orchard.ImportExport.ViewModels.CustomStepsViewModel
 @if (Model.CustomSteps.Any()) {
     <fieldset>
-        <legend>@T("Choose the custom steps to execute in the export file:")</legend>
+        <legend>Choose the custom steps to execute in the export file:</legend>
         <ol>
             @for (var customStepIndex = 0; customStepIndex < Model.CustomSteps.Count; customStepIndex++) {
                 var closureIndex = customStepIndex;
@@ -16,5 +16,5 @@
     </fieldset>
 }
 else {
-    <p>@T("There are no additional export steps available.")</p>
+    <p>There are no additional export steps available.</p>
 }

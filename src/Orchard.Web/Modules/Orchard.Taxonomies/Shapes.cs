@@ -1,10 +1,10 @@
-﻿using System;
+﻿using Orchard.ContentManagement;
+using Orchard.DisplayManagement.Descriptors;
+using Orchard.Taxonomies.Models;
+using Orchard.Utility.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using Orchard.Taxonomies.Models;
-using Orchard.ContentManagement;
-using Orchard.DisplayManagement.Descriptors;
-using Orchard.Utility.Extensions;
 
 namespace Orchard.Taxonomies {
     public class Shapes : IShapeTableProvider {

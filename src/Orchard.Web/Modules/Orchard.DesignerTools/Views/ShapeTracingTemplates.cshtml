@@ -17,7 +17,7 @@
                 <div class="deactivated-content">
                 @using (Html.BeginFormAntiForgeryPost(Url.Action("ActivateTracing", "ShapeTracing", new { Area = "Orchard.DesignerTools" }), FormMethod.Post, new { @class = "inline link" })) {
                     @Html.Hidden("ReturnUrl", Context.Request.RawUrl)
-                    <button type="submit" class="primaryAction">@T("Activate Shape Tracing").Text</button>
+                    <button type="submit" class="btn btn-primary">@T("Activate Shape Tracing").Text</button>
                 }
                 </div>
             </div>
@@ -122,7 +122,7 @@
     <div class="settings">
         @using (Html.BeginFormAntiForgeryPost(Url.Action("DeactivateTracing", "ShapeTracing", new { Area = "Orchard.DesignerTools" }), FormMethod.Post, new { @class = "inline link" })) {
             @Html.Hidden("ReturnUrl", Context.Request.RawUrl)
-            <button type="submit" class="primaryAction">@T("Deactivate Shape Tracing").Text</button>
+            <button type="submit" class="btn btn-primary">@T("Deactivate Shape Tracing").Text</button>
         }
     </div>
 </script>

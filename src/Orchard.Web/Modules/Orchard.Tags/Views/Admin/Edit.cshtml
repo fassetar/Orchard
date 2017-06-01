@@ -13,7 +13,7 @@
     </fieldset>
 
     <fieldset>
-        <button class="btn btn-success" type="submit">@T("Save")</button>
+        <button class="btn btn-success" type="submit">Save</button>
     </fieldset>
 }
 <h2>@T("Content items tagged with {0}", Model.TagName)</h2>
@@ -29,7 +29,7 @@ else {
         <thead>
             <tr>
                 <th scope="col">@T("Content Type")</th>
-                <th scope="co2">@T("Name")</th>
+                <th scope="co2">Name</th>
             </tr>
         </thead>
         @foreach (IContent content in (IEnumerable<IContent>)ViewData["ContentItems"]) { 

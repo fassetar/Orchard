@@ -4,12 +4,12 @@
 <fieldset>
     @Html.LabelFor(m => m.Tenant, T("Tenant"))
     @Html.TextBoxFor(m => m.Tenant, new { @class = "text large" })
-    <span class="hint">@T("Azure Active Directory tenant (e.g. yoursite.onmicrosoft.com).")</span>
+    <span class="help-block">@T("Azure Active Directory tenant (e.g. yoursite.onmicrosoft.com).")</span>
 </fieldset>
 <fieldset>
     @Html.LabelFor(m => m.ADInstance, T("Active Directory Instance"))
     @Html.TextBoxFor(m => m.ADInstance, new { @class = "text large" })
-    <span class="hint">@T("Default instance is https://login.microsoftonline.com/{your-tenant-name}")</span>
+    <span class="help-block">@T("Default instance is https://login.microsoftonline.com/{your-tenant-name}")</span>
 </fieldset>
 <fieldset>
     @Html.LabelFor(m => m.ClientId, T("App ID"))
@@ -18,17 +18,17 @@
 <fieldset>
     @Html.LabelFor(m => m.AppName, T("App Name"))
     @Html.TextBoxFor(m => m.AppName, new { @class = "text large" })
-    <span class="hint">@T("The application name you wish to give active directory login rights to.")</span>
+    <span class="help-block">@T("The application name you wish to give active directory login rights to.")</span>
 </fieldset>
 <fieldset>
     @Html.LabelFor(m => m.LogoutRedirectUri, T("Logout Redirect"))
     @Html.TextBoxFor(m => m.LogoutRedirectUri, new { @class = "text large" })
-    <span class="hint">@T("Redirect url after azure logout, default is http://localhost:30321/OrchardLocal/")</span>
+    <span class="help-block">@T("Redirect url after azure logout, default is http://localhost:30321/OrchardLocal/")</span>
 </fieldset>
 <fieldset>
     @Html.LabelFor(m => m.ServiceResourceID, T("Service Resource ID"))
     @Html.TextAreaFor(m => m.ServiceResourceID, new { @class = "text large" })
-    <span class="hint">
+    <span class="help-block">
         @T(@"If you have a single 'Service Resource ID' just write it down directly.
              If you have multiple resources, enter each resource id on its own line, using key=value pairs.
              Example: service1=https://yoursite.onmicrosoft.com/some-guid-for-service1")
@@ -53,11 +53,11 @@
 <fieldset>
     @Html.CheckBoxFor(m => m.UseAzureGraphApi)
     <label class="forcheckbox" for="AzureActiveDirectorySettings_UseAzureGraphApi">@T("Enable Graph API")</label>
-    <span class="hint">@T("Check this box to enable syncing Orchard Role membership to Azure Graph API Group Membership.  This module will not create new Orchard Roles for you, but it will sync up user membership of existing Orchard Roles with AD Group membership for Role names that match a group name")</span>
+    <span class="help-block">@T("Check this box to enable syncing Orchard Role membership to Azure Graph API Group Membership.  This module will not create new Orchard Roles for you, but it will sync up user membership of existing Orchard Roles with AD Group membership for Role names that match a group name")</span>
 </fieldset>
 <fieldset>
     @Html.LabelFor(m => m.GraphApiUrl, T("Graph API URL"))
     @Html.TextBoxFor(m => m.GraphApiUrl, new { @class = "text large" })
-    <span class="hint">@T("Typically https://graph.windows.net")</span>
+    <span class="help-block">@T("Typically https://graph.windows.net")</span>
 </fieldset>
 <hr />

@@ -11,12 +11,10 @@
 }
 <div>
     <fieldset>
-        <legend>
-            @T("Export Options")
-        </legend>
+        <legend>Export Options</legend>
         <ul>
             @foreach (var option in exportOptions) {
-                var exportOptionId = String.Format("{0}_{1}", Html.FieldIdFor(m => m.UploadConfigurationFile), option.Value);
+                var exportOptionId = string.Format("{0}_{1}", Html.FieldIdFor(m => m.UploadConfigurationFile), option.Value);
                 <li>
                     <input type="radio" id="@exportOptionId" name="@Html.FieldNameFor(m => m.UploadConfigurationFile)" value="@option.Value" @if (option.Selected) { <text> checked="checked" </text> }/>
                     <label for="@exportOptionId" class="forradiobutton">@option.Text</label>
@@ -25,7 +23,7 @@
         </ul>
     </fieldset>
 </div>
-<div data-controllerid="@String.Format("{0}_{1}", Html.FieldIdFor(m => m.UploadConfigurationFile), "false")">
+<div data-controllerid="@string.Format("{0}_{1}", Html.FieldIdFor(m => m.UploadConfigurationFile), "false")">
     @{
         var stepIndex = 0;
         var steps = Model.Steps.Where(x => x.IsVisible).ToArray();
@@ -52,9 +50,9 @@
         }
     }
 </div>
-<div data-controllerid="@String.Format("{0}_{1}", Html.FieldIdFor(m => m.UploadConfigurationFile), "true")" style="display: none;">
+<div data-controllerid="@string.Format("{0}_{1}", Html.FieldIdFor(m => m.UploadConfigurationFile), "true")" style="display: none;">
     <fieldset>
-        <label for="ConfigurationFile">@T("Configuration File")</label>
-        <input type="file" id="ConfigurationFile" size="64" name="ConfigurationFile" value="@T("Browse...")" />
+        <label for="ConfigurationFile">Configuration File</label>
+        <input type="file" id="ConfigurationFile" size="64" name="ConfigurationFile" value="Browse..." />
     </fieldset>
 </div>

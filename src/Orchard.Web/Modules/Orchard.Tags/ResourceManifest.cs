@@ -6,8 +6,6 @@ namespace Orchard.Tags {
             var manifest = builder.Add();
 
             manifest.DefineScript("TagsAutocomplete").SetUrl("orchard-tags-autocomplete.js").SetDependencies("jQueryUI");
-
-            manifest.DefineStyle("TagsAdmin").SetUrl("orchard-tags-admin.css");
         }
     }
 }

@@ -28,7 +28,7 @@
             @Html.SelectOption(Model.Options.BulkAction, SpamBulkAction.Ham, T("Mark as Ham").ToString())
             @Html.SelectOption(Model.Options.BulkAction, SpamBulkAction.Delete, T("Delete").ToString())
         </select>
-        <button class="btn btn-primary" type="submit" name="submit.BulkEdit" value="@T("Apply")">@T("Apply")</button>
+        <button class="btn btn-primary" type="submit" name="submit.BulkEdit" value="Apply">Apply</button>
     </fieldset>
     <fieldset class="bulk-actions">
         <label for="filterResults">@T("Filter:")</label>

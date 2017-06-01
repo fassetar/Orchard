@@ -2,8 +2,7 @@
 @using Orchard.Utility.Extensions;
 @using Orchard.Warmup.Models;
 
-@{ 
-    Style.Include("orchard-warmup-admin.css");
+@{
     Layout.Title = T("Performance").ToString(); 
 }
 
@@ -16,7 +15,7 @@
 <fieldset>
     <div>
         @Html.TextAreaFor(m => m.Settings.Urls, new { @class = "text medium" })
-        <span class="hint">@T("This must be a set of relative paths, e.g., /, /About. Please ensure that you enter only one path per line.")</span>
+        <span class="help-block">@T("This must be a set of relative paths, e.g., /, /About. Please ensure that you enter only one path per line.")</span>
     </div>
 </fieldset>
 <fieldset>
@@ -26,7 +25,7 @@
     </div>
     <div data-controllerid="@Html.FieldIdFor(m => m.Settings.Scheduled)">
         @T("Every") 
-        @Html.TextBoxFor(m => m.Settings.Delay, new { @class = "text small" }) 
+        @Html.TextBoxFor(m => m.Settings.Delay, new { @class = "form-control" }) 
         @T("minutes")
         @Html.ValidationMessage("Delay", "*")
     </div>
@@ -71,6 +70,6 @@
 </fieldset>
     }
 <fieldset>
-    <button class="primaryAction" name="submit" value="@T("Save")" type="submit">@T("Save")</button>
+    <button class="btn btn-primary" name="submit" value="Save" type="submit">Save</button>
 </fieldset>    
 }

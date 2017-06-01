@@ -89,12 +89,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Styles\menu.page-admin.css" />
-    <Content Include="Styles\images\menu.page.png" />
     <Content Include="Web.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Styles\Web.config" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

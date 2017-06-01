@@ -18,7 +18,7 @@
         <fieldset>
             <label for="DisplayName">@T("Display Name")</label>
             @Html.TextBoxFor(m => m.DisplayName, new { @class = "text medium" })
-            <span class="hint">@T("Content Type Id: {0}", Model.Name)</span>
+            <span class="help-block">@T("Content Type Id: {0}", Model.Name)</span>
             @* todo: if we continue to go down the midrodata route, some helpers would be nice *@
             <meta itemprop="DisplayName" content="@Model.DisplayName" />
             @* has unintended consequences (renamging the type) - changing the name creates a new type of that name *@
@@ -39,8 +39,8 @@
             @Html.EditorFor(m => m.Parts, "TypeParts", "")
         </div>
         <fieldset class="action">
-            <button class="primaryAction" type="submit" name="submit.Save" value="Save">@T("Save")</button>
-            <button class="primaryAction" type="submit" name="submit.Delete" value="Delete" itemprop="RemoveUrl">@T("Delete")</button>
+            <button class="btn btn-primary" type="submit" name="submit.Save" value="Save">Save</button>
+            <button class="btn btn-primary" type="submit" name="submit.Delete" value="Delete" itemprop="RemoveUrl">@T("Delete")</button>
         </fieldset>
     </div> 
 }

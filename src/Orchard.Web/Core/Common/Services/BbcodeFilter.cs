@@ -41,7 +41,7 @@ namespace Orchard.Core.Common.Services {
 
                 // substitue [url] by <a>
                 sb.Remove(start, end - start + 6);
-                sb.Insert(start, String.Format("<a href=\"{0}\">{0}</a>", url));
+                sb.Insert(start, string.Format("<a href=\"{0}\">{0}</a>", url));
             }
 
             // [url={url}]
@@ -65,7 +65,7 @@ namespace Orchard.Core.Common.Services {
 
                 // substitue [url] by <a>
                 sb.Remove(start, end - start + 6);
-                sb.Insert(start, String.Format("<a href=\"{0}\">{1}</a>", url, title));
+                sb.Insert(start, string.Format("<a href=\"{0}\">{1}</a>", url, title));
             }
 
             // [img]

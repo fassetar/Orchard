@@ -362,7 +362,7 @@ namespace Orchard.Core.Contents.Controllers
                 && !string.IsNullOrWhiteSpace(returnUrl)
                 && Request.IsLocalUrl(returnUrl)
                 // only if the original returnUrl is the content itself
-                && String.Equals(returnUrl, Url.ItemDisplayUrl(contentItem), StringComparison.OrdinalIgnoreCase)
+                && string.Equals(returnUrl, Url.ItemDisplayUrl(contentItem), StringComparison.OrdinalIgnoreCase)
                 ) {
                 previousRoute = contentItem.As<IAliasAspect>().Path;
             }

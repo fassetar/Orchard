@@ -156,7 +156,7 @@ namespace Orchard.Core.Shapes
                 .OnDisplaying(displaying => {
                     var pager = displaying.Shape;
                     string pagerId = pager.PagerId;
-                    if (!String.IsNullOrWhiteSpace(pagerId))
+                    if (!string.IsNullOrWhiteSpace(pagerId))
                         displaying.Shape.Metadata.Alternates.Add("Pager__" + EncodeAlternateElement(pagerId));
                 });
 
@@ -164,7 +164,7 @@ namespace Orchard.Core.Shapes
                 .OnDisplaying(displaying => {
                     var pager = displaying.Shape.Pager;
                     string pagerId = pager.PagerId;
-                    if (!String.IsNullOrWhiteSpace(pagerId))
+                    if (!string.IsNullOrWhiteSpace(pagerId))
                         pager.Metadata.Alternates.Add("Pager_Gap__" + EncodeAlternateElement(pagerId));
                 });
 
@@ -172,7 +172,7 @@ namespace Orchard.Core.Shapes
                 .OnDisplaying(displaying => {
                     var pager = displaying.Shape.Pager;
                     string pagerId = pager.PagerId;
-                    if (!String.IsNullOrWhiteSpace(pagerId))
+                    if (!string.IsNullOrWhiteSpace(pagerId))
                         displaying.Shape.Metadata.Alternates.Add("Pager_First__" + EncodeAlternateElement(pagerId));
                 });
 
@@ -180,7 +180,7 @@ namespace Orchard.Core.Shapes
                 .OnDisplaying(displaying => {
                     var pager = displaying.Shape.Pager;
                     string pagerId = pager.PagerId;
-                    if (!String.IsNullOrWhiteSpace(pagerId))
+                    if (!string.IsNullOrWhiteSpace(pagerId))
                         displaying.Shape.Metadata.Alternates.Add("Pager_Previous__" + EncodeAlternateElement(pagerId));
                 });
 
@@ -188,7 +188,7 @@ namespace Orchard.Core.Shapes
                 .OnDisplaying(displaying => {
                     var pager = displaying.Shape.Pager;
                     string pagerId = pager.PagerId;
-                    if (!String.IsNullOrWhiteSpace(pagerId))
+                    if (!string.IsNullOrWhiteSpace(pagerId))
                         displaying.Shape.Metadata.Alternates.Add("Pager_Next__" + EncodeAlternateElement(pagerId));
                 });
 
@@ -196,7 +196,7 @@ namespace Orchard.Core.Shapes
                 .OnDisplaying(displaying => {
                     var pager = displaying.Shape.Pager;
                     string pagerId = pager.PagerId;
-                    if (!String.IsNullOrWhiteSpace(pagerId))
+                    if (!string.IsNullOrWhiteSpace(pagerId))
                         displaying.Shape.Metadata.Alternates.Add("Pager_Last__" + EncodeAlternateElement(pagerId));
                 });
 
@@ -204,7 +204,7 @@ namespace Orchard.Core.Shapes
                 .OnDisplaying(displaying => {
                     var pager = displaying.Shape.Pager;
                     string pagerId = pager.PagerId;
-                    if (!String.IsNullOrWhiteSpace(pagerId))
+                    if (!string.IsNullOrWhiteSpace(pagerId))
                         displaying.Shape.Metadata.Alternates.Add("Pager_CurrentPage__" + EncodeAlternateElement(pagerId));
                 });
 
@@ -212,7 +212,7 @@ namespace Orchard.Core.Shapes
                 .OnDisplaying(displaying => {
                     var pager = displaying.Shape;
                     string pagerId = pager.PagerId;
-                    if (!String.IsNullOrWhiteSpace(pagerId))
+                    if (!string.IsNullOrWhiteSpace(pagerId))
                         displaying.Shape.Metadata.Alternates.Add("Pager_Links__" + EncodeAlternateElement(pagerId));
                 });
 
@@ -288,7 +288,7 @@ namespace Orchard.Core.Shapes
 
             if (tabbed.Count() > 1) {
                 foreach (var tab in tabbed) {
-                    var tabName = String.IsNullOrWhiteSpace(tab.Key) ? "Content" : tab.Key;
+                    var tabName = string.IsNullOrWhiteSpace(tab.Key) ? "Content" : tab.Key;
                     var tabBuilder = new TagBuilder("div");
                     tabBuilder.Attributes["id"] = "tab-" + tabName.HtmlClassify();
                     tabBuilder.Attributes["data-tab"] = tabName;
@@ -356,7 +356,7 @@ namespace Orchard.Core.Shapes
             foreach (var shape in orderedShapes) {
                 var tab = (string)shape.Metadata.Tab;
 
-                if (String.IsNullOrEmpty(tab))
+                if (string.IsNullOrEmpty(tab))
                     continue;
 
                 if(!tabs.Contains(tab))
@@ -514,10 +514,10 @@ namespace Orchard.Core.Shapes
             var gapText = GapText ?? T("...");
 
             var routeData = new RouteValueDictionary(Html.ViewContext.RouteData.Values);
-            var queryString = _workContext.Value.HttpContext.Request.QueryString;
-            if (queryString != null) {
-                foreach (var key in from string key in queryString.Keys where key != null && !routeData.ContainsKey(key) let value = queryString[key] select key) {
-                    routeData[key] = queryString[key];
+            var querystring = _workContext.Value.HttpContext.Request.QueryString;
+            if (querystring != null) {
+                foreach (var key in from string key in querystring.Keys where key != null && !routeData.ContainsKey(key) let value = querystring[key] select key) {
+                    routeData[key] = querystring[key];
                 }
             }
 
@@ -551,7 +551,7 @@ namespace Orchard.Core.Shapes
             int firstPage = Math.Max(1, Page - (numberOfPagesToShow / 2));
             int lastPage = Math.Min(totalPageCount, Page + (int)(numberOfPagesToShow / 2));
 
-            var pageKey = String.IsNullOrEmpty(PagerId) ? "page" : PagerId;
+            var pageKey = string.IsNullOrEmpty(PagerId) ? "page" : PagerId;
 
             Shape.Classes.Add("pager");
             Shape.Metadata.Alternates.Clear();
@@ -722,7 +722,7 @@ namespace Orchard.Core.Shapes
                 listTagName = string.IsNullOrEmpty(Tag) ? "ul" : Tag;
             }
 
-            var listTag = String.IsNullOrEmpty(listTagName) ? null : GetTagBuilder(listTagName, Id, Classes, Attributes);
+            var listTag = string.IsNullOrEmpty(listTagName) ? null : GetTagBuilder(listTagName, Id, Classes, Attributes);
 
             string itemTagName = null;
             if (ItemTag != "-") {
@@ -740,7 +740,7 @@ namespace Orchard.Core.Shapes
             var index = 0;
             foreach (var item in items) {
                 
-                var itemTag = String.IsNullOrEmpty(itemTagName) ? null : GetTagBuilder(itemTagName, null, ItemClasses, ItemAttributes);
+                var itemTag = string.IsNullOrEmpty(itemTagName) ? null : GetTagBuilder(itemTagName, null, ItemClasses, ItemAttributes);
 
                 if (item is IShape) {
                     item.Tag = itemTag;
@@ -748,7 +748,7 @@ namespace Orchard.Core.Shapes
 
                 var itemOutput = Display(item).ToHtmlString();
 
-                if (!String.IsNullOrWhiteSpace(itemOutput)) {
+                if (!string.IsNullOrWhiteSpace(itemOutput)) {
                     itemTags.Add(itemTag);
                     itemOutputs.Add(itemOutput);
                 }

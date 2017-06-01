@@ -12,7 +12,7 @@
             child.find('.navigation-position > input').attr('value', prefix + pos);
 
             // recurse position for children
-            child.children('ol').each(function (i, item) { populate(item, prefix + pos.toString() + '.') });
+            child.children('ol').each(function (i, item) { populate(item, prefix + pos.tostring() + '.') });
 
             pos++;
 

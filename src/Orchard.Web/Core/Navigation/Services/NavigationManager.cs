@@ -95,7 +95,7 @@ namespace Orchard.Core.Navigation.Services {
                 !(url.StartsWith("/") || schemes.Any(scheme => url.StartsWith(scheme + ":")))) {
                 if (!url.StartsWith("#")) {
                     if (url.StartsWith("~/")) {
-                        if (!String.IsNullOrEmpty(_shellSettings.RequestUrlPrefix)) {
+                        if (!string.IsNullOrEmpty(_shellSettings.RequestUrlPrefix)) {
                             url = _shellSettings.RequestUrlPrefix + "/" + url.Substring(2);
                         }
                         else {
@@ -231,9 +231,9 @@ namespace Orchard.Core.Navigation.Services {
 
             foreach (var item in items) {
                 MenuItem parent;
-                var parentPosition = String.Empty;
+                var parentPosition = string.Empty;
 
-                var position = item.Position ?? String.Empty;
+                var position = item.Position ?? string.Empty;
 
                 var lastSegment = position.LastIndexOf('.');
                 if (lastSegment != -1) {

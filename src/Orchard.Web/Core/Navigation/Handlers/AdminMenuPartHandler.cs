@@ -10,7 +10,7 @@ namespace Orchard.Core.Navigation.Handlers {
 
             OnInitializing<AdminMenuPart>((ctx, x) => {
                                       x.OnAdminMenu = false;
-                                      x.AdminMenuText = String.Empty;
+                                      x.AdminMenuText = string.Empty;
                                   });
         }
     }

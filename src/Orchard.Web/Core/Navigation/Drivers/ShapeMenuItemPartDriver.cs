@@ -28,7 +28,7 @@ namespace Orchard.Core.Navigation.Drivers {
 
         protected override DriverResult Editor(ShapeMenuItemPart part, IUpdateModel updater, dynamic shapeHelper) {
             if (updater.TryUpdateModel(part, Prefix, null, null)) {
-                if (String.IsNullOrWhiteSpace(part.ShapeType)) {
+                if (string.IsNullOrWhiteSpace(part.ShapeType)) {
                     updater.AddModelError("ShapeType", T("The Shape Type is mandatory."));
                 }
             }

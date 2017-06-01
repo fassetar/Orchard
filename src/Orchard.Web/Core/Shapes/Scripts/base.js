@@ -62,7 +62,7 @@
                     var cookie = $.orchard.cookie(scope);
                     var newData = (cookie && $.parseJSON(cookie)) || {};
                     newData[key] = value;
-                    var dataString = (function (obj) { //todo: pull out into a seperate function
+                    var datastring = (function (obj) { //todo: pull out into a seperate function
                         if (!obj) { return ""; }
                         var k, str = "{";
                         for (k in obj) { // only really simple stringification
@@ -73,7 +73,7 @@
                         }
                         return str + "}";
                     })(newData);
-                    $.orchard.cookie(scope, dataString, { expires: $.orchard.__cookieExpiration, path: (options && options.path) || "/" }); // todo: default path should be app path
+                    $.orchard.cookie(scope, datastring, { expires: $.orchard.__cookieExpiration, path: (options && options.path) || "/" }); // todo: default path should be app path
                 }
             }
         }
@@ -280,15 +280,15 @@
  * @desc Delete a cookie by passing null as value. Keep in mind that you have to use the same path and domain
  *       used when the cookie was set.
  *
- * @param String name The name of the cookie.
- * @param String value The value of the cookie.
+ * @param string name The name of the cookie.
+ * @param string value The value of the cookie.
  * @param Object options An object literal containing key/value pairs to provide optional cookie attributes.
  * @option Number|Date expires Either an integer specifying the expiration date from now on in days or a Date object.
  *                             If a negative value is specified (e.g. a date in the past), the cookie will be deleted.
  *                             If set to null or omitted, the cookie will be a session cookie and will not be retained
  *                             when the the browser exits.
- * @option String path The value of the path atribute of the cookie (default: path of page that created the cookie).
- * @option String domain The value of the domain attribute of the cookie (default: domain of page that created the cookie).
+ * @option string path The value of the path atribute of the cookie (default: path of page that created the cookie).
+ * @option string domain The value of the domain attribute of the cookie (default: domain of page that created the cookie).
  * @option Boolean secure If true, the secure attribute of the cookie will be set and the cookie transmission will
  *                        require a secure protocol (like HTTPS).
  * @type undefined
@@ -304,9 +304,9 @@
  * @example $.cookie('the_cookie');
  * @desc Get the value of a cookie.
  *
- * @param String name The name of the cookie.
+ * @param string name The name of the cookie.
  * @return The value of the cookie.
- * @type String
+ * @type string
  *
  * @name $.cookie
  * @cat Plugins/Cookie
@@ -320,7 +320,7 @@ jQuery.cookie = function(name, value, options) {
             options.expires = -1;
         }
         var expires = '';
-        if (options.expires && (typeof options.expires == 'number' || options.expires.toUTCString)) {
+        if (options.expires && (typeof options.expires == 'number' || options.expires.toUTCstring)) {
             var date;
             if (typeof options.expires == 'number') {
                 date = new Date();
@@ -328,7 +328,7 @@ jQuery.cookie = function(name, value, options) {
             } else {
                 date = options.expires;
             }
-            expires = '; expires=' + date.toUTCString(); // use expires attribute, max-age is not supported by IE
+            expires = '; expires=' + date.toUTCstring(); // use expires attribute, max-age is not supported by IE
         }
         // CAUTION: Needed to parenthesize options.path and options.domain
         // in the following expressions, otherwise they evaluate to undefined

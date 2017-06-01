@@ -13,7 +13,7 @@ namespace Orchard.Taxonomies {
 
         public void GetNavigation(NavigationBuilder builder) {
             builder
-                .AddImageSet("taxonomies")
+                //.AddImageSet("taxonomies")
                 .Add(T("Taxonomies"), "4", BuildMenu);
         }
 

@@ -9,7 +9,7 @@ namespace Orchard.Workflows {
 
         public void GetNavigation(NavigationBuilder builder) {
             builder
-                .AddImageSet("workflows")
+                //.AddImageSet("workflows")
                 .Add(T("Workflows"), "10",
                 menu => menu
                     .Add(T("Workflows"), "1.0",

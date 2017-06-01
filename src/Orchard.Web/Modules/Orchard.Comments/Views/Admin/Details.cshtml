@@ -22,7 +22,7 @@
 @using(Html.BeginFormAntiForgeryPost()) { 
     @Html.ValidationSummary()
     <fieldset class="bulk-actions">
-        <label for="publishActions">@T("Actions:")</label>
+        <label for="publishActions">Actions:</label>
         <select id="publishActions" name="@Html.NameOf(m => m.Options.BulkAction)">
             @Html.SelectOption(Model.Options.BulkAction, CommentDetailsBulkAction.None, T("Choose action...").ToString())
             @Html.SelectOption(Model.Options.BulkAction, CommentDetailsBulkAction.Approve, T("Approve").ToString())

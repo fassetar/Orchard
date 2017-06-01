@@ -15,7 +15,7 @@
             <br />
             <div class="input-group">
                 <span class="input-group-addon">
-                    @T("Actions:")
+                    Actions:
                 </span>
                 <select id="publishActions" name="@Html.NameOf(m => m.Options.BulkAction)" class="form-control">
                     @Html.SelectOption(Model.Options.BulkAction, UsersBulkAction.None, T("Choose action...").ToString())

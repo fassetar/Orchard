@@ -126,7 +126,6 @@
     <Content Include="Content\Admin\images\enabled.gif" />
     <Content Include="Module.txt" />
     <Content Include="Scripts\multi-tenancy.admin.js" />
-    <Content Include="Styles\orchard-multitenancy-admin.css" />
     <Content Include="Views\Admin\Add.cshtml" />
     <Content Include="Views\Admin\Edit.cshtml" />
     <Content Include="Views\Admin\DisplayTemplates\ActionsForUninitialized.cshtml" />
@@ -145,12 +144,6 @@
   <ItemGroup>
     <Content Include="Content\Web.config">
       <SubType>Designer</SubType>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Styles\Web.config">
-      <SubType>
-      </SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>

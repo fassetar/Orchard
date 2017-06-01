@@ -8,7 +8,8 @@ namespace Orchard.Core.Reports {
         public string MenuName { get { return "admin"; } }
 
         public void GetNavigation(NavigationBuilder builder) {
-            builder.AddImageSet("reports")
+            builder
+                //.AddImageSet("reports")
                 .Add(T("Reports"), "12",
                     menu => menu.Add(T("View"), "0", item => item.Action("Index", "Admin", new { area = "Reports" })
                         .Permission(StandardPermissions.SiteOwner)));

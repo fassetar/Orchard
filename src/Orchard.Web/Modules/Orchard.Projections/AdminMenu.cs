@@ -8,7 +8,9 @@ namespace Orchard.Projections {
         public string MenuName { get { return "admin"; } }
 
         public void GetNavigation(NavigationBuilder builder) {
-            builder.AddImageSet("projector").Add(T("Queries"), "3",
+            builder
+               //.AddImageSet("projector")
+               .Add(T("Queries"), "3",
                 menu => menu
                     .Add(T("Queries"), "1.0",
                         qi => qi.Action("Index", "Admin", new { area = "Orchard.Projections" }).Permission(Permissions.ManageQueries).LocalNav())

@@ -2,9 +2,6 @@
 @using Orchard.Search.Models
 @using Orchard.Search.ViewModels;
 @{
-    Style.Require("Search");
-}
-@{
     var settings = WorkContext.CurrentSite.As<SearchSettingsPart>();
     var part = (SearchFormPart)Model.ContentPart;
     var index = part.OverrideIndex && part.SelectedIndex != settings.SearchIndex ? part.SelectedIndex : default(string);

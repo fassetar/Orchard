@@ -1,6 +1,5 @@
 ﻿@using Orchard.Localization.Models;
 @{
-    Style.Require("Localization");
     IEnumerable<LocalizationPart> localizations = Model.Localizations;
 }
 @if (localizations != null && localizations.Count() > 0) {

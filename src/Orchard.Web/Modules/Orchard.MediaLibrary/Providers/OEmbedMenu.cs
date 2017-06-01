@@ -12,7 +12,8 @@ namespace Orchard.MediaLibrary.Providers {
         public string MenuName { get { return "mediaproviders"; } }
 
         public void GetNavigation(NavigationBuilder builder) {
-            builder.AddImageSet("oembed")
+            builder
+                //.AddImageSet("oembed")
                 .Add(T("Media Url"), "10", 
                     menu => menu.Action("Index", "OEmbed", new { area = "Orchard.MediaLibrary" })
                         .Permission(Permissions.ManageOwnMedia));

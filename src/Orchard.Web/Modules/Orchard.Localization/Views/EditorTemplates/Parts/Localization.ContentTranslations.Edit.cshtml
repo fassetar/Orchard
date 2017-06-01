@@ -1,8 +1,6 @@
 ﻿@model Orchard.Localization.ViewModels.EditLocalizationViewModel
 @using System.Globalization
-@{
-    Style.Require("LocalizationAdmin");
-}
+
 <fieldset class="localization culture-selection">
     <label for="@Html.FieldIdFor(m => m.SelectedCulture)">@T("Content Localization")</label>
     <div>

@@ -8,7 +8,7 @@
     var options = (ContentOptions)Model.Options;
 }
 <fieldset class="bulk-actions">
-    <label for="publishActions">@T("Actions:")</label>
+    <label for="publishActions">Actions:</label>
     <select id="publishActions" name="Options.BulkAction">
         @Html.SelectOption(options.BulkAction, ContentsBulkAction.None, T("Choose action...").ToString())
         @Html.SelectOption(options.BulkAction, ContentsBulkAction.PublishNow, T("Publish Now").ToString())

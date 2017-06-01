@@ -160,27 +160,11 @@
     <Content Include="Scripts\Models.js" />
     <Content Include="Scripts\Models.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Styles\LayoutEditor.css" />
-    <Content Include="Styles\LayoutEditor.min.css" />
-    <Content Include="Styles\menu.layouts-admin.css" />
-    <Content Include="Styles\menu.elements.png" />
-    <Content Include="Styles\element-editor.css" />
-    <Content Include="Styles\element-browser.css" />
-    <Content Include="Styles\default-grid.css" />
-    <Content Include="Styles\edit.png" />
-    <Content Include="Styles\menu.layouts.png" />
-    <Content Include="Styles\overlay.png" />
-    <Content Include="Styles\remove.png" />
-    <Content Include="Styles\dialog.css" />
-    <Content Include="Styles\admin-dialog.css" />
-    <Content Include="Styles\split-arrow-down.png" />
-    <Content Include="Styles\split-arrow-up.png" />
     <Content Include="Views\BlueprintAdmin\Edit.cshtml">
       <SubType>Code</SubType>
     </Content>
     <Content Include="Web.config" />
     <Content Include="Scripts\Web.config" />
-    <Content Include="Styles\Web.config" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="Module.txt" />
     <Content Include="Views\EditorTemplates\Parts.Layout.cshtml" />
@@ -547,7 +531,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Elements\Break.cshtml" />
-    <Content Include="Styles\LayoutEditor\Menu.less" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Parts.Layout.Recursive.cshtml" />

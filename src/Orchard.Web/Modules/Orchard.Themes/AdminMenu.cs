@@ -7,7 +7,8 @@ namespace Orchard.Themes {
         public string MenuName { get { return "admin"; } }
 
         public void GetNavigation(NavigationBuilder builder) {
-            builder.AddImageSet("themes")
+            builder
+                //.AddImageSet("themes")
                 .Add(T("Themes"), "10", menu => menu.Action("Index", "Admin", new { area = "Orchard.Themes" }).Permission(Permissions.ApplyTheme)
                     .Add(T("Installed"), "0", item => item.Action("Index", "Admin", new { area = "Orchard.Themes" }).Permission(Permissions.ApplyTheme).LocalNav()));
         }

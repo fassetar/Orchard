@@ -1,8 +1,8 @@
-﻿using System.Linq;
-using Orchard.Blogs.Services;
+﻿using Orchard.Blogs.Services;
 using Orchard.Localization;
 using Orchard.Security;
 using Orchard.UI.Navigation;
+using System.Linq;
 
 namespace Orchard.Blogs {
     public class AdminMenu : INavigationProvider {
@@ -21,7 +21,7 @@ namespace Orchard.Blogs {
         public string MenuName { get { return "admin"; } }
 
         public void GetNavigation(NavigationBuilder builder) {
-            builder.AddImageSet("blog")
+            builder//.AddImageSet("blog")
                 .Add(T("Blog"), "1.5", BuildMenu);
         }
 

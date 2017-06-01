@@ -3,7 +3,6 @@
 @using Orchard.Utility.Extensions;
 @{
     Script.Require("ShapesBase");
-    Style.Require("TagsAdmin");
     Layout.Title = T("Tags").ToString();
 }
 
@@ -15,7 +14,7 @@
         {
             <div class="input-group">
                 <span class="input-group-addon">
-                    @T("Actions:")
+                    Actions:
                 </span>
                 <select id="publishActions" name="@Html.NameOf(m => m.BulkAction)" class="form-control">
                     @Html.SelectOption(Model.BulkAction, TagAdminIndexBulkAction.None, T("Choose action...").ToString())

@@ -146,8 +146,6 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Scripts\orchard-search-settings.js" />
-    <Content Include="Styles\orchard-search-admin.css" />
-    <Content Include="Styles\orchard-search-search.css" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\EditorTemplates\Parts\Search.SiteSettings.Index.cshtml" />
@@ -158,11 +156,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Placement.info" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Styles\Web.config">
-      <SubType>Designer</SubType>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Web.config" />

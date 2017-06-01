@@ -1,7 +1,6 @@
 ﻿@using Orchard.Blogs.Extensions;
 @using Orchard.Blogs.Models;
 @{
-    Style.Require("BlogsArchives");
     Script.Require("BlogsArchives");
     IEnumerable<KeyValuePair<ArchiveData, int>> archives = Model.Archives;
     var dateTimeLocalization = WorkContext.Resolve<Orchard.Localization.Services.IDateTimeFormatProvider>();

@@ -2,12 +2,6 @@
 @using Orchard.Utility.Extensions;
 
 @{
-    Style.Include("media-library-picker-admin.css");
-    Style.Require("jQueryColorBox");
-    Script.Require("jQueryUI_Sortable").AtFoot();
-    Script.Require("jQueryColorBox").AtFoot();
-    Script.Include("media-library-picker.js").AtFoot();
-
     var fieldName = (string) Model.FieldName;
     var displayName = (string) Model.DisplayName;
     var multiple = (bool)(Model.Multiple ?? false);

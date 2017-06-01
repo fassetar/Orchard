@@ -103,27 +103,10 @@
     <Content Include="Scripts\media-library-picker.js" />
     <Content Include="Scripts\media-library.js" />
     <Content Include="Scripts\modal-window.js" />
-    <Content Include="Styles\Images\menu.media.png" />
-    <Content Include="Styles\menu.media-library-admin.css" />
-    <Content Include="Styles\menu.oembed-mediaproviders.css" />
-    <Content Include="Styles\orchard-oembed-admin.css" />
-    <Content Include="Styles\menu.websearch-mediaproviders.css" />
-    <Content Include="Styles\menu.clientstorage-mediaproviders.css" />
-    <Content Include="Styles\dialog-mode.css" />
-    <Content Include="Styles\media-library-picker-admin.css" />
-    <Content Include="Styles\Images\folders-loader.gif" />
-    <Content Include="Styles\Images\loading.gif" />
-    <Content Include="Styles\Images\processing.gif" />
-    <Content Include="Styles\orchard-clientstorage-admin.css" />
-    <Content Include="Styles\Images\ajax-loader.gif" />
-    <Content Include="Styles\orchard-websearch-admin.css" />
-    <Content Include="Styles\orchard-mediaproviders-admin.css" />
-    <Content Include="Styles\orchard-medialibrary-admin.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Scripts\Web.config" />
-    <Content Include="Styles\Web.config" />
     <Compile Include="Drivers\VectorImagePartDriver.cs" />
     <Compile Include="Extensions\MediaMetaDataExtensions.cs" />
     <Compile Include="Factories\VectorImageFactory.cs" />
@@ -410,9 +393,7 @@
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationManifest>Styles\orchard-medialibrary-admin.css</ApplicationManifest>
-  </PropertyGroup>
+  <PropertyGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />

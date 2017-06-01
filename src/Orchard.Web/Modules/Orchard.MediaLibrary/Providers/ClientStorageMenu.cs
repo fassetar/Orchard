@@ -12,7 +12,8 @@ namespace Orchard.MediaLibrary.Providers {
         public string MenuName { get { return "mediaproviders"; } }
 
         public void GetNavigation(NavigationBuilder builder) {
-            builder.AddImageSet("clientstorage")
+            builder
+                //.AddImageSet("clientstorage")
                 .Add(T("My Computer"), "5", 
                     menu => menu.Action("Index", "ClientStorage", new { area = "Orchard.MediaLibrary" })
                         .Permission(Permissions.ManageOwnMedia));

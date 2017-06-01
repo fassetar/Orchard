@@ -119,11 +119,6 @@
     <Content Include="Placement.info" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Styles\Images\menu.jobsqueue.png" />
-    <Content Include="Styles\Images\queue-controls.png" />
-    <Content Include="Styles\admin-jobsqueue.css" />
-    <Content Include="Styles\menu.jobsqueue-admin.css" />
-    <Content Include="Styles\workflows-activity-sendmessage.css" />
     <Content Include="Views\EditorTemplates\Parts\JobsQueueSettings.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -154,9 +149,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Admin\Details.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Styles\Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\Web.config" />

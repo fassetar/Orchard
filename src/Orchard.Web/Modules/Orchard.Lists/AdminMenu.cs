@@ -31,7 +31,7 @@ namespace Orchard.Lists {
         public string MenuName { get { return "admin"; } }
 
         public void GetNavigation(NavigationBuilder builder) {
-            builder.AddImageSet("list");
+            //builder.AddImageSet("list");
 
             CreateListManagementMenuItem(builder);
             CreateListMenuItems(builder);

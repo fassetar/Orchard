@@ -98,7 +98,7 @@ namespace Orchard.Taxonomies.Handlers {
                     processingEngine.AddTask(shellSettings, shellDescriptorManager.GetShellDescriptor(), "ITermCountProcessor.Process", new Dictionary<string, object> { { "termPartRecordIds", _processedTermParts } });
                 }
                 foreach (var termPartRecordId in termPartRecordIds) {
-                    _processedTermParts.Add(termPartRecordId);                    
+                    _processedTermParts.Add(termPartRecordId);
                 }
             }
         }

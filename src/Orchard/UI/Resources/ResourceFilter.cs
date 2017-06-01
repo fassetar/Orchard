@@ -1,6 +1,6 @@
-using System.Web.Mvc;
 using Orchard.DisplayManagement;
 using Orchard.Mvc.Filters;
+using System.Web.Mvc;
 
 namespace Orchard.UI.Resources {
     public class ResourceFilter : FilterProvider, IResultFilter {

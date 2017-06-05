@@ -5,10 +5,10 @@
 @{ Layout.Title = T("Manage Blogs").ToString(); }
 
 @if (Model.ContentItems.Items.Count > 0) { 
-<div class="actions"><a class="add button btn btn-success" href="@Url.BlogCreate()">@T("New Blog")</a></div>
+<div class="actions"><a class="add button btn btn-success" href="@Url.BlogCreate()">New Blog</a></div>
     using(Html.BeginFormAntiForgeryPost(Url.Action("List", "Admin", new { area = "Contents", id = "" }))) {
         <fieldset class="bulk-actions">
-            <label><input type="checkbox" class="check-all" />@T("Select all")</label>@T(" | ")
+            <label><input type="checkbox" class="check-all" />Select All</label>@T(" | ")
             <label for="publishActions">Actions:</label>
             <select id="publishActions" name="Options.BulkAction">
                 @Html.SelectOption(ContentsBulkAction.None, ContentsBulkAction.None, T("Choose action...").ToString())

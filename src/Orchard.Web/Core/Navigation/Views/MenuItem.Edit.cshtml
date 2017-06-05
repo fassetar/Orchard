@@ -12,6 +12,6 @@
     </div>
 </div>
 
-@if (!string.IsNullOrWhiteSpace(Request.Querystring["returnUrl"])) {
-    @Html.Hidden("returnUrl", Request.Querystring["returnUrl"])
+@if (!string.IsNullOrWhiteSpace(Request.QueryString["returnUrl"])) {
+    @Html.Hidden("returnUrl", Request.QueryString["returnUrl"])
 }

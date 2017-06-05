@@ -5,7 +5,7 @@
 
 @if (Model.Settings.Patterns.Where(x => x.Culture == Model.CurrentCulture).Count() == 0)
 {
-    <div class="message message-Error">@T("The current Content Type does not have a default Autoroute Pattern. Please edit the settings first.")</div>
+    <div class="message txt-error">The current Content Type does not have a default Autoroute Pattern. Please edit the settings first.</div>
     return;
 }
 
@@ -14,20 +14,20 @@
     var pattern = Model.Settings.Patterns.Where(x => x.Culture == Model.CurrentCulture);
 
     var urlPrefix = WorkContext.Resolve<ShellSettings>().RequestUrlPrefix;
-    if (!String.IsNullOrWhiteSpace(urlPrefix))
+    if (!string.IsNullOrWhiteSpace(urlPrefix))
     {
         urlPrefix += "/";
     }
 }
 
-
 <fieldset class="permalink">
     @if (Model.Settings.AllowCustomPattern)
     {
-        <div class="permalink-definition" dir="ltr">
+        <div class="permalink-definition">
+            <h5>Permalink:</h5>
             <div class="input-group">
-                <span class="input-group-addon"><b>@T("Permalink"):</b> @Url.MakeAbsolute("/")@urlPrefix</span>
-                <span>@Html.TextBoxFor(m => m.CurrentUrl, new { @class = "form-control is-url" })</span>
+                <span class="input-group-addon">~/</span>
+                <span>@Html.TextBoxFor(m => m.CurrentUrl, new { @class = "form-control" })</span>
             </div>
         </div>
         <p class="help-block">@T("Save the current item and leave the input empty to have it automatically generated using the pattern {0} e.g., {1}.", pattern.ElementAtOrDefault(Convert.ToInt32(defaultPattern.PatternIndex)).Name, pattern.ElementAtOrDefault(Convert.ToInt32(defaultPattern.PatternIndex)).Description)</p>
@@ -65,12 +65,12 @@
         <fieldset>
             <span class="checkbox-and-label">
                 @Html.CheckBoxFor(m => m.PromoteToHomePage)
-                <label for="@Html.FieldIdFor(m => m.PromoteToHomePage)" class="forcheckbox">@T("Set as home page")</label>
+                <label for="@Html.FieldIdFor(m => m.PromoteToHomePage)" class="forcheckbox">Set as home page</label>
             </span>
         </fieldset>
     }
 }
 else
 {
-    <span>@T("This content is the current home page")</span>
+    <span>This content is the current home page.</span>
 }

@@ -1,3 +1,5 @@
+using Autofac.Features.Metadata;
+using Orchard.Environment.Extensions.Models;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,12 +9,10 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Autofac.Features.Metadata;
-using Orchard.Environment.Extensions.Models;
 
 namespace Orchard.UI.Resources {
     public class ResourceManager : IResourceManager, IUnitOfWorkDependency {
-        private readonly Dictionary<Tuple<String, String>, RequireSettings> _required = new Dictionary<Tuple<String, String>, RequireSettings>();
+        private readonly Dictionary<Tuple<string, string>, RequireSettings> _required = new Dictionary<Tuple<string, string>, RequireSettings>();
         private readonly List<LinkEntry> _links = new List<LinkEntry>();
         private readonly Dictionary<string, MetaEntry> _metas = new Dictionary<string, MetaEntry> {
             { "generator", new MetaEntry { Content = "Orchard", Name = "generator" } }
@@ -20,23 +20,23 @@ namespace Orchard.UI.Resources {
         private readonly Dictionary<string, IList<ResourceRequiredContext>> _builtResources = new Dictionary<string, IList<ResourceRequiredContext>>(StringComparer.OrdinalIgnoreCase);
         private readonly IEnumerable<Meta<IResourceManifestProvider>> _providers;
         private ResourceManifest _dynamicManifest;
-        private List<String> _headScripts;
-        private List<String> _footScripts;
+        private List<string> _headScripts;
+        private List<string> _footScripts;
         private IEnumerable<IResourceManifest> _manifests;
 
         private const string NotIE = "!IE";
 
         private static string ToAppRelativePath(string resourcePath) {
-            if (!String.IsNullOrEmpty(resourcePath) && !Uri.IsWellFormedUriString(resourcePath, UriKind.Absolute)) {
+            if (!string.IsNullOrEmpty(resourcePath) && !Uri.IsWellFormedUriString(resourcePath, UriKind.Absolute)) {
                 resourcePath = VirtualPathUtility.ToAppRelative(resourcePath);
             }
             return resourcePath;
         }
 
         private static string FixPath(string resourcePath, string relativeFromPath) {
-            if (!String.IsNullOrEmpty(resourcePath) && !VirtualPathUtility.IsAbsolute(resourcePath) && !Uri.IsWellFormedUriString(resourcePath, UriKind.Absolute)) {
+            if (!string.IsNullOrEmpty(resourcePath) && !VirtualPathUtility.IsAbsolute(resourcePath) && !Uri.IsWellFormedUriString(resourcePath, UriKind.Absolute)) {
                 // appears to be a relative path (e.g. 'foo.js' or '../foo.js', not "/foo.js" or "http://..")
-                if (String.IsNullOrEmpty(relativeFromPath)) {
+                if (string.IsNullOrEmpty(relativeFromPath)) {
                     throw new InvalidOperationException("ResourcePath cannot be relative unless a base relative path is also provided.");
                 }
                 resourcePath = VirtualPathUtility.ToAbsolute(VirtualPathUtility.Combine(relativeFromPath, resourcePath));
@@ -47,8 +47,8 @@ namespace Orchard.UI.Resources {
         private static TagBuilder GetTagBuilder(ResourceDefinition resource, string url) {
             var tagBuilder = new TagBuilder(resource.TagName);
             tagBuilder.MergeAttributes(resource.TagBuilder.Attributes);
-            if (!String.IsNullOrEmpty(resource.FilePathAttributeName)) {
-                if (!String.IsNullOrEmpty(url)) {
+            if (!string.IsNullOrEmpty(resource.FilePathAttributeName)) {
+                if (!string.IsNullOrEmpty(url)) {
                     if (VirtualPathUtility.IsAppRelative(url)) {
                         url = VirtualPathUtility.ToAbsolute(url);
                     }
@@ -245,11 +245,11 @@ namespace Orchard.UI.Resources {
             return _metas.Values.ToList().AsReadOnly();
         }
 
-        public virtual IList<String> GetRegisteredHeadScripts() {
+        public virtual IList<string> GetRegisteredHeadScripts() {
             return _headScripts == null ? null : _headScripts.AsReadOnly();
         }
 
-        public virtual IList<String> GetRegisteredFootScripts() {
+        public virtual IList<string> GetRegisteredFootScripts() {
             return _footScripts == null ? null : _footScripts.AsReadOnly();
         }
 
@@ -262,7 +262,7 @@ namespace Orchard.UI.Resources {
             foreach (var settings in GetRequiredResources(resourceType)) {
                 var resource = FindResource(settings);
                 if (resource == null) {
-                    throw new InvalidOperationException(String.Format(CultureInfo.CurrentCulture, "A '{1}' named '{0}' could not be found.", settings.Name, settings.Type));
+                    throw new InvalidOperationException(string.Format(CultureInfo.CurrentCulture, "A '{1}' named '{0}' could not be found.", settings.Name, settings.Type));
                 }
                 ExpandDependencies(resource, settings, allResources);
             }
@@ -318,7 +318,7 @@ namespace Orchard.UI.Resources {
 
             var index = meta.Name ?? meta.HttpEquiv;
             
-            if (String.IsNullOrEmpty(index)) {
+            if (string.IsNullOrEmpty(index)) {
                 return;
             }
 

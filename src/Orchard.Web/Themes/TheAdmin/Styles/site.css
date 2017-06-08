@@ -118,6 +118,9 @@ h4{
 }
 
 @media (min-width: 769px) {
+    .affix-content {
+        overflow: auto;
+    }
     .affix-content .container {
         width: 600px;
     }
@@ -142,9 +145,6 @@ h4{
         overflow: hidden;
     }
 
-    .affix-content {
-        overflow: auto;
-    }
 
         .affix-content .container {
             width: 1000px;
@@ -153,11 +153,6 @@ h4{
             .affix-content .container .page-header {
                 margin-top: 0;
             }
-
-    /*.affix-content {
-        padding-right: 30px;
-        padding-left: 30px;
-    }*/
 
     .affix-title {
         border-bottom: 1px solid #ecf0f1;

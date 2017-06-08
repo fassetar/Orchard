@@ -1,12 +1,11 @@
-﻿using System;
-using System.Linq;
-using Orchard.ContentManagement;
+﻿using Orchard.ContentManagement;
 using Orchard.Core.Containers.Models;
 using Orchard.Core.Containers.Services;
 using Orchard.Localization;
 using Orchard.Security;
 using Orchard.UI.Navigation;
 using Orchard.Utility.Extensions;
+using System.Linq;
 
 namespace Orchard.Lists {
     public class AdminMenu : INavigationProvider {
@@ -16,9 +15,9 @@ namespace Orchard.Lists {
         private readonly IWorkContextAccessor _workContextAccessor;
 
         public AdminMenu(
-            IContainerService containerService, 
+            IContainerService containerService,
             IContentManager contentManager,
-            IAuthorizationService authorizationService, 
+            IAuthorizationService authorizationService,
             IWorkContextAccessor workContextAccessor
             ) {
             _containerService = containerService;
@@ -39,7 +38,7 @@ namespace Orchard.Lists {
 
         private void CreateListManagementMenuItem(NavigationBuilder builder) {
             builder.Add(T("Lists"), "11", item => item
-                .Action("Index", "Admin", new {area = "Orchard.Lists"}).Permission(Permissions.ManageLists)
+                .Action("Index", "Admin", new { area = "Orchard.Lists" }).Permission(Permissions.ManageLists)
             );
         }
 
@@ -54,7 +53,7 @@ namespace Orchard.Lists {
             foreach (var container in containers) {
                 var closureContainer = container;
 
-                if (!String.IsNullOrWhiteSpace(container.AdminMenuImageSet)) {
+                if (!string.IsNullOrWhiteSpace(container.AdminMenuImageSet)) {
                     builder.AddImageSet(container.AdminMenuImageSet.Trim());
                 }
 
@@ -72,7 +71,7 @@ namespace Orchard.Lists {
                             actualContainer = containedItem;
                             foreach (var itemContentType in containedItem.ItemContentTypes) {
                                 var closureItemContentType = itemContentType;
-                                item.Add(T("New {0}", itemContentType.DisplayName), String.Format("1.{0}", position++), subItem => subItem
+                                item.Add(T("New {0}", itemContentType.DisplayName), string.Format("1.{0}", position++), subItem => subItem
                                     .Action("Create", "Admin", new { id = closureItemContentType.Name, containerid = containedItem.Id, area = "Contents" }));
                             }
                         }
@@ -85,10 +84,10 @@ namespace Orchard.Lists {
                     item.AddClass("nav-list");
                     item.AddClass(closureContainer.AdminMenuText.HtmlClassify());
                     item.LinkToFirstChild(false);
-                    
+
                     foreach (var itemContentType in closureContainer.ItemContentTypes) {
                         var closureItemContentType = itemContentType;
-                        item.Add(T("New {0}", itemContentType.DisplayName), String.Format("1.{0}", position++), subItem => subItem
+                        item.Add(T("New {0}", itemContentType.DisplayName), string.Format("1.{0}", position++), subItem => subItem
                             .Action("Create", "Admin", new { id = closureItemContentType.Name, containerid = container.Id, area = "Contents" }));
                     }
                 });

@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using Orchard.Utility.Extensions;
+using System.Collections.Generic;
 using System.Linq;
-using Orchard.Utility.Extensions;
 
 namespace Orchard.ContentManagement.MetaData.Models {
     public class ContentPartDefinition {

@@ -14,7 +14,7 @@ namespace Orchard.Core.Dashboard {
                     menu => menu.Add(T("Orchard"), "-5",
                         item => item
                             .Action("Index", "Admin", new { area = "Dashboard" })
-                            .Permission(StandardPermissions.AccessAdminPanel)));
+                            .Permission(StandardPermissions.AccessAdminPanel)), new[] { "th" });
         }
     }
 }

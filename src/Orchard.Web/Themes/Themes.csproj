@@ -95,12 +95,6 @@
     <Content Include="TheThemeMachine\Styles\Site.css" />
     <Content Include="TheThemeMachine\Theme.png" />
     <Content Include="TheThemeMachine\Theme.txt" />
-    <Content Include="SafeMode\Content\Web.config">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="SafeMode\Styles\Web.config">
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="TheAdmin\Views\Pager.cshtml" />
     <Content Include="TheAdmin\Views\OrchardVersion.cshtml" />
     <Content Include="TheThemeMachine\ThemeZonePreview.png" />
@@ -117,15 +111,6 @@
     <Content Include="TheAdmin\Views\Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="SafeMode\Content\orchard.ico" />
-    <Content Include="SafeMode\Styles\ie6.css" />
-    <Content Include="SafeMode\Styles\images\backgroundHeader.gif" />
-    <Content Include="SafeMode\Styles\images\backgroundVines.gif" />
-    <Content Include="SafeMode\Styles\images\orchardLogo.gif" />
-    <Content Include="SafeMode\Styles\site.css" />
-    <Content Include="SafeMode\Theme.png" />
-    <Content Include="SafeMode\Theme.txt" />
-    <Content Include="SafeMode\Views\Layout.cshtml" />
     <Content Include="TheAdmin\Styles\Images\backgroundHeader.gif" />
     <Content Include="TheAdmin\Styles\Images\orchardLogo.gif" />
     <Content Include="TheAdmin\Theme.png" />

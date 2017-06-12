@@ -1,5 +1,4 @@
 ﻿using Orchard.Localization;
-using Orchard.Security;
 using Orchard.UI.Navigation;
 
 namespace Orchard.Taxonomies {
@@ -12,9 +11,7 @@ namespace Orchard.Taxonomies {
         public string MenuName { get { return "admin"; } }
 
         public void GetNavigation(NavigationBuilder builder) {
-            builder
-                //.AddImageSet("taxonomies")
-                .Add(T("Taxonomies"), "4", BuildMenu);
+            builder.Add(T("Taxonomies"), "4", BuildMenu, new[] { "tags" });
         }
 
         private void BuildMenu(NavigationItemBuilder menu) {

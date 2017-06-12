@@ -1,10 +1,10 @@
-﻿using System.Linq;
-using Orchard.ContentManagement;
+﻿using Orchard.ContentManagement;
 using Orchard.ContentManagement.MetaData;
 using Orchard.Core.Contents.Settings;
 using Orchard.Localization;
 using Orchard.Security;
 using Orchard.UI.Navigation;
+using System.Linq;
 
 namespace Orchard.Core.Contents {
     public class AdminMenu : INavigationProvider {
@@ -25,9 +25,9 @@ namespace Orchard.Core.Contents {
             var contentTypeDefinitions = _contentDefinitionManager.ListTypeDefinitions().OrderBy(d => d.Name);
             var listableContentTypes = contentTypeDefinitions.Where(ctd => ctd.Settings.GetModel<ContentTypeSettings>().Listable);
             ContentItem listableCi = null;
-            foreach(var contentTypeDefinition in listableContentTypes) {
+            foreach (var contentTypeDefinition in listableContentTypes) {
                 listableCi = _contentManager.New(contentTypeDefinition.Name);
-                if(_authorizer.Authorize(Permissions.EditContent, listableCi)) {
+                if (_authorizer.Authorize(Permissions.EditContent, listableCi)) {
                     builder
                         //.AddImageSet("content")
                         .Add(T("Content"), "1.4", menu => menu

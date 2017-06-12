@@ -203,13 +203,13 @@ namespace Orchard.Users.Controllers {
                 return HttpNotFound();
             }
 
-            if (String.IsNullOrWhiteSpace(username)) {
+            if (string.IsNullOrWhiteSpace(username)) {
                 ModelState.AddModelError("username", T("You must specify a username or e-mail."));
                 return View();
             }
 
             var siteUrl = _orchardServices.WorkContext.CurrentSite.BaseUrl;
-            if (String.IsNullOrWhiteSpace(siteUrl)) {
+            if (string.IsNullOrWhiteSpace(siteUrl)) {
                 siteUrl = HttpContext.Request.ToRootUrlString();
             }
 

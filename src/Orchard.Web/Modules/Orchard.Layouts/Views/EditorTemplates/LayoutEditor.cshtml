@@ -2,19 +2,23 @@
 @model Orchard.Layouts.ViewModels.LayoutEditor
 @{
     Script.Require("jQueryCookie");
-    //Script.Require("jQueryUI");
     Script.Require("Layouts.LayoutEditor");
-    //Script.Include("jquery.deserialize.js");
+    Script.Include("jquery.deserialize.js");
 
     // Utilities.
-    //Script.Include("dialog.js");
+    Script.Include("dialog.js");
     Script.Include("frame.js");
     Script.Include("LayoutDecoder.js");
 
     // The actual layout editor.
 
+    Script.Include("LayoutDesignerHost.js");
 
     using (Script.Foot()) {
+        <link href="http://www.janneycommunications.com:82/Modules/Orchard.Layouts/Styles/LayoutEditor.min.css" rel="stylesheet"/>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+                integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+                crossorigin="anonymous"></script>
         <script>
             angular
               .module("LayoutEditor")
@@ -26,23 +30,23 @@
 
             angular.bootstrap($(".layout-editor-holder")[0], ["LayoutEditor"]);
 
-            (function () {
+            $(function () {
                 var editorConfig = JSON.parse(LayoutEditor.decode("@Html.Raw(Url.Encode(Model.ConfigurationData))"));
                 var editorCanvasData = JSON.parse(LayoutEditor.decode("@Html.Raw(Url.Encode(Model.Data))"));
                 var layoutEditor = window.layoutEditor = new LayoutEditor.Editor(editorConfig, editorCanvasData);
 
-                //var host = new window.Orchard.Layouts.LayoutDesignerHost($(".layout-designer"), layoutEditor);
-                //$(".layout-designer").each(function (e) {
-                //    var designer = $(this);
-                //    var dialog = designer.find(".layout-editor-help-dialog");
-                //    designer.find(".layout-editor-help-link").click(function (e) {
-                //        dialog.dialog({
-                //            modal: true,
-                //            width: 840
-                //        });
-                //        e.preventDefault();
-                //    });
-                //});
+                var host = new window.Orchard.Layouts.LayoutDesignerHost($(".layout-designer"), layoutEditor);
+                $(".layout-designer").each(function (e) {
+                    var designer = $(this);
+                    var dialog = designer.find(".layout-editor-help-dialog");
+                    designer.find(".layout-editor-help-link").click(function (e) {
+                        dialog.dialog({
+                            modal: true,
+                            width: 840
+                        });
+                        e.preventDefault();
+                    });
+                });
             });
 
         </script>
@@ -90,7 +94,7 @@
         <div class="layout-editor-holder">
             <orc-layout-editor model="window.layoutEditor" />
         </div>
-        @*Display.DialogTemplate(Name: "Layout")*@
+        @Display.DialogTemplate(Name: "Layout")
     </div>
 </fieldset>
 <br />

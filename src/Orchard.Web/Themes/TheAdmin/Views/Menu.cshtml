@@ -62,7 +62,7 @@
 
         sectionHeaderMarkup = HasText(itemId)
             ? new HtmlString(string.Format(@"<a href=""#"" class=""{1}"" id=""{2}"">{0}</a>", Html.Encode(sectionHeaderText), Html.Encode(itemClassName), Html.Encode(itemId)))
-            : new HtmlString(string.Format(@"<a href=""#"">{0}<button class=""btn btn-link btn-xs"" data-toggle=""collapse"" data-target=""#{0}"" data-parent=""#sidenav01"">&#9660;</button></a>", Html.Encode(sectionHeaderText), Html.Encode(itemClassName)));
+            : new HtmlString(string.Format(@"<a href=""#"" data-toggle=""collapse"" data-target=""#{0}"" data-parent=""#sidenav01"">{0} <i class=""fa fa-angle-down fa-fw""></i></a>", Html.Encode(sectionHeaderText), Html.Encode(itemClassName)));
     }
 
     if (firstLevelMenuItem.Selected)
@@ -129,7 +129,7 @@
         @firstLevelTag.EndElement
         }
 @tag.EndElement
-@using (Script.Foot())
+@*@using (Script.Foot())
 {
     <script type="text/javascript">
         //<![CDATA[
@@ -138,4 +138,4 @@
         })(jQuery);
         //]]>
     </script>
-}
+}*@

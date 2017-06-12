@@ -90,6 +90,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="TheAdmin\Scripts\admin.js" />
+    <Content Include="TheAdmin\Scripts\jquery.nestable.js" />
     <Content Include="TheAdmin\Styles\Images\vinesBackgroundBottom.gif" />
     <Content Include="TheThemeMachine\Styles\Site.css" />
     <Content Include="TheThemeMachine\Theme.png" />

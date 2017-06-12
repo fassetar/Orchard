@@ -4,22 +4,13 @@
     Script.Include("admin.js").AtFoot();
     IEnumerable<dynamic> firstLevelMenuItems = Model;
 
-    if (Model.ImageSets != null)
-    {
-        foreach (var imageSet in Model.ImageSets)
-        {
-            RegisterImageSet("menu." + imageSet, Model.MenuName /* style */, 16 /* bounding box */);
-        }
-    }
-
     Model.Attributes.Add("role", "navigation");
     Model.Attributes.Add("data-filter-watermark", T("Filter").Text);
     Model.Attributes.Add("id", "sidenav01");
     var tag = Tag(Model, "ul");
 }
-﻿@tag.StartElement
-@foreach (var firstLevelMenuItem in Model)
-{
+@tag.StartElement
+@foreach (var firstLevelMenuItem in Model) {
     IEnumerable<dynamic> secondLevelMenuItems = firstLevelMenuItem;
 
     string sectionHeaderText = firstLevelMenuItem.Text.Text;
@@ -34,108 +25,81 @@
         ? "" + firstLevelMenuItem.IdHint
         : null;
 
+    var itemClass = (firstLevelMenuItem.Classes != null)
+    ? "" + string.Join(",", firstLevelMenuItem.Classes.ToArray())
+    : null;
+
     IHtmlString sectionHeaderMarkup;
     if (firstOfTheSecond != null
         && firstLevelMenuItem.LinkToFirstChild
         && (
             firstOfTheSecond.RouteValues != null
-            || HasText(firstOfTheSecond.Url)))
-    {
+            || HasText(firstOfTheSecond.Url))) {
         firstLevelMenuItemUrl = firstOfTheSecond.Href;
         sectionHeaderMarkup = HasText(itemId)
             ? Html.Link(sectionHeaderText, (string)firstOfTheSecond.Href, new { @class = itemClassName, id = itemId })
-            : Html.Link(sectionHeaderText, (string)firstOfTheSecond.Href, new { @class = itemClassName });
-    }
-    else if (firstLevelMenuItem.RouteValues != null || HasText(firstLevelMenuItem.Url))
-    {
+            : new HtmlString(string.Format(@"<a href=""{2}""> <i class=""fa fa-{1} fa-fw""></i> {0} </a>", Html.Encode(sectionHeaderText), Html.Encode(itemClass), (string)firstOfTheSecond.Href));
+    } else if (firstLevelMenuItem.RouteValues != null || HasText(firstLevelMenuItem.Url)) {
         sectionHeaderMarkup = HasText(itemId)
             ? Html.Link(sectionHeaderText, (string)firstLevelMenuItem.Href, new { @class = itemClassName, id = itemId })
             : Html.Link(sectionHeaderText, (string)firstLevelMenuItem.Href, new { @class = itemClassName });
-    }
-    else
-    {
+    } else {
         // if the header isn't linked and there are no children there's no reason for this item in the menu other than to look pretty
-        if (!secondLevelMenuItems.Any())
-        {
+        if (!secondLevelMenuItems.Any()) {
             continue;
         }
 
         sectionHeaderMarkup = HasText(itemId)
-            ? new HtmlString(string.Format(@"<a href=""#"" class=""{1}"" id=""{2}"">{0}</a>", Html.Encode(sectionHeaderText), Html.Encode(itemClassName), Html.Encode(itemId)))
-            : new HtmlString(string.Format(@"<a href=""#"" data-toggle=""collapse"" data-target=""#{0}"" data-parent=""#sidenav01"">{0} <i class=""fa fa-angle-down fa-fw""></i></a>", Html.Encode(sectionHeaderText), Html.Encode(itemClassName)));
+            ? new HtmlString(string.Format(@"<a href=""#"" id=""{2}""> <i class=""fa fa-{1} fa-fw""></i>{0}</a>", Html.Encode(sectionHeaderText), Html.Encode(itemClass), Html.Encode(itemId)))
+            : new HtmlString(string.Format(@"<a href=""#"" data-toggle=""collapse"" data-target=""#{0}"" aria-expanded=""false"" data-parent=""#sidenav01""><i class=""fa fa-{1} fa-fw""></i> {0} <i class=""fa fa-angle-right fa-fw""></i><i class=""fa fa-angle-down fa-fw""></i></a>", Html.Encode(sectionHeaderText), Html.Encode(itemClass)));
     }
 
-    if (firstLevelMenuItem.Selected)
-    {
+    if (firstLevelMenuItem.Selected) {
         firstLevelMenuItem.Classes.Add("active");
     }
 
-    if (HasText(sectionHeaderTextHint))
-    {
-        firstLevelMenuItem.Classes.Add("section-" + sectionHeaderTextHint.HtmlClassify());
-    }
+    <li>
+        @sectionHeaderMarkup
+        @if (secondLevelMenuItems.Count(menuItem => !menuItem.LocalNav) > 1 || !firstLevelMenuItem.LinkToFirstChild) {
+            <div class="collapse" id="@Html.Encode(sectionHeaderText)" style="height: 0px;">
+                <ul class="nav nav-list" style="margin-left: 20px;">
+                    @{ var first = true;}
+                    @foreach (var secondLevelMenuItem in secondLevelMenuItems.Where(menuItem => !menuItem.LocalNav)) {
+                        if (first && firstLevelMenuItem.LinkToFirstChild && string.Equals(firstLevelMenuItemUrl, secondLevelMenuItem.Href)) {
+                            first = false;
+                            continue;
+                        }
 
-    var firstLevelTag = Tag(firstLevelMenuItem, "li");
-    @firstLevelTag.StartElement
-    @sectionHeaderMarkup
-    if (secondLevelMenuItems.Count(menuItem => !menuItem.LocalNav) > 1 || !firstLevelMenuItem.LinkToFirstChild)
-    {
-        <div class="collapse" id="@Html.Encode(sectionHeaderText)" style="height: 0px;">
-            <ul class="nav nav-list">
-                @{ var first = true;}
-                @foreach (var secondLevelMenuItem in secondLevelMenuItems.Where(menuItem => !menuItem.LocalNav))
-                {
-                    if (first && firstLevelMenuItem.LinkToFirstChild && string.Equals(firstLevelMenuItemUrl, secondLevelMenuItem.Href))
-                    {
-                        first = false;
-                        continue;
-                    }
+                        string secondLevelTextHint = secondLevelMenuItem.Text.TextHint;
+                        var firstOfTheThird = ((IEnumerable<dynamic>)secondLevelMenuItem.Items).FirstOrDefault();
 
-                    string secondLevelTextHint = secondLevelMenuItem.Text.TextHint;
-                    var firstOfTheThird = ((IEnumerable<dynamic>)secondLevelMenuItem.Items).FirstOrDefault();
+                        var secondLevelItemClassName = HasText(secondLevelTextHint)
+                            ? secondLevelTextHint.HtmlClassify()
+                            : null;
+                        var secondLevelItemId = HasText(secondLevelMenuItem.IdHint)
+                            ? secondLevelMenuItem.IdHint
+                            : null;
 
-                    var secondLevelItemClassName = HasText(secondLevelTextHint)
-                        ? "fa fa-" + secondLevelTextHint.HtmlClassify()
-                        : "fa";
-                    var secondLevelItemId = HasText(secondLevelMenuItem.IdHint)
-                        ? "fa-" + secondLevelMenuItem.IdHint
-                        : null;
+                        if (secondLevelMenuItem.Selected) {
+                            secondLevelMenuItem.Classes.Add("selected");
+                        }
 
-                    if (secondLevelMenuItem.Selected)
-                    {
-                        secondLevelMenuItem.Classes.Add("selected");
-                    }
 
-                    var secondLevelTag = Tag(secondLevelMenuItem, "li");
-                    var secondLevelUrl = secondLevelMenuItem.Href;
-                    if (firstOfTheThird != null && secondLevelMenuItem.LinkToFirstChild && (firstOfTheThird.RouteValues != null || HasText(firstOfTheThird.Url)))
-                    {
-                        secondLevelUrl = firstOfTheThird.Href;
+                        var secondLevelUrl = secondLevelMenuItem.Href;
+                        if (firstOfTheThird != null && secondLevelMenuItem.LinkToFirstChild && (firstOfTheThird.RouteValues != null || HasText(firstOfTheThird.Url))) {
+                            secondLevelUrl = firstOfTheThird.Href;
+                        }
+                        <li>
+                            @if (HasText(secondLevelItemId)) {
+                                <a href="@secondLevelUrl" class="@secondLevelItemClassName" id="@secondLevelItemId">@secondLevelMenuItem.Text</a>
+                            } else {
+                                <a href="@secondLevelUrl" class="@secondLevelItemClassName">@secondLevelMenuItem.Text</a>
+                            }
+                        </li>
                     }
-                    @secondLevelTag.StartElement
-                    if (HasText(secondLevelItemId))
-                    {
-                        <a href="@secondLevelUrl" class="@secondLevelItemClassName" id="@secondLevelItemId">@secondLevelMenuItem.Text</a>
-                    }
-                    else
-                    {
-                        <a href="@secondLevelUrl" class="@secondLevelItemClassName">@secondLevelMenuItem.Text</a>
-                    }
-                    @secondLevelTag.EndElement
-                }
-            </ul>
-        </div>
+                </ul>
+            </div>
         }
-        @firstLevelTag.EndElement
-        }
+    </li>
+}
 @tag.EndElement
-@*@using (Script.Foot())
-{
-    <script type="text/javascript">
-        //<![CDATA[
-        (function ($) {
-            $("@string.Format(".{0} h3", string.Join(".", Model.Classes))").expandoControl(function (controller) { return controller.next(); }, { key: "N42", path: "@Url.Content("~/")" });
-        })(jQuery);
-        //]]>
-    </script>
-}*@

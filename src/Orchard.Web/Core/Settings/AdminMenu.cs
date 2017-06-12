@@ -21,8 +21,9 @@ namespace Orchard.Core.Settings {
             builder
                 //.AddImageSet("settings")
                 .Add(T("Settings"), "99",
-                    menu => menu.Add(T("General"), "0", item => item.Action("Index", "Admin", new { area = "Settings", groupInfoId = "Index" })
-                        .Permission(Permissions.ManageSettings)), new [] {"collapsed"});
+                    menu => menu.LinkToFirstChild(false).AddClass("cog")
+                    .Add(T("General"), "0", item => item.Action("Index", "Admin", new { area = "Settings", groupInfoId = "Index" })
+                        .Permission(Permissions.ManageSettings)));
 
             var site = _siteService.GetSiteSettings();
             if (site == null)

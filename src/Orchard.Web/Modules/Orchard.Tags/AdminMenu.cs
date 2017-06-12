@@ -7,11 +7,9 @@ namespace Orchard.Tags {
         public string MenuName { get { return "admin"; } }
 
         public void GetNavigation(NavigationBuilder builder) {
-            builder
-                //.AddImageSet("tags")
-                .Add(T("Tags"), "8",
+            builder.Add(T("Tags"), "8",
                     menu => menu.Add(T("List"), "0", item => item.Action("Index", "Admin", new { area = "Orchard.Tags" })
-                        .Permission(Permissions.ManageTags)));
+                        .Permission(Permissions.ManageTags)), new[] { "tag" });
         }
     }
 }

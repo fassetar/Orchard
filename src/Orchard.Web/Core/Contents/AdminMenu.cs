@@ -38,7 +38,7 @@ namespace Orchard.Core.Contents {
             var contentTypes = contentTypeDefinitions.Where(ctd => ctd.Settings.GetModel<ContentTypeSettings>().Creatable).OrderBy(ctd => ctd.DisplayName);
             if (contentTypes.Any()) {
                 builder.Add(T("New"), "-1", menu => {
-                    menu.LinkToFirstChild(false);
+                    menu.LinkToFirstChild(false).AddClass("plus");
                     foreach (var contentTypeDefinition in contentTypes) {
                         var ci = _contentManager.New(contentTypeDefinition.Name);
                         var cim = _contentManager.GetItemMetadata(ci);

@@ -4,8 +4,6 @@
 @using System.Linq;
 
 @{
-    Style.Require("PackagingAdmin");
-
     Layout.Title = T("{0} - {1} Details", Model.ExtensionDescriptor.Name, Model.ExtensionDescriptor.Version).ToString();
 }
 
@@ -15,7 +13,7 @@
 
     if (Model.Recipes != null && Model.Recipes.Count > 0) {
         <fieldset>
-            <legend>@T("Pick the recipes you want to run").ToString()</legend>
+            <legend>Pick the recipes you want to run</legend>
 
             @{ var recipeIndex = 0; }
             @foreach (PackagingInstallRecipeViewModel recipe in Model.Recipes) {
@@ -33,7 +31,7 @@
     }
 
     <fieldset>
-        <legend>@T("Pick the features you want enabled").ToString()</legend>
+        <legend>Pick the features you want enabled</legend>
 
         @{ var featureIndex = 0; }
         @foreach (PackagingInstallFeatureViewModel feature in Model.Features) {
@@ -56,5 +54,5 @@
         }
     </fieldset>
 
-    <button class="btn btn-primary" type="submit">@T("Ok")</button>
+    <button class="btn btn-primary" type="submit">Ok</button>
 }

@@ -1,7 +1,7 @@
 ﻿@model Orchard.DynamicForms.ViewModels.SubmissionViewModel
 @{
-    Style.Require("DynamicForms.FormElements");
-    Script.Require("ShapesBase");
+    Style.Include("DynamicForms.FormElements");
+    Script.Include("ShapesBase");
 }
 @{
     Layout.Title = T("Submission for {0}", Model.Submission.FormName);
@@ -9,17 +9,17 @@
 <table class="table">
     <thead>
         <tr>
-            <th>@T("Field")</th>
-            <th>@T("Value")</th>
+            <th>Field</th>
+            <th>Value</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td>@T("ID")</td>
+            <td>ID</td>
             <td>@Model.Submission.Id</td>
         </tr>
         <tr>
-            <td>@T("Created")</td>
+            <td>Created</td>
             <td>@Display.DateTime(DateTimeUtc: Model.Submission.CreatedUtc)</td>
         </tr>
         @foreach (string key in Model.NameValues) {

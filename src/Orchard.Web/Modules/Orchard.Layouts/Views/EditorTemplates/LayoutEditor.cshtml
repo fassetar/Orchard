@@ -45,7 +45,6 @@
                     });
                 });
             });
-
         </script>
     }
 
@@ -74,7 +73,6 @@
                 </li>
             </ol>
             <ol class="layout-editor-toolbar-group list-unstyled">
-             
                 @if (Model.Templates.Any()) {
                     var options = Model.Templates.Select(x => new SelectListItem { Text = Html.ItemDisplayText(x).ToString(), Value = x.Id.ToString(CultureInfo.InvariantCulture), Selected = x.Id == Model.TemplateId });
                     <li>

@@ -8,39 +8,36 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     @{
-        Script.Require("jQuery").AtFoot();
-        Script.Require("Knockout").AtFoot();
-        
-        Style.Include("orchard-mediaproviders-admin.css");
-        Style.Include("orchard-websearch-admin.css");
-        Style.Require("FontAwesome");
+//Script.Require("jQuery").AtFoot();
+//Script.Require("Knockout").AtFoot();
+
+//Style.Include("orchard-mediaproviders-admin.css");
+//Style.Include("orchard-websearch-admin.css");
     }
 
     @Display.Metas()
     @Display.HeadScripts()
     @Display.HeadLinks()
     @Display.StyleSheetLinks()
-    
+
     @{
         var apiKey = WorkContext.CurrentSite.As<WebSearchSettingsPart>().ApiKey;
     }
 </head>
-<body >
+<body>
     <div id="websearch-main">
         <!-- Register for an API account on https://datamarket.azure.com/dataset/5BA839F1-12CE-4CCE-BF57-A49D98D29A44 -->
-        
+
         @if (String.IsNullOrWhiteSpace(apiKey)) {
-            <div id="message-api">
-                @T("You need to define an API Key in the Media settings before being able to use this feature.")
-            </div>
+            <div id="message-api">You need to define an API Key in the Media settings before being able to use this feature.</div>
         }
         <form data-bind="submit: doSearch">
             <div class="query-container">
                 <div id="icon">
-                    <button type="submit" class="fa fa-search"></button>    
+                    <button type="submit" class="fa fa-search"></button>
                 </div>
                 <div id="query">
-                    <input type="text" autofocus placeholder="@T("search")"/>
+                    <input type="text" autofocus="autofocus" placeholder="search" />
                 </div>
             </div>
         </form>
@@ -57,20 +54,20 @@
 
     <div id="websearch-properties">
         <article data-bind="with: focus">
-            <h1>@T("PROPERTIES")</h1>
+            <h1>PROPERTIES</h1>
             <div class="thumbnail" data-bind="style: { backgroundImage: 'url(' + data.Thumbnail.MediaUrl + ')' }"></div>
-            <div class="dimensions"><em>@T("Dimensions:")</em> <span data-bind="text: data.Width + ' x ' +  data.Height"></span></div>
-            <div class="filename"><em>@T("Filename:")</em> <span data-bind="text: getFilename()"></span></div>
-            <div class="filesize"><em>@T("Size:")</em> <span data-bind="text: Math.round(data.FileSize/1024) + ' KB'"></span></div>
+            <div class="dimensions"><em>Dimensions:</em> <span data-bind="text: data.Width + ' x ' +  data.Height"></span></div>
+            <div class="filename"><em>Filename:</em> <span data-bind="text: getFilename()"></span></div>
+            <div class="filesize"><em>Size:</em> <span data-bind="text: Math.round(data.FileSize/1024) + ' KB'"></span></div>
             <div class="actions">
-                <a class="source button" data-bind="attr: {href: data.SourceUrl}" target="_blank">@T("Page")</a>
-                <a class="media button" data-bind="attr: {href: data.MediaUrl}" target="_blank">@T("Open")</a>
+                <a class="source button" data-bind="attr: {href: data.SourceUrl}" target="_blank">Page</a>
+                <a class="media button" data-bind="attr: {href: data.MediaUrl}" target="_blank">Open</a>
             </div>
         </article>
-        
+
         <div id="websearch-properties-selection" data-bind="visible: selection().length">
-            <h1>@T("SELECTION")</h1>
-            <button id="button-import">@if (Model.Replace == null) { <text>@T("Import")</text> } else { <text>@T("Replace")</text> } </button>
+            <h1>SELECTION</h1>
+            <button id="button-import">@if (Model.Replace == null) { <text>Import</text> } else { <text>Replace</text> } </button>
             <ul data-bind="foreach: selection">
                 <li>
                     <div class="selection" data-bind="click: $parent.focus, style: { backgroundImage: 'url(' + data.Thumbnail.MediaUrl + ')' }">
@@ -81,120 +78,120 @@
                 </li>
             </ul>
         </div>
-    </div>    
+    </div>
 
-    @using(Script.Foot()) {
-    <script type="text/javascript">
-        //<![CDATA[
-        $(function () {
-            function SearchResult(data) {
-                var self = this;
+    @using (Script.Foot()) {
+        <script type="text/javascript">
+            //<![CDATA[
+            $(function () {
+                function SearchResult(data) {
+                    var self = this;
 
-                // values
-                self.data = data;
-                self.hasFocus = ko.observable();
-                self.selected = ko.observable();
-                self.status = ko.observable('');
-                self.tooltip = ko.observable('');
+                    // values
+                    self.data = data;
+                    self.hasFocus = ko.observable();
+                    self.selected = ko.observable();
+                    self.status = ko.observable('');
+                    self.tooltip = ko.observable('');
 
-                // operations
-                self.setData = function (value) {
-                    self.data = value;
-                };
+                    // operations
+                    self.setData = function (value) {
+                        self.data = value;
+                    };
 
-                self.getFilename = function () {
-                    var value = self.data.MediaUrl;
-                    return value.substr(value.lastIndexOf('/') + 1);
-                };
+                    self.getFilename = function () {
+                        var value = self.data.MediaUrl;
+                        return value.substr(value.lastIndexOf('/') + 1);
+                    };
 
-                self.kilobytes = function () {
-                    return Math.round(self.data.FileSize / 1024);
-                };
-            }
+                    self.kilobytes = function () {
+                        return Math.round(self.data.FileSize / 1024);
+                    };
+                }
 
-            function WebSearchViewModel() {
-                var self = this;
+                function WebSearchViewModel() {
+                    var self = this;
 
-                // values
-                self.selection = ko.observableArray([]);
-                self.focus = ko.observable();
-                self.results = ko.observableArray();
+                    // values
+                    self.selection = ko.observableArray([]);
+                    self.focus = ko.observable();
+                    self.results = ko.observableArray();
 
-                self.filename = function () {
-                    return value.substr(value.lastIndexOf('/') + 1);
-                };
+                    self.filename = function () {
+                        return value.substr(value.lastIndexOf('/') + 1);
+                    };
 
-                self.doSearch = function () {
-                    var query = $('#query > input').val();
-                    var url = 'https://api.datamarket.azure.com/Bing/Search/Image?$format=json&Query=%27' + encodeURIComponent(query) + '%27';
+                    self.doSearch = function () {
+                        var query = $('#query > input').val();
+                        var url = 'https://api.datamarket.azure.com/Bing/Search/Image?$format=json&Query=%27' + encodeURIComponent(query) + '%27';
 
-                    $.ajax({
-                        type: "POST",
-                        url: url,
-                        headers: { "Authorization": "Basic @Convert.ToBase64String(Encoding.ASCII.GetBytes(":" + @apiKey))" }
-                    }).done(function (msg) {
-                        var results = msg.d.results;
-                        self.clearSelection();
-                        self.results([]);
-                        for (var i = 0; i < results.length; i++) {
-                            self.results.push(new SearchResult(results[i]));
+                        $.ajax({
+                            type: "POST",
+                            url: url,
+                            headers: { "Authorization": "Basic @Convert.ToBase64String(Encoding.ASCII.GetBytes(":" + @apiKey))" }
+                        }).done(function (msg) {
+                            var results = msg.d.results;
+                            self.clearSelection();
+                            self.results([]);
+                            for (var i = 0; i < results.length; i++) {
+                                self.results.push(new SearchResult(results[i]));
+                            }
+                        });
+                    };
+
+                    self.clearSelection = function () {
+                        // unselect previous elements
+                        self.selection().forEach(function (item) {
+                            item.selected(false);
+                        });
+
+                        self.selection([]);
+                    };
+
+                    self.focus.subscribe(function (oldValue) {
+                        if (oldValue) {
+                            oldValue.hasFocus(false);
+                        }
+                    }, this, "beforeChange");
+
+                    self.focus.subscribe(function (newValue) {
+                        if (newValue) {
+                            newValue.hasFocus(true);
                         }
                     });
+
+                    self.toggleSelect = function (searchResult) {
+                        var index = $.inArray(searchResult, self.selection());
+                        if (index == -1) {
+                            self.selection.push(searchResult);
+                            searchResult.selected(true);
+                        } else {
+                            self.selection.remove(searchResult);
+                            searchResult.selected(false);
+                        }
+
+                        self.focus(searchResult);
+                    };
+
+                    self.select = function (searchResult) {
+                        var index = $.inArray(searchResult, self.selection());
+                        if (index == -1) {
+                            self.clearSelection();
+                            self.selection([searchResult]);
+                            searchResult.selected(true);
+                        }
+
+                        self.focus(searchResult);
+                    };
+
                 };
 
-                self.clearSelection = function () {
-                    // unselect previous elements
-                    self.selection().forEach(function (item) {
-                        item.selected(false);
-                    });
+                var viewModel = new WebSearchViewModel();
+                ko.applyBindings(viewModel);
 
-                    self.selection([]);
-                };
-
-                self.focus.subscribe(function (oldValue) {
-                    if (oldValue) {
-                        oldValue.hasFocus(false);
-                    }
-                }, this, "beforeChange");
-
-                self.focus.subscribe(function (newValue) {
-                    if (newValue) {
-                        newValue.hasFocus(true);
-                    }
-                });
-
-                self.toggleSelect = function (searchResult) {
-                    var index = $.inArray(searchResult, self.selection());
-                    if (index == -1) {
-                        self.selection.push(searchResult);
-                        searchResult.selected(true);
-                    } else {
-                        self.selection.remove(searchResult);
-                        searchResult.selected(false);
-                    }
-
-                    self.focus(searchResult);
-                };
-
-                self.select = function (searchResult) {
-                    var index = $.inArray(searchResult, self.selection());
-                    if (index == -1) {
-                        self.clearSelection();
-                        self.selection([searchResult]);
-                        searchResult.selected(true);
-                    }
-
-                    self.focus(searchResult);
-                };
-
-            };
-
-            var viewModel = new WebSearchViewModel();
-            ko.applyBindings(viewModel);
-
-            $("#websearch-results").on("click", "li", function (e) {
-                var searchResult = ko.dataFor(this);
-                @if(Model.Replace == null) {
+                $("#websearch-results").on("click", "li", function (e) {
+                    var searchResult = ko.dataFor(this);
+                    @if(Model.Replace == null) {
                     <text>
                     if (e.ctrlKey) {
                         viewModel.toggleSelect(searchResult);
@@ -207,18 +204,18 @@
                     viewModel.select(searchResult);
                     </text>
                 }
-            }).on("contextmenu", "li", function (e) {
-                var searchResult = ko.dataFor(this);
-                viewModel.toggleSelect(searchResult);
-                return false;
-            });
+                }).on("contextmenu", "li", function (e) {
+                    var searchResult = ko.dataFor(this);
+                    viewModel.toggleSelect(searchResult);
+                    return false;
+                });
 
-            $("#button-import").on("click", function (e) {
-                viewModel.selection().forEach(function (item) {
-                    var url = item.data.MediaUrl;
-                    item.status('uploading');
-                    item.tooltip('');
-                    @if (Model.Replace == null) {
+                $("#button-import").on("click", function (e) {
+                    viewModel.selection().forEach(function (item) {
+                        var url = item.data.MediaUrl;
+                        item.status('uploading');
+                        item.tooltip('');
+                        @if (Model.Replace == null) {
                         <text>
                         $.post('@Url.Action("Import")', {
                             folderPath: '@Html.Raw(HttpUtility.JavaScriptStringEncode(Model.FolderPath))',
@@ -246,8 +243,8 @@
                            item.tooltip("Media imported successfully.");
                            @if(Model.Replace != null) {
                                <text>
-                               window.parent.$("a.button.close")[0].click();
-                               </text>
+                           window.parent.$("a.button.close")[0].click();
+                           </text>
                            }
                        }
                    })
@@ -257,13 +254,13 @@
                    })
                    .always(function () {
                    });
+                    });
                 });
-            });
-        })
-        //]]>
-    </script>
+            })
+            //]]>
+        </script>
     }
-    
-@Display.FootScripts()
+
+    @Display.FootScripts()
 </body>
 </html>

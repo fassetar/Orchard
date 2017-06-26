@@ -1,27 +1,30 @@
 ﻿@model Orchard.Tags.ViewModels.EditTagsViewModel
 
 @{
-    Script.Require("TagsAutocomplete");
+    Script.Include("~/Themes/TheAdmin/Scripts/bootstrap3-typeahead.js");
+    Script.Include("~/Themes/TheAdmin/Scripts/bootstrap-tagsinput.js");
 }
 
 <fieldset>
     <div class="input-group">
-        <span class="input-group-addon">
-            @T("Tags:")
-        </span>
-        @Html.TextBoxFor(m => m.Tags, new { @class = "form-control", @placeholder = "Separate multiple tags with commas" })
+        <span class="input-group-addon">Tags:</span>
+        @Html.TextBoxFor(m => m.Tags, new {  @placeholder = "Separate multiple tags with commas" })
     </div>
+    <br/>
 </fieldset>
 
-@using (Script.Foot())
-{
+@using (Script.Foot()) {
     <script type="text/javascript">
-        //<![CDATA[
         $(function () {
-            $.tagsAutocomplete.autocomplete(
-                '@Html.FieldIdFor(m => m.Tags)',
-                '@Url.Action("FetchSimilarTags", new { Controller = "Admin", Area = "Orchard.Tags" })', 1);
+            $("#@Html.FieldIdFor(m => m.Tags)").tagsinput({
+                typeahead: {
+                    minLength: 3,
+                    freeInput: false,
+                    source: function (query) {
+                        return $.get('@Url.Action("FetchSimilarTags", new { Controller = "Admin", Area = "Orchard.Tags" })', { snippet: query });
+                    }
+                }
+            });
         });
-        //]]>
     </script>
 }

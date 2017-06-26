@@ -2,17 +2,9 @@
 @using Orchard.Utility.Extensions
 @model Orchard.Azure.MediaServices.ViewModels.Media.AssetViewModel
 @{
-    Style.Require("jQueryUI_Orchard");
-    Style.Require("FontAwesome");
-    Style.Include("cloudmedia-tabs.css", "cloudmedia-tabs.min.css");
-    Style.Include("cloudmedia-admin-asset.css", "cloudmedia-admin-asset.min.css");
-    
-    Script.Require("jQuery");
-    Script.Require("jQueryUI");
-    Script.Require("jQueryUI_Tabs");
-    Script.Include("cloudmedia-admin-common.js", "cloudmedia-admin-common.min.js");
-    Script.Include("cloudmedia-edit-asset.js", "cloudmedia-edit-asset.min.js");
-    
+    //Script.Include("cloudmedia-admin-common.js", "cloudmedia-admin-common.min.js");
+    //Script.Include("cloudmedia-edit-asset.js", "cloudmedia-edit-asset.min.js");
+
     Layout.Title = T("Edit {0}", Model.Asset.GetType().Name.CamelFriendly());
 
     var specializedSettings = Model.SpecializedSettings as IList<AssetDriverResult> ?? Model.SpecializedSettings.ToArray();

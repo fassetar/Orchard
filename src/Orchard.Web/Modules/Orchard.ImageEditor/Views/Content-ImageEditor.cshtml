@@ -4,12 +4,6 @@
 @using Orchard.Utility.Extensions
 @model dynamic
 @{
-    //Script.Require("jQuery");
-    //Script.Require("jQueryUI");
-    //Style.Require("jQueryUI_Orchard");
-    //Script.Include("~/Modules/Orchard.ImageEditor/Scripts/image.editor.js");
-    //Style.Include("~/Modules/Orchard.ImageEditor/Styles/image.editor.css");
-
     ContentItem media = Model.MediaContentItem;
     var mediaPart = media.As<MediaPart>();
     var imagePart = media.As<ImagePart>();

@@ -8,8 +8,6 @@
 @model PackagingListViewModel
 
 @{
-    Style.Require("PackagingAdmin");
-
     Layout.Title = T("Themes").ToString();
 }
 
@@ -30,7 +28,7 @@
 </fieldset>
 
 @if (Model.Entries.Count() <= 0) {
-    <p>@T("No theme updates available.").ToString()</p>
+    <p>No theme updates available.</p>
 } else {
     <ul class="contentItems theme">
     @foreach (var theme in Model.Entries) {

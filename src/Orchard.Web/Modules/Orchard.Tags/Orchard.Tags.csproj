@@ -114,7 +114,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Projections\TagsFilterForms.cs" />
-    <Compile Include="ResourceManifest.cs" />
     <Compile Include="Services\ITagCloudService.cs" />
     <Compile Include="Services\ITagService.cs" />
     <Compile Include="Services\TagCloudService.cs" />

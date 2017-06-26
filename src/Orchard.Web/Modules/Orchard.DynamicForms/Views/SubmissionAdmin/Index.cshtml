@@ -3,7 +3,7 @@
 @model Orchard.DynamicForms.ViewModels.SubmissionsIndexViewModel
 @{
     Style.Include("forms-admin.css", "forms-admin.min.css"); // TODO: Shouldn't this be a Style.Require()?
-    Script.Require("ShapesBase");
+    Script.Include("ShapesBase");
     Layout.Title = T("Submissions for {0}", Model.FormName);
 }
 @{

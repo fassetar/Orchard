@@ -138,7 +138,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Module.txt" />
-    <Content Include="Scripts\orchard-tags-autocomplete.js" />
     <Content Include="Views\Admin\Edit.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Parts\Tags.ShowTags.cshtml" />
@@ -176,9 +175,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Web.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Scripts\Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Parts\TagCloud.cshtml" />

@@ -28,7 +28,7 @@
 </fieldset>
 
 @if (Model.Entries.Count() <= 0) {
-    <p>@T("No module updates available.").ToString()</p>
+    <p>No module updates available.</p>
 } else {
     <ul class="contentItems">
     @foreach (var module in Model.Entries) {
@@ -54,7 +54,7 @@
 
                     <div class="related">
                         @Html.Link(T("Install Latest").Text, InstallAction(module.NewVersionToInstall))@T(" | ")
-                        <a href="@module.NewVersionToInstall.PackageStreamUri">@T("Download")</a>
+                        <a href="@module.NewVersionToInstall.PackageStreamUri">Download</a>
                     </div>
 
                     <div class="properties">
@@ -63,10 +63,10 @@
                             <li>@T("Last Updated: {0}", module.NewVersionToInstall.LastUpdated)</li>
                             <li>&nbsp;&#124;&nbsp;@T("Author: {0}", !string.IsNullOrEmpty(module.NewVersionToInstall.Authors) ? module.NewVersionToInstall.Authors : T("Unknown").ToString())</li>
                             <li>&nbsp;&#124;&nbsp;@T("Downloads: {0}", module.NewVersionToInstall.DownloadCount)</li>
-                            <li>&nbsp;&#124;&nbsp;@T("Website: ")
+                            <li>&nbsp;&#124;&nbsp;Website: 
                                 @if (!string.IsNullOrEmpty(module.NewVersionToInstall.ProjectUrl)) { <a href="@module.NewVersionToInstall.ProjectUrl">@module.NewVersionToInstall.ProjectUrl</a> } else { @T("Unknown").ToString() }
                             </li>
-                            <li><div>&nbsp;&#124;&nbsp;@T("Rating: ")
+                            <li><div>&nbsp;&#124;&nbsp;Rating: 
                                     <div class="ratings" style="width:@(15 * 5)px" title="@T("Rating: {0} out of 5 ({1} total).", module.NewVersionToInstall.Rating, module.NewVersionToInstall.RatingsCount)">
                                         <div class="score" style="width:@(15 * (module.NewVersionToInstall.Rating))px">&nbsp;</div>
                                     </div>

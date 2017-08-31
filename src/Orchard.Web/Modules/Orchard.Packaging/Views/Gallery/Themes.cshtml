@@ -18,7 +18,7 @@
     </fieldset>
 
     <fieldset class="bulk-actions bulk-actions-auto">
-        <label for="filterResults">@T("Sort by:")</label>
+        <label for="filterResults">Sort by:</label>
         <select id="filterResults" name="@Html.NameOf(m => m.Options.Order)">
             @Html.SelectOption(Model.Options.Order, PackagingExtensionsOrder.Downloads, T("Downloads").ToString())
             @Html.SelectOption(Model.Options.Order, PackagingExtensionsOrder.Ratings, T("Ratings").ToString())
@@ -103,7 +103,7 @@
             </li>}
         </ul>
     } else {
-        <p>@T("No themes available.").ToString()</p>
+        <p>No themes available.</p>
     }
 
     @Display(Model.Pager)

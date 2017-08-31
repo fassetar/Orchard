@@ -59,7 +59,7 @@
 
                     <div class="related">
                         @Html.Link(T("Install Latest").Text, InstallAction(theme.NewVersionToInstall))@T(" | ")
-                        <a href="@theme.NewVersionToInstall.PackageStreamUri">@T("Download")</a>
+                        <a href="@theme.NewVersionToInstall.PackageStreamUri">Download</a>
                     </div>
 
                     <div class="properties">
@@ -87,6 +87,5 @@
             </div>
         </li>}
     </ul>
-
     @Display(Model.Pager)
 }

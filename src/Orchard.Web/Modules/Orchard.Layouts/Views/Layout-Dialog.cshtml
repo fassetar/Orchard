@@ -1,6 +1,5 @@
 ﻿@{
-    SetMeta("X-UA-Compatible", "IE=edge,chrome=1");
-    Script.Require("jQuery").AtFoot();
+    SetMeta("X-UA-Compatible", "IE=edge,chrome=1");    
     Script.Require("ShapesBase").AtFoot();
     Script.Include("~/Themes/TheAdmin/Scripts/admin.js").AtFoot();
 
@@ -29,7 +28,6 @@
         </div>
     </div>
 </div>
-
 @*
     Not rendering the Token Script prevents an issue with Edge when trying to load a resource via AJAX
     while the window is being destroyed. This causes the JSON object to be undefined, causing jQuery to fail to parse the AJAX response.
